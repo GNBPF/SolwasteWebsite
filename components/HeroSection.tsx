@@ -26,14 +26,14 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          <h1 className="text-5xl md:text-7xl lg:text-9xl font-serif text-cream mb-8 leading-tight drop-shadow-2xl">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-serif text-cream mb-6 md:mb-8 leading-tight drop-shadow-2xl px-4">
             We don't just <br/> manage waste.
           </h1>
           <motion.p 
              initial={{ opacity: 0 }}
              animate={{ opacity: 1 }}
              transition={{ delay: 1, duration: 1 }}
-             className="text-xl md:text-2xl font-light text-gold tracking-[0.2em] uppercase"
+             className="text-lg sm:text-xl md:text-2xl font-light text-gold tracking-[0.15em] md:tracking-[0.2em] uppercase px-4"
           >
             We manage the future.
           </motion.p>

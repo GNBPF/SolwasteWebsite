@@ -33,20 +33,20 @@ const MachinesSection = () => {
     return (
         <section id={SectionId.MACHINES} className="py-24 bg-cream text-moss overflow-hidden">
             <div className="container mx-auto px-6">
-                <div className="mb-24 text-center">
+                <div className="mb-16 md:mb-24 text-center">
                     <motion.div 
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-4xl md:text-6xl font-serif mb-4">Engineering Nature</h2>
-                        <p className="text-gray-600 max-w-2xl mx-auto font-light text-lg">German precision mechanisms meeting the organic soul of India.</p>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif mb-3 md:mb-4">Engineering Nature</h2>
+                        <p className="text-gray-600 max-w-2xl mx-auto font-light text-base md:text-lg px-4">German precision mechanisms meeting the organic soul of India.</p>
                     </motion.div>
                 </div>
 
                 {/* Machine 1: Organic Trash Composter */}
-                <div className="flex flex-col lg:flex-row items-center gap-12 mb-32">
-                    <div className="w-full lg:w-1/2 h-[600px] relative">
+                <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 mb-20 md:mb-32">
+                    <div className="w-full lg:w-1/2 h-[400px] sm:h-[500px] md:h-[600px] relative">
                         <div className="absolute top-4 left-4 z-10 bg-white/80 backdrop-blur px-3 py-1 rounded-full border border-white/20">
                             <span className="text-[10px] uppercase tracking-widest text-moss font-bold flex items-center gap-2">
                                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>

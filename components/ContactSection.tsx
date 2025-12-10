@@ -12,20 +12,20 @@ const ContactSection = () => {
                     You aren't buying a machine; you are investing in a legacy.
                 </p>
 
-                <form className="space-y-8 text-left max-w-xl mx-auto bg-white/5 p-8 rounded-2xl border border-white/10">
-                    <div className="grid grid-cols-2 gap-6">
+                <form className="space-y-6 md:space-y-8 text-left max-w-xl mx-auto bg-white/5 p-6 md:p-8 rounded-2xl border border-white/10">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                         <div className="space-y-2">
                             <label className="text-xs uppercase tracking-wider text-gray-500">First Name</label>
-                            <input type="text" className="w-full bg-transparent border-b border-gray-700 py-3 focus:outline-none focus:border-gold transition-colors text-lg" />
+                            <input type="text" className="w-full bg-transparent border-b border-gray-700 py-2 md:py-3 focus:outline-none focus:border-gold transition-colors text-base md:text-lg" />
                         </div>
                         <div className="space-y-2">
                             <label className="text-xs uppercase tracking-wider text-gray-500">Last Name</label>
-                            <input type="text" className="w-full bg-transparent border-b border-gray-700 py-3 focus:outline-none focus:border-gold transition-colors text-lg" />
+                            <input type="text" className="w-full bg-transparent border-b border-gray-700 py-2 md:py-3 focus:outline-none focus:border-gold transition-colors text-base md:text-lg" />
                         </div>
                     </div>
                     <div className="space-y-2">
                         <label className="text-xs uppercase tracking-wider text-gray-500">I represent</label>
-                        <select className="w-full bg-transparent border-b border-gray-700 py-3 focus:outline-none focus:border-gold transition-colors text-cream/80 text-lg appearance-none">
+                        <select className="w-full bg-transparent border-b border-gray-700 py-2 md:py-3 focus:outline-none focus:border-gold transition-colors text-cream/80 text-base md:text-lg appearance-none">
                             <option className="bg-charcoal">Venture Capital / Investor</option>
                             <option className="bg-charcoal">Housing Society Chairman</option>
                             <option className="bg-charcoal">Corporate CSR</option>
@@ -34,10 +34,10 @@ const ContactSection = () => {
                     </div>
                     <div className="space-y-2">
                          <label className="text-xs uppercase tracking-wider text-gray-500">Email</label>
-                         <input type="email" className="w-full bg-transparent border-b border-gray-700 py-3 focus:outline-none focus:border-gold transition-colors text-lg" />
+                         <input type="email" className="w-full bg-transparent border-b border-gray-700 py-2 md:py-3 focus:outline-none focus:border-gold transition-colors text-base md:text-lg" />
                     </div>
 
-                    <button className="w-full mt-8 py-4 bg-gold text-charcoal font-bold tracking-[0.2em] hover:bg-white transition-all uppercase text-sm">
+                    <button type="submit" className="w-full mt-6 md:mt-8 py-3 md:py-4 bg-gold text-charcoal font-bold tracking-[0.15em] md:tracking-[0.2em] hover:bg-white transition-all uppercase text-xs md:text-sm rounded-lg">
                         Request Private Demo
                     </button>
                 </form>

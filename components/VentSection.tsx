@@ -122,8 +122,6 @@ const VentSection: React.FC = () => {
     if (!input.trim()) return;
 
     setIsProcessing(true);
-    // Simulate "particle implosion" delay for effect
-    await new Promise(r => setTimeout(r, 2000));
     
     const result = await generateSolwasteSolution(input);
     setSolution(result);

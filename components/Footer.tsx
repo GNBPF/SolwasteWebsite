@@ -10,43 +10,43 @@ const XIcon = () => (
 
 const Footer = () => {
   return (
-    <footer className="bg-gold text-charcoal py-12">
+    <footer className="bg-gold text-charcoal py-10 md:py-12">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
           {/* Contact Information */}
           <div>
-            <div className="mb-6">
-              <p className="font-medium mb-1">123-456-789</p>
-              <p className="font-medium mb-1">hello@solwaste.co</p>
-              <p className="text-sm leading-relaxed">
+            <div className="mb-4 md:mb-6">
+              <p className="font-medium mb-1 text-sm md:text-base">123-456-789</p>
+              <p className="font-medium mb-1 text-sm md:text-base">hello@solwaste.co</p>
+              <p className="text-xs md:text-sm leading-relaxed">
                 Worli, 1st floor, 264-265, Dr. Annie Besant Road,<br />
                 Worli, Mumbai, MH 400025
               </p>
             </div>
             
             {/* Social Media Icons */}
-            <div className="flex items-center gap-4">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                <Instagram size={24} />
+            <div className="flex items-center gap-3 md:gap-4">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="Instagram">
+                <Instagram size={20} className="md:w-6 md:h-6" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                <Facebook size={24} />
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="Facebook">
+                <Facebook size={20} className="md:w-6 md:h-6" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="Twitter">
                 <XIcon />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                <Linkedin size={24} />
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="LinkedIn">
+                <Linkedin size={20} className="md:w-6 md:h-6" />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                <Youtube size={24} />
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="YouTube">
+                <Youtube size={20} className="md:w-6 md:h-6" />
               </a>
             </div>
           </div>
 
           {/* Column 2 */}
           <div>
-            <ul className="space-y-2">
+            <ul className="space-y-1.5 md:space-y-2 text-sm md:text-base">
               <li>
                 <Link to="/#impact" className="hover:underline transition-all">
                   Vision 2047
@@ -67,7 +67,7 @@ const Footer = () => {
 
           {/* Column 3 */}
           <div>
-            <ul className="space-y-2">
+            <ul className="space-y-1.5 md:space-y-2 text-sm md:text-base">
               <li>
                 <Link to="/" className="hover:underline transition-all">
                   Testimonials & Insights
@@ -88,7 +88,7 @@ const Footer = () => {
 
           {/* Column 4 */}
           <div>
-            <ul className="space-y-2">
+            <ul className="space-y-1.5 md:space-y-2 text-sm md:text-base">
               <li>
                 <Link to="/" className="hover:underline transition-all">
                   Press & Media
@@ -109,16 +109,16 @@ const Footer = () => {
         </div>
 
         {/* Bottom Links */}
-        <div className="pt-8 border-t border-charcoal/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex gap-8">
-            <Link to="/" className="text-sm hover:underline transition-all">
+        <div className="pt-6 md:pt-8 border-t border-charcoal/20 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-xs md:text-sm">
+          <div className="flex gap-6 md:gap-8">
+            <Link to="/" className="hover:underline transition-all">
               Privacy Policy
             </Link>
-            <Link to="/" className="text-sm hover:underline transition-all">
+            <Link to="/" className="hover:underline transition-all">
               Accessibility Statement
             </Link>
           </div>
-          <p className="text-sm opacity-70">
+          <p className="opacity-70">
             © {new Date().getFullYear()} Solwaste. All rights reserved.
           </p>
         </div>

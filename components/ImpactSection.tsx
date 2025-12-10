@@ -1,152 +1,282 @@
-import React, { useState, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Leaf, Wind } from "lucide-react";
-import { SectionId } from "../types";
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Home, Factory, Building2, ArrowRight, Zap, Users, Box } from 'lucide-react';
 
-const SparkIcon = () => (
-  <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-    <path
-      d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
-      stroke="#D4AF37"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
-const initialStats = [
-  { label: "Waste Saved", value: 12455, unit: "kg", icon: <Leaf className="text-moss" /> },
-  { label: "CO₂ Prevented", value: 8326, unit: "kg", icon: <Wind className="text-blue-500" /> },
-  { label: "Energy Gen.", value: 456, unit: "kWh", icon: <SparkIcon /> }
+// --- Configuration: Grounded in your Real Website Data ---
+const MILESTONES = [
+  { 
+    id: "phase1",
+    year: "PHASE 1", 
+    label: "Early Adoption", 
+    sub: "Compost in Every Home",
+    desc: "The foundation. We invite early adopters to transform waste at the source. Installing decentralized units in homes and societies to stop landfill reliance.",
+    tags: ["Invitation for Early Adopters", "Decentralized Units"],
+    color: "text-gold",
+    icon: Home
+  },
+  { 
+    id: "phase2",
+    year: "PHASE 2", 
+    label: "Biogas-as-a-Service", 
+    sub: "Modular Expansion for Cities",
+    desc: "Moving beyond hardware. We build neighborhood grids where communities don't just dump waste—they trade it. A scalable, modular energy service.",
+    tags: ["Biogas-as-a-Service", "Modular Infrastructure"],
+    color: "text-orange-400",
+    icon: Factory
+  },
+  { 
+    id: "phase3",
+    year: "VISION 2047", 
+    label: "Circular Cities", 
+    sub: "Powered by Leftovers",
+    desc: "The ultimate goal. A futuristic India where entire skylines are powered by their own organic waste. A completely closed-loop, waste-neutral ecosystem.",
+    tags: ["Circular Economy", "Futuristic Skyline"],
+    color: "text-green-400",
+    icon: Building2
+  },
 ];
 
-const StatCard = ({ stat }) => (
-  <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors group">
-    <div className="flex justify-between items-start mb-4">
-      <span className="opacity-60 text-xs uppercase tracking-widest group-hover:text-gold transition-colors">
-        {stat.label}
-      </span>
-      {stat.icon}
+// --- Components ---
+
+const MilestoneCard = ({ data, isActive, onClick }) => {
+  return (
+    <motion.div
+      layout
+      onClick={onClick}
+      className={`relative p-6 md:p-8 rounded-2xl cursor-pointer overflow-hidden group transition-colors duration-500 border
+        ${isActive ? "z-10 border-gold/50" : "z-0 border-white/5 hover:border-white/10 hover:bg-white/5"}
+      `}
+      initial={false}
+    >
+      {/* 1. The Sliding Glow Background */}
+      {isActive && (
+        <motion.div
+          layoutId="activeCardGlow"
+          className="absolute inset-0 bg-[#0f2e1f] shadow-[0_0_40px_rgba(212,175,55,0.15)] rounded-2xl"
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        />
+      )}
+
+      {/* Content Wrapper */}
+      <div className="relative z-10 flex flex-col h-full">
+        <div className="flex justify-between items-start mb-4">
+          <div className="flex items-center gap-3">
+             <div className={`p-2 rounded-lg border ${isActive ? "bg-black/40 border-gold/30" : "bg-white/5 border-white/10"}`}>
+                <data.icon size={20} className={isActive ? data.color : "text-white/50"} />
+             </div>
+             <span className={`text-sm font-mono tracking-widest uppercase ${isActive ? "text-white/60" : "text-white/20"}`}>
+                {data.year}
+             </span>
+          </div>
+        </div>
+
+        <motion.h3 
+          className={`text-2xl md:text-3xl font-serif font-bold mb-1 ${isActive ? "text-white" : "text-white/60"}`}
+          layout
+        >
+          {data.label}
+        </motion.h3>
+        
+        <motion.div className={`text-sm font-medium uppercase tracking-wider mb-4 ${data.color}`}>
+            {data.sub}
+        </motion.div>
+
+        {/* Text Reveal Animation */}
+        <div className="relative overflow-hidden">
+             <motion.p 
+               className="text-white/70 text-sm leading-relaxed mb-6 max-w-md"
+               animate={{ 
+                 opacity: isActive ? 1 : 0.4,
+                 height: isActive ? "auto" : "0px",
+                 marginBottom: isActive ? "24px" : "0px"
+               }}
+             >
+               {data.desc}
+             </motion.p>
+        </div>
+
+        {/* Tags / Pills from your screenshot */}
+        <motion.div 
+           className="flex flex-wrap gap-2 mt-auto"
+           animate={{ opacity: isActive ? 1 : 0 }}
+        >
+           {data.tags.map((tag, i) => (
+               <span key={i} className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] uppercase tracking-wide text-white/60">
+                   {tag}
+               </span>
+           ))}
+        </motion.div>
+      </div>
+    </motion.div>
+  );
+};
+
+const HolographicVisual = ({ activeId }) => {
+  return (
+    <div className="w-full h-full relative flex items-center justify-center">
+        {/* Base Grid */}
+        <div className="absolute inset-0 opacity-20"
+             style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '40px 40px' }} 
+        />
+
+        <AnimatePresence mode="wait">
+            
+            {/* Phase 1: The Home Unit */}
+            {activeId === "phase1" && (
+                <motion.div
+                    key="anim1"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 1.2, opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="relative flex flex-col items-center"
+                >
+                    <div className="w-40 h-56 border-2 border-gold/40 rounded-xl relative flex items-center justify-center bg-[#0f2e1f]/50 backdrop-blur-sm">
+                        <Home size={48} className="text-gold" />
+                        {/* Organic Particles rising */}
+                        {[...Array(5)].map((_, i) => (
+                           <motion.div 
+                              key={i}
+                              className="absolute w-1 h-1 bg-gold rounded-full"
+                              initial={{ y: 20, opacity: 0 }}
+                              animate={{ y: -60, opacity: [0, 1, 0] }}
+                              transition={{ duration: 2, delay: i * 0.3, repeat: Infinity }}
+                           />
+                        ))}
+                    </div>
+                    <div className="mt-8 text-center">
+                        <div className="text-gold font-mono text-xs mb-1">UNIT STATUS</div>
+                        <div className="text-white text-lg font-bold">DECENTRALIZED</div>
+                    </div>
+                </motion.div>
+            )}
+
+            {/* Phase 2: The Connected Grid (Biogas-as-a-Service) */}
+            {activeId === "phase2" && (
+                <motion.div
+                    key="anim2"
+                    className="relative w-full h-full flex items-center justify-center"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                >
+                    {/* Central Plant */}
+                    <div className="absolute z-10 w-24 h-24 bg-orange-500/10 rounded-full border border-orange-500/50 flex items-center justify-center">
+                        <Factory size={32} className="text-orange-500" />
+                    </div>
+                    
+                    {/* Rotating Connection Lines */}
+                    {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => (
+                        <motion.div
+                            key={i}
+                            className="absolute w-[140px] h-[1px] bg-gradient-to-r from-orange-500/50 to-transparent origin-left left-1/2 top-1/2"
+                            style={{ rotate: deg }}
+                            initial={{ scaleX: 0 }}
+                            animate={{ scaleX: 1 }}
+                            transition={{ delay: i * 0.05 }}
+                        >
+                            <motion.div 
+                                className="w-2 h-2 bg-orange-400 rounded-full absolute right-0 -top-1"
+                                animate={{ scale: [1, 1.5, 1] }}
+                                transition={{ duration: 2, repeat: Infinity, delay: i * 0.1 }}
+                            />
+                        </motion.div>
+                    ))}
+                     <div className="absolute bottom-12 text-center">
+                        <div className="text-orange-400 font-mono text-xs mb-1">SERVICE LAYER</div>
+                        <div className="text-white text-lg font-bold">INTERCONNECTED</div>
+                    </div>
+                </motion.div>
+            )}
+
+            {/* Phase 3: The Futuristic Skyline */}
+            {activeId === "phase3" && (
+                <motion.div
+                    key="anim3"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    className="relative w-full px-12 flex flex-col items-center"
+                >
+                    {/* Skyline SVG Silhouette */}
+                    <div className="flex items-end gap-2 opacity-80">
+                        <motion.div initial={{ height: 0 }} animate={{ height: 60 }} className="w-8 bg-green-500/20 border-t border-x border-green-500/50 rounded-t-sm" />
+                        <motion.div initial={{ height: 0 }} animate={{ height: 100 }} className="w-12 bg-green-500/20 border-t border-x border-green-500/50 rounded-t-sm" />
+                        <motion.div initial={{ height: 0 }} animate={{ height: 40 }} className="w-8 bg-green-500/20 border-t border-x border-green-500/50 rounded-t-sm" />
+                        <motion.div initial={{ height: 0 }} animate={{ height: 80 }} className="w-10 bg-green-500/20 border-t border-x border-green-500/50 rounded-t-sm" />
+                    </div>
+                    
+                    {/* Energy Flow Underneath */}
+                    <div className="w-full h-[1px] bg-green-500 mt-1 relative overflow-hidden">
+                        <motion.div 
+                           className="absolute inset-0 bg-white blur-sm"
+                           animate={{ x: ["-100%", "100%"] }}
+                           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                        />
+                    </div>
+                    
+                    <div className="mt-8 text-center">
+                        <div className="text-green-400 font-mono text-xs mb-1">VISION 2047</div>
+                        <div className="text-white text-lg font-bold">WASTE NEUTRAL</div>
+                    </div>
+                </motion.div>
+            )}
+
+        </AnimatePresence>
     </div>
-    <div className="text-4xl lg:text-5xl font-serif font-bold tabular-nums">
-      {stat.value.toLocaleString()}{" "}
-      <span className="text-lg font-sans font-normal opacity-50">{stat.unit}</span>
-    </div>
-  </div>
-);
+  );
+};
 
-const ImpactSection = () => {
-  const { scrollYProgress } = useScroll();
-  const mapScale = useTransform(scrollYProgress, [0.5, 0.9], [0.95, 1.03]);
+// --- Main Layout ---
 
-  const [stats, setStats] = useState(initialStats);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setStats(prev =>
-        prev.map(s => ({
-          ...s,
-          value: s.value + Math.floor(Math.random() * 3)
-        }))
-      );
-    }, 1500);
-
-    return () => clearInterval(interval);
-  }, []);
+const ImpactVision2047 = () => {
+  const [activeIdx, setActiveIdx] = useState(0);
 
   return (
-    <section id={SectionId.IMPACT} className="py-24 bg-moss text-cream relative overflow-hidden">
-      {/* BG gradient */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none" />
-
-      <div className="container mx-auto px-6 relative">
-
-        {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-white/20 pb-8">
-          <div>
-            <h2 className="text-4xl md:text-6xl font-serif mb-2">Vision 2047</h2>
-            <p className="text-gold font-light tracking-wide">By the time India turns 100, we aim for zero waste.</p>
-          </div>
-
-          <div className="hidden md:block text-right">
-            <p className="text-xs opacity-60 tracking-widest mb-2">LIVE NETWORK STATUS</p>
-            <div className="flex items-center justify-end gap-2">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_10px_#4ade80]" />
-              <span className="font-mono text-sm">ONLINE</span>
+    <section className="bg-[#0a1f14] py-24 overflow-hidden relative">
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none" />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-white/10 pb-8">
+            <div>
+                 <span className="text-gold font-mono text-xs tracking-widest uppercase">The Roadmap</span>
+                 <h2 className="text-4xl md:text-5xl font-serif text-white mt-2">Vision <span className="text-green-400">2047</span></h2>
             </div>
-          </div>
+            <div className="text-right hidden md:block">
+                 <div className="text-white/40 text-sm">Building the infrastructure for</div>
+                 <div className="text-white font-bold">A Waste-Neutral India</div>
+            </div>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          {stats.map((stat, idx) => (
-            <StatCard key={idx} stat={stat} />
-          ))}
-        </div>
-
-        {/* India Map */}
-        <div className="relative h-[480px] w-full bg-charcoal/30 rounded-3xl overflow-hidden border border-white/5 shadow-2xl flex items-center justify-center">
-
-          <motion.div style={{ scale: mapScale }} className="w-full h-full flex items-center justify-center">
-
-            <svg
-              viewBox="0 0 700 850"
-              className="h-[85%] opacity-90 drop-shadow-2xl"
-              fill="none"
-              strokeWidth="8"
-              stroke="#D4AF37"
-            >
-              {/* INDIA MAP — accurate outline */}
-              <path
-                d="
-                  M441 50 L460 80 L480 110 L470 140 L490 170 L520 190 L530 220 L540 260 
-                  L560 300 L580 330 L600 360 L590 390 L610 420 L640 450 L650 480 L630 510 
-                  L610 540 L600 580 L590 620 L560 650 L520 680 L480 700 L440 720 L400 740 
-                  L360 760 L320 770 L280 780 L240 770 L200 750 L170 720 L150 690 L140 650 
-                  L130 610 L120 570 L110 530 L120 490 L140 460 L160 430 L170 390 L160 350 
-                  L150 310 L140 270 L150 240 L160 200 L170 160 L200 130 L240 110 L280 90 
-                  L320 70 L360 60 L400 55 Z
-                "
-                stroke="#D4AF37"
-                fill="none"
-              />
-
-              {/* Green radiating pulses */}
-              {[
-                { cx: 360, cy: 420 },
-                { cx: 300, cy: 300 },
-                { cx: 420, cy: 600 }
-              ].map((p, i) => (
-                <motion.circle
-                  key={i}
-                  cx={p.cx}
-                  cy={p.cy}
-                  r="0"
-                  fill="#4ade80"
-                  initial={{ opacity: 0, r: 0 }}
-                  whileInView={{ opacity: 0.12, r: 220 }}
-                  transition={{ duration: 4 + i, delay: i * 0.5 }}
-                />
-              ))}
-
-              {/* City nodes */}
-              <circle cx="340" cy="260" r="10" fill="#D4AF37" className="animate-pulse" />
-              <circle cx="300" cy="480" r="10" fill="#D4AF37" className="animate-pulse" style={{ animationDelay: "0.4s" }} />
-              <circle cx="420" cy="580" r="10" fill="#D4AF37" className="animate-pulse" style={{ animationDelay: "0.8s" }} />
-              <circle cx="500" cy="350" r="10" fill="#D4AF37" className="animate-pulse" style={{ animationDelay: "1.2s" }} />
-
-            </svg>
-
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <h1 className="text-4xl md:text-6xl font-serif text-white/5 tracking-[1em] font-bold">INDIA 2047</h1>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+            
+            {/* Left: The Timeline Cards */}
+            <div className="lg:col-span-5 flex flex-col justify-center gap-4">
+                {MILESTONES.map((item, idx) => (
+                    <MilestoneCard 
+                        key={item.id} 
+                        data={item} 
+                        isActive={idx === activeIdx} 
+                        onClick={() => setActiveIdx(idx)} 
+                    />
+                ))}
             </div>
 
-          </motion.div>
+            {/* Right: The Hologram Visualization */}
+            <div className="lg:col-span-7 h-[400px] lg:h-[500px] bg-black/20 rounded-3xl border border-white/5 backdrop-blur-sm relative overflow-hidden flex items-center justify-center shadow-2xl">
+                <HolographicVisual activeId={MILESTONES[activeIdx].id} />
+                
+                {/* Status Indicator */}
+                <div className="absolute top-6 right-6 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest">Live Vision Render</span>
+                </div>
+            </div>
+            
         </div>
       </div>
     </section>
   );
 };
 
-export default ImpactSection;
+export default ImpactVision2047;
