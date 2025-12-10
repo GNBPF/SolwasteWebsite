@@ -6,6 +6,7 @@ import ImpactSection from '../components/ImpactSection';
 import PartnersSection from '../components/PartnersSection';
 import AppSection from '../components/AppSection';
 import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <PartnersSection />
             <AppSection />
             <ContactSection />
+            <Footer />
         </main>
     );
 };

@@ -3,10 +3,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const partners = [
-  { name: "Government of Kerala", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Government_of_Kerala_Logo.svg/800px-Government_of_Kerala_Logo.svg.png" },
-  { name: "LuLu Group", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/85/LuLu_Group_International_Logo.svg/800px-LuLu_Group_International_Logo.svg.png" },
-  { name: "ONGC", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/52/ONGC_Logo.svg/800px-ONGC_Logo.svg.png" },
-  { name: "Petronet LNG", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/6/67/Petronet_LNG_Logo.svg/800px-Petronet_LNG_Logo.svg.png" }
+  { name: "Government of Kerala", logo: "/kerela.png" },
+  { name: "LuLu Group", logo: "/mall.png" },
+  { name: "ONGC", logo: "/ongc.png" },
+  { name: "Petronet LNG", logo: "/petronet.png" }
 ];
 
 const PartnersSection = () => {

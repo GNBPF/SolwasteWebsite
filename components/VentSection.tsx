@@ -10,48 +10,110 @@ const VentSection: React.FC = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [solution, setSolution] = useState<VentResponse | null>(null);
+  const [interimText, setInterimText] = useState('');
   
   // Ref for speech recognition
   const recognitionRef = useRef<any>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const inputRef = useRef<string>('');
+
+  // Keep inputRef in sync with input state
+  useEffect(() => {
+    inputRef.current = input;
+  }, [input]);
 
   useEffect(() => {
-    // Basic check for browser support
-    if ('webkitSpeechRecognition' in window) {
-      // @ts-ignore
-      recognitionRef.current = new window.webkitSpeechRecognition();
-      recognitionRef.current.continuous = false;
+    // Check for browser support - works in Chrome, Edge, Safari
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    
+    if (SpeechRecognition) {
+      recognitionRef.current = new SpeechRecognition();
+      recognitionRef.current.continuous = true;
       recognitionRef.current.interimResults = true;
+      recognitionRef.current.lang = 'en-US';
 
       recognitionRef.current.onresult = (event: any) => {
-        let finalTranscript = '';
+        let interimTranscript = '';
+        let finalTranscript = inputRef.current;
+        
         for (let i = event.resultIndex; i < event.results.length; ++i) {
-             if (event.results[i].isFinal) {
-               finalTranscript += event.results[i][0].transcript;
-             }
+          const transcript = event.results[i][0].transcript;
+          if (event.results[i].isFinal) {
+            finalTranscript += transcript + ' ';
+          } else {
+            interimTranscript += transcript;
+          }
         }
-        if (finalTranscript) {
-             setInput(finalTranscript);
-             setIsRecording(false);
-        }
+        
+        setInput(finalTranscript);
+        setInterimText(interimTranscript);
       };
 
-      recognitionRef.current.onerror = () => {
+      recognitionRef.current.onerror = (event: any) => {
+        console.error('Speech recognition error:', event.error);
         setIsRecording(false);
+        setInterimText('');
+        if (event.error === 'not-allowed') {
+          alert('Microphone access denied. Please allow microphone access in your browser settings.');
+        }
       };
       
       recognitionRef.current.onend = () => {
-        setIsRecording(false);
+        if (isRecording) {
+          // Auto-restart if still recording (for continuous mode)
+          try {
+            recognitionRef.current?.start();
+          } catch (e) {
+            console.error('Failed to restart recognition:', e);
+            setIsRecording(false);
+          }
+        }
       };
     }
+    
+    return () => {
+      if (recognitionRef.current) {
+        recognitionRef.current.stop();
+      }
+    };
   }, []);
 
+  // Auto-resize textarea
+  useEffect(() => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = textareaRef.current.scrollHeight + 'px';
+    }
+  }, [input, interimText]);
+
   const handleMicClick = () => {
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    
+    if (!SpeechRecognition) {
+      alert('Voice input is not supported in your browser. Please use Chrome, Edge, or Safari.');
+      return;
+    }
+
     if (isRecording) {
-      recognitionRef.current?.stop();
+      try {
+        recognitionRef.current?.stop();
+        setIsRecording(false);
+        setInterimText('');
+      } catch (e) {
+        console.error('Error stopping recognition:', e);
+        setIsRecording(false);
+      }
     } else {
-      setInput('');
-      recognitionRef.current?.start();
-      setIsRecording(true);
+      try {
+        setInput('');
+        setInterimText('');
+        inputRef.current = '';
+        recognitionRef.current?.start();
+        setIsRecording(true);
+      } catch (e) {
+        console.error('Error starting recognition:', e);
+        alert('Could not start voice input. Please check your microphone permissions.');
+      }
     }
   };
 
@@ -75,6 +137,16 @@ const VentSection: React.FC = () => {
 
   return (
     <section id="vent" className="relative min-h-screen bg-charcoal text-cream flex flex-col justify-center items-center px-4 py-20 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 opacity-30">
+          <img 
+            src="/ventBackgroung.jpg" 
+            alt="Waste Management Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/70 to-charcoal/90" />
+        </div>
+        
         {/* Background Particles (Simulated) */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">
             {[...Array(25)].map((_, i) => (
@@ -120,15 +192,19 @@ const VentSection: React.FC = () => {
 
               <form onSubmit={handleSubmit} className="relative w-full max-w-xl mx-auto">
                 <div className="relative group">
-                    <input
-                        type="text"
-                        value={input}
+                    <textarea
+                        ref={textareaRef}
+                        value={input + interimText}
                         onChange={(e) => setInput(e.target.value)}
                         placeholder="e.g. Garbage pileup in sector 5..."
-                        className="w-full bg-transparent border-b-2 border-gray-700 text-xl md:text-2xl py-4 pr-12 focus:outline-none focus:border-gold transition-colors font-light text-cream placeholder-gray-600 font-serif"
+                        className="w-full bg-transparent border-b-2 border-gray-700 text-xl md:text-2xl py-4 pr-12 focus:outline-none focus:border-gold transition-colors font-light text-cream placeholder-gray-600 font-serif resize-none overflow-hidden min-h-[60px] max-h-[400px]"
                         disabled={isProcessing}
+                        rows={1}
+                        style={{
+                          opacity: interimText ? 0.7 : 1
+                        }}
                     />
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-4">
+                    <div className="absolute right-0 top-4 flex items-center gap-4">
                         <button
                             type="button"
                             onClick={handleMicClick}
@@ -137,12 +213,18 @@ const VentSection: React.FC = () => {
                                 ? 'bg-red-500 text-white animate-pulse shadow-[0_0_15px_rgba(239,68,68,0.5)]' 
                                 : 'text-gray-500 hover:text-gold hover:bg-white/5'
                             }`}
-                            title="Voice Input"
+                            title={isRecording ? "Stop Recording" : "Start Voice Input"}
                         >
                             <Mic size={24} />
                         </button>
                     </div>
                 </div>
+                
+                {isRecording && (
+                  <p className="text-center text-gold text-sm mt-4 animate-pulse">
+                    🎤 Listening... Speak now
+                  </p>
+                )}
 
                 <div className="mt-16 flex justify-center">
                     <button

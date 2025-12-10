@@ -4,6 +4,7 @@ import { Check, Download, Zap, Shield, Activity, ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router-dom';
 import ProductScene from '../components/ThreeScene';
 import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
 
 const Feature = ({ icon, title, desc }: { icon: any, title: string, desc: string }) => (
     <div className="flex gap-4 items-start">
@@ -27,8 +28,13 @@ const MachinesPage = () => {
         {/* Product 1: The Composter */}
         <section className="container mx-auto px-6 mb-32">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div className="h-[600px] bg-gradient-to-br from-gray-100 to-white rounded-3xl overflow-hidden shadow-inner border border-white">
-                    <ProductScene type="composter" />
+                <div className="space-y-4">
+                    <div className="h-[400px] bg-gradient-to-br from-gray-100 to-white rounded-3xl overflow-hidden shadow-lg border border-white">
+                        <img src="/OrganicWasteComposter.jpeg" alt="Organic Waste Composter" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="h-[300px] bg-gradient-to-br from-gray-100 to-white rounded-3xl overflow-hidden shadow-lg border border-white">
+                        <img src="/OrganicWasteComposter1.jpeg" alt="Organic Waste Composter Detail" className="w-full h-full object-cover" />
+                    </div>
                 </div>
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
@@ -108,7 +114,7 @@ const MachinesPage = () => {
         <section className="container mx-auto px-6 py-32">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <motion.div 
-                    order={2} className="lg:order-1"
+                    className="lg:order-1"
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -141,6 +147,7 @@ const MachinesPage = () => {
         </section>
 
         <ContactSection />
+        <Footer />
     </div>
   );
 };

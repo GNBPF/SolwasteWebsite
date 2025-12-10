@@ -20,10 +20,7 @@ export const Navbar = () => {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? 'bg-moss/95 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 relative z-50 group">
-             <div className="w-8 h-8 bg-gold rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-               <span className="font-serif font-bold text-moss">S</span>
-             </div>
-             <span className="text-xl font-serif tracking-widest font-bold text-cream">SOLWASTE</span>
+             <img src={"/logo.png"} alt="Solwaste Logo" className="h-10 w-auto object-contain group-hover:scale-110 transition-transform" />
           </Link>
           
           <div className="hidden md:flex gap-8 items-center">

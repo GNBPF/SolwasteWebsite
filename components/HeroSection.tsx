@@ -10,7 +10,7 @@ const HeroSection = () => {
       {/* Simulated Video Background with Ken Burns Effect */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.img 
-          src="https://images.unsplash.com/photo-1596707328570-8b1735496660?q=80&w=2070&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=2400&auto=format&fit=crop" 
           alt="Indian Urban Nature" 
           className="w-full h-full object-cover opacity-60"
           initial={{ scale: 1.1 }}
