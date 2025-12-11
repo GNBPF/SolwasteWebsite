@@ -303,25 +303,15 @@ const TheVent = () => {
                   <motion.button
                     type="submit"
                     disabled={!isValid}
-                    className="w-full md:w-auto px-12 py-4 rounded-full font-bold text-sm tracking-[0.2em] uppercase transition-all flex items-center justify-center gap-3"
-                    style={{ 
-                      backgroundColor: isValid ? COLORS.gold : '#374151',
-                      color: isValid ? COLORS.bg : '#9ca3af',
-                      cursor: isValid ? 'pointer' : 'not-allowed',
-                      opacity: isValid ? 1 : 0.7
-                    }}
+                    className={`w-full md:w-auto px-12 py-4 rounded-full font-bold text-sm tracking-[0.2em] uppercase transition-all flex items-center justify-center gap-3 ${
+                      isValid ? 'bg-gold text-charcoal hover:bg-white cursor-pointer' : 'bg-gray-600 text-gray-400 cursor-not-allowed opacity-60'
+                    }`}
                     whileHover={isValid ? { scale: 1.02 } : {}}
                     whileTap={isValid ? { scale: 0.98 } : {}}
                   >
                     Send to The Void <Send size={16} />
                   </motion.button>
                 </div>
-                
-                {!isValid && (
-                  <p className="text-center text-xs text-red-400 mt-4 font-medium">
-                    ⚠️ Required: Name, Email, and Message
-                  </p>
-                )}
 
               </form>
             </motion.div>

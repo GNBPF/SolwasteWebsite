@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHome = location.pathname === '/';
 
   useEffect(() => {
@@ -15,13 +16,45 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate('/');
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
+
+  const handleSectionClick = (sectionId: string) => {
+    if (isHome) {
+      const element = document.getElementById(sectionId);
+      element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      navigate('/');
+      // Wait for navigation and DOM to be ready
+      const scrollToSection = () => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          // Retry if element not found yet
+          setTimeout(scrollToSection, 50);
+        }
+      };
+      setTimeout(scrollToSection, 100);
+    }
+  };
+
   return (
     <>
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? 'bg-moss/95 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2 relative z-50 group">
+          <a href="/" onClick={handleLogoClick} className="flex items-center gap-3 relative z-50 group cursor-pointer">
              <img src={"/logo.png"} alt="Solwaste Logo" className="h-10 w-auto object-contain group-hover:scale-110 transition-transform" />
-          </Link>
+             <div className="flex flex-col leading-tight">
+               <span className="text-cream font-bold text-xl tracking-wider group-hover:text-gold transition-colors">SOLWASTE</span>
+               <span className="text-cream/70 text-[10px] font-light tracking-wide">Nothing Wasted. Ever.</span>
+             </div>
+          </a>
           
           <div className="hidden md:flex gap-8 items-center">
             <Link to="/otc" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
@@ -30,19 +63,15 @@ export const Navbar = () => {
             <Link to="/biogas" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
                  Biogas
             </Link>
-            {isHome ? (
-                <>
-                <a href="#impact" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">Impact</a>
-                <a href="#app" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">App</a>
-                </>
-            ) : (
-                <Link to="/" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
-                    Home
-                </Link>
-            )}
-            <a href="#contact" className="px-6 py-2 border border-gold text-gold rounded-full hover:bg-gold hover:text-moss transition-all text-xs uppercase tracking-widest font-bold">
-              Partner
-            </a>
+            <button onClick={() => handleSectionClick('impact')} className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
+                 Impact
+            </button>
+            <button onClick={() => handleSectionClick('app')} className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
+                 App
+            </button>
+            <Link to="/shop" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
+                 Shop
+            </Link>
           </div>
 
           <button className="md:hidden text-cream relative z-50" onClick={() => setIsOpen(!isOpen)}>
@@ -60,21 +89,24 @@ export const Navbar = () => {
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-moss z-40 flex flex-col items-center justify-center gap-8"
           >
-             <Link to="/" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
+             <button onClick={(e) => { setIsOpen(false); handleLogoClick(e); }} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
                  Home
-             </Link>
+             </button>
              <Link to="/otc" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
                  OTC
              </Link>
              <Link to="/biogas" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
                  Biogas
              </Link>
-             <a href="#impact" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
+             <button onClick={() => { setIsOpen(false); handleSectionClick('impact'); }} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
                  Impact
-             </a>
-             <a href="#app" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
+             </button>
+             <button onClick={() => { setIsOpen(false); handleSectionClick('app'); }} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
                  App
-             </a>
+             </button>
+             <Link to="/shop" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
+                 Shop
+             </Link>
           </motion.div>
         )}
       </AnimatePresence>

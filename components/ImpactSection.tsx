@@ -43,7 +43,7 @@ const MilestoneCard = ({ data, isActive, onClick }) => {
     <motion.div
       layout
       onClick={onClick}
-      className={`relative p-6 md:p-8 rounded-2xl cursor-pointer overflow-hidden group transition-colors duration-500 border
+      className={`relative p-4 sm:p-5 md:p-6 lg:p-8 rounded-xl md:rounded-2xl cursor-pointer overflow-hidden group transition-colors duration-500 border
         ${isActive ? "z-10 border-gold/50" : "z-0 border-white/5 hover:border-white/10 hover:bg-white/5"}
       `}
       initial={false}
@@ -71,13 +71,13 @@ const MilestoneCard = ({ data, isActive, onClick }) => {
         </div>
 
         <motion.h3 
-          className={`text-2xl md:text-3xl font-serif font-bold mb-1 ${isActive ? "text-white" : "text-white/60"}`}
+          className={`text-xl sm:text-2xl md:text-3xl font-serif font-bold mb-1 ${isActive ? "text-white" : "text-white/60"}`}
           layout
         >
           {data.label}
         </motion.h3>
         
-        <motion.div className={`text-sm font-medium uppercase tracking-wider mb-4 ${data.color}`}>
+        <motion.div className={`text-xs sm:text-sm font-medium uppercase tracking-wider mb-3 md:mb-4 ${data.color}`}>
             {data.sub}
         </motion.div>
 
@@ -233,7 +233,7 @@ const ImpactVision2047 = () => {
   const [activeIdx, setActiveIdx] = useState(0);
 
   return (
-    <section className="bg-[#0a1f14] py-24 overflow-hidden relative">
+    <section id="impact" className="bg-[#0a1f14] py-24 overflow-hidden relative">
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">

@@ -203,10 +203,10 @@ const VentSection: React.FC = () => {
                 What’s the waste problem keeping you up?
               </p>
 
-              <form onSubmit={handleSubmit} className="relative w-full max-w-2xl mx-auto bg-white/5 backdrop-blur-sm p-6 md:p-10 rounded-3xl border border-white/10">
+              <form onSubmit={handleSubmit} className="relative w-full max-w-2xl mx-auto bg-white/5 backdrop-blur-sm p-4 sm:p-6 md:p-8 lg:p-10 rounded-2xl md:rounded-3xl border border-white/10">
                 
                 {/* Contact Details Section */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 md:mb-8">
                   {/* Name */}
                   <div className="relative group">
                     <User size={18} className="absolute left-0 top-3 text-gray-500 group-focus-within:text-gold transition-colors" />
@@ -248,8 +248,8 @@ const VentSection: React.FC = () => {
                 </div>
 
                 {/* Message Section */}
-                <div className="relative mb-6">
-                  <label className="text-xs uppercase tracking-wider text-gray-400 mb-3 block">Your Message *</label>
+                <div className="relative mb-4 md:mb-6">
+                  <label className="text-xs uppercase tracking-wider text-gray-400 mb-2 md:mb-3 block">Your Message *</label>
                   <div className={`relative border rounded-xl transition-all duration-300 ${isRecording ? 'border-gold shadow-[0_0_15px_rgba(212,175,55,0.3)]' : 'border-gray-700 bg-black/20'}`}>
                     <div className="relative">
                       <textarea
@@ -257,7 +257,7 @@ const VentSection: React.FC = () => {
                           value={input}
                           onChange={(e) => setInput(e.target.value)}
                           placeholder="Type or click the mic to speak..."
-                          className="w-full bg-transparent p-4 pr-16 focus:outline-none text-lg font-light min-h-[100px] resize-none rounded-xl text-cream placeholder-gray-600"
+                          className="w-full bg-transparent p-3 sm:p-4 pr-14 sm:pr-16 focus:outline-none text-base md:text-lg font-light min-h-[100px] sm:min-h-[120px] resize-none rounded-xl text-cream placeholder-gray-600"
                           disabled={isProcessing}
                       />
                       
@@ -292,13 +292,13 @@ const VentSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-8 flex flex-col items-center">
+                <div className="mt-6 md:mt-8 flex flex-col items-center">
                     <button
                         type="submit"
                         disabled={!isFormValid || isProcessing}
                         className={`
-                            group relative overflow-hidden rounded-full px-10 py-5 bg-gold text-charcoal font-bold text-sm tracking-[0.2em] uppercase transition-all
-                            ${(!isFormValid || isProcessing) ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:scale-105'}
+                            group relative overflow-hidden rounded-full px-8 sm:px-10 py-3 sm:py-4 md:py-5 font-bold text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all w-full sm:w-auto
+                            ${(!isFormValid || isProcessing) ? 'bg-gray-600 text-gray-400 opacity-60 cursor-not-allowed' : 'bg-gold text-charcoal hover:bg-white hover:scale-105'}
                         `}
                     >
                         {isProcessing ? (
@@ -312,12 +312,6 @@ const VentSection: React.FC = () => {
                             </span>
                         )}
                     </button>
-                    
-                    {!isFormValid && (
-                      <p className="text-center text-xs text-red-400 mt-4 font-medium">
-                        ⚠️ Required: Name, Email, and Message
-                      </p>
-                    )}
                 </div>
               </form>
             </motion.div>

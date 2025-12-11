@@ -39,7 +39,7 @@ const BiogasPage = () => {
   return (
     <div className="bg-charcoal text-cream">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-12 md:pb-0">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{ backgroundImage: 'url(/OrganicWasteComposter1.jpeg)' }}
@@ -70,31 +70,31 @@ const BiogasPage = () => {
           ))}
         </div>
         
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link to="/" className="inline-flex items-center gap-2 text-cream/70 hover:text-gold transition-colors mb-8 text-sm uppercase tracking-wider">
-              <ArrowLeft size={16} /> Back to Home
+            <Link to="/" className="inline-flex items-center gap-2 text-cream/70 hover:text-gold transition-colors mb-6 md:mb-8 text-xs md:text-sm uppercase tracking-wider">
+              <ArrowLeft size={14} className="md:w-4 md:h-4" /> Back to Home
             </Link>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cream via-gold to-cream">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif mb-8 md:mb-12 lg:mb-16 text-transparent bg-clip-text bg-gradient-to-r from-cream via-gold to-cream leading-[1.1] px-2">
               Biogas Technology
             </h1>
             
-            <p className="text-xl md:text-2xl text-cream/80 max-w-3xl mx-auto font-light leading-relaxed">
-              Our machines aren't just metal boxes –<br/>
-              they're ecosystems in disguise.
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-cream/80 max-w-3xl mx-auto font-light leading-relaxed px-4">
+              Our machines aren't just metal boxes –<br className="hidden sm:block"/>
+              <span className="sm:hidden"> </span>they're ecosystems in disguise.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Solution Lines */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-charcoal to-moss/10">
-        <div className="container mx-auto px-6">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 bg-gradient-to-b from-charcoal to-moss/10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -212,18 +212,18 @@ const BiogasPage = () => {
       </section>
 
       {/* Key Benefits */}
-      <section className="py-20 md:py-32 bg-moss text-cream">
-        <div className="container mx-auto px-6">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 bg-moss text-cream">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-serif text-center mb-16"
+            className="text-3xl sm:text-4xl md:text-5xl font-serif text-center mb-10 md:mb-16"
           >
             Why Biogas Technology?
           </motion.h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
             {[
               { icon: Flame, title: 'Clean Energy', desc: 'Generate biogas for cooking & heating, reducing LPG dependency' },
               { icon: Droplets, title: 'Zero Emissions', desc: 'Anaerobic digestion with zero methane leakage to atmosphere' },
@@ -236,11 +236,11 @@ const BiogasPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                className="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-gold/50 transition-all"
+                className="text-center p-5 sm:p-6 md:p-8 bg-white/5 backdrop-blur-sm rounded-xl md:rounded-2xl border border-white/10 hover:border-gold/50 transition-all"
               >
-                <benefit.icon size={48} className="mx-auto mb-4 text-gold" />
-                <h3 className="text-xl font-serif mb-3">{benefit.title}</h3>
-                <p className="text-cream/80 font-light text-sm leading-relaxed">{benefit.desc}</p>
+                <benefit.icon size={40} className="sm:w-12 sm:h-12 mx-auto mb-3 md:mb-4 text-gold" />
+                <h3 className="text-lg sm:text-xl font-serif mb-2 md:mb-3">{benefit.title}</h3>
+                <p className="text-cream/80 font-light text-xs sm:text-sm leading-relaxed">{benefit.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -248,13 +248,13 @@ const BiogasPage = () => {
       </section>
 
       {/* Visual Section */}
-      <section className="py-20 md:py-32 bg-charcoal">
-        <div className="container mx-auto px-6">
-          <div className="rounded-3xl overflow-hidden shadow-2xl border-2 border-gold/20">
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 bg-charcoal">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border-2 border-gold/20">
             <img 
               src="/OrganicWasteComposter1.jpeg"
               alt="Biogas Technology"
-              className="w-full h-[400px] md:h-[600px] object-cover"
+              className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
             />
           </div>
           
@@ -262,9 +262,9 @@ const BiogasPage = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mt-12"
+            className="text-center mt-8 md:mt-12 px-4"
           >
-            <p className="text-2xl md:text-3xl font-serif text-gold italic">
+            <p className="text-xl sm:text-2xl md:text-3xl font-serif text-gold italic leading-relaxed">
               "From waste to watts – the future is biogas."
             </p>
           </motion.div>

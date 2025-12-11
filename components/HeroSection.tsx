@@ -26,27 +26,32 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-serif text-cream mb-6 md:mb-8 leading-tight drop-shadow-2xl px-4">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-cream mb-4 sm:mb-6 md:mb-8 leading-tight drop-shadow-2xl px-4">
             We don't just <br/> manage waste.
           </h1>
           <motion.p 
              initial={{ opacity: 0 }}
              animate={{ opacity: 1 }}
              transition={{ delay: 1, duration: 1 }}
-             className="text-lg sm:text-xl md:text-2xl font-light text-gold tracking-[0.15em] md:tracking-[0.2em] uppercase px-4"
+             className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-gold tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] uppercase px-4"
           >
             We manage the future.
           </motion.p>
         </motion.div>
 
-        <motion.div 
+        <motion.button
+          onClick={() => {
+            const ventSection = document.getElementById('vent');
+            ventSection?.scrollIntoView({ behavior: 'smooth' });
+          }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-12 animate-bounce text-cream/50"
+          className="absolute bottom-8 sm:bottom-10 md:bottom-12 animate-bounce text-cream/50 cursor-pointer hover:text-gold transition-colors"
+          aria-label="Scroll to next section"
         >
-           <ArrowDown size={32} />
-        </motion.div>
+           <ArrowDown size={24} className="sm:w-7 sm:h-7 md:w-8 md:h-8" />
+        </motion.button>
       </div>
     </section>
   );
