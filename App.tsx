@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import Home from './pages/Home';
 import MachinesPage from './pages/MachinesPage';
+import OTCPage from './pages/OTCPage';
+import BiogasPage from './pages/BiogasPage';
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
@@ -13,6 +15,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/machines" element={<MachinesPage />} />
+        <Route path="/otc" element={<OTCPage />} />
+        <Route path="/biogas" element={<BiogasPage />} />
       </Routes>
     </div>
   );

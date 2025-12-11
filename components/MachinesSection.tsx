@@ -87,7 +87,7 @@ const MachinesSection = () => {
 
                         <div className="pt-6 flex gap-4">
                              <Link 
-                                to="/machines" 
+                                to="/otc" 
                                 className="group inline-flex items-center gap-2 px-8 py-4 bg-moss text-cream rounded-full hover:bg-gold hover:text-charcoal transition-all font-medium uppercase text-xs tracking-widest"
                             >
                                 View Full Details <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform"/>
@@ -115,7 +115,7 @@ const MachinesSection = () => {
                         </p>
                         <div className="pt-6 flex gap-4 lg:justify-end">
                              <Link 
-                                to="/machines"
+                                to="/biogas"
                                 className="group inline-flex items-center gap-2 px-8 py-4 border border-moss text-moss rounded-full hover:bg-moss hover:text-cream transition-all font-medium uppercase text-xs tracking-widest"
                              >
                                 Learn More <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform"/>

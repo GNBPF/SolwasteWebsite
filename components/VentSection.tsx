@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Mic, Send, Sparkles, Loader2, RefreshCw } from 'lucide-react';
+import { Mic, Send, Sparkles, Loader2, RefreshCw, User, Mail, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { generateSolwasteSolution } from '../services/geminiService';
 import { VentResponse } from '../types';
@@ -11,6 +11,13 @@ const VentSection: React.FC = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [solution, setSolution] = useState<VentResponse | null>(null);
   const [interimText, setInterimText] = useState('');
+  
+  // User details state
+  const [userDetails, setUserDetails] = useState({
+    name: '',
+    email: '',
+    phone: ''
+  });
   
   // Ref for speech recognition
   const recognitionRef = useRef<any>(null);
@@ -119,9 +126,11 @@ const VentSection: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim()) return;
+    if (!input.trim() || !userDetails.name.trim() || !userDetails.email.trim()) return;
 
     setIsProcessing(true);
+    
+    console.log('Submitting:', { ...userDetails, message: input });
     
     const result = await generateSolwasteSolution(input);
     setSolution(result);
@@ -131,7 +140,13 @@ const VentSection: React.FC = () => {
   const reset = () => {
     setSolution(null);
     setInput('');
+    setUserDetails({ name: '', email: '', phone: '' });
   };
+  
+  // Check if form is valid
+  const isFormValid = userDetails.name.trim() !== '' && 
+                      userDetails.email.trim() !== '' && 
+                      input.trim() !== '';
 
   return (
     <section id="vent" className="relative min-h-screen bg-charcoal text-cream flex flex-col justify-center items-center px-4 py-20 overflow-hidden">
@@ -188,49 +203,102 @@ const VentSection: React.FC = () => {
                 What’s the waste problem keeping you up?
               </p>
 
-              <form onSubmit={handleSubmit} className="relative w-full max-w-xl mx-auto">
-                <div className="relative group">
-                    <textarea
-                        ref={textareaRef}
-                        value={input + interimText}
-                        onChange={(e) => setInput(e.target.value)}
-                        placeholder="e.g. Garbage pileup in sector 5..."
-                        className="w-full bg-transparent border-b-2 border-gray-700 text-xl md:text-2xl py-4 pr-12 focus:outline-none focus:border-gold transition-colors font-light text-cream placeholder-gray-600 font-serif resize-none overflow-hidden min-h-[60px] max-h-[400px]"
-                        disabled={isProcessing}
-                        rows={1}
-                        style={{
-                          opacity: interimText ? 0.7 : 1
-                        }}
-                    />
-                    <div className="absolute right-0 top-4 flex items-center gap-4">
-                        <button
-                            type="button"
-                            onClick={handleMicClick}
-                            className={`p-3 rounded-full transition-all duration-300 ${
-                                isRecording 
-                                ? 'bg-red-500 text-white animate-pulse shadow-[0_0_15px_rgba(239,68,68,0.5)]' 
-                                : 'text-gray-500 hover:text-gold hover:bg-white/5'
-                            }`}
-                            title={isRecording ? "Stop Recording" : "Start Voice Input"}
-                        >
-                            <Mic size={24} />
-                        </button>
-                    </div>
-                </div>
+              <form onSubmit={handleSubmit} className="relative w-full max-w-2xl mx-auto bg-white/5 backdrop-blur-sm p-6 md:p-10 rounded-3xl border border-white/10">
                 
-                {isRecording && (
-                  <p className="text-center text-gold text-sm mt-4 animate-pulse">
-                    🎤 Listening... Speak now
-                  </p>
-                )}
+                {/* Contact Details Section */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  {/* Name */}
+                  <div className="relative group">
+                    <User size={18} className="absolute left-0 top-3 text-gray-500 group-focus-within:text-gold transition-colors" />
+                    <input 
+                      type="text" 
+                      placeholder="Your Name *"
+                      value={userDetails.name}
+                      onChange={(e) => setUserDetails({...userDetails, name: e.target.value})}
+                      disabled={isProcessing}
+                      className="w-full bg-transparent border-b border-gray-600 py-2 pl-8 focus:outline-none focus:border-gold transition-colors text-cream placeholder-gray-500"
+                    />
+                  </div>
 
-                <div className="mt-16 flex justify-center">
+                  {/* Email */}
+                  <div className="relative group">
+                    <Mail size={18} className="absolute left-0 top-3 text-gray-500 group-focus-within:text-gold transition-colors" />
+                    <input 
+                      type="email" 
+                      placeholder="Email ID *"
+                      value={userDetails.email}
+                      onChange={(e) => setUserDetails({...userDetails, email: e.target.value})}
+                      disabled={isProcessing}
+                      className="w-full bg-transparent border-b border-gray-600 py-2 pl-8 focus:outline-none focus:border-gold transition-colors text-cream placeholder-gray-500"
+                    />
+                  </div>
+
+                  {/* Phone (Optional) */}
+                  <div className="relative group md:col-span-2">
+                    <Phone size={18} className="absolute left-0 top-3 text-gray-500 group-focus-within:text-gold transition-colors" />
+                    <input 
+                      type="tel" 
+                      placeholder="Phone Number (Optional)"
+                      value={userDetails.phone}
+                      onChange={(e) => setUserDetails({...userDetails, phone: e.target.value})}
+                      disabled={isProcessing}
+                      className="w-full bg-transparent border-b border-gray-600 py-2 pl-8 focus:outline-none focus:border-gold transition-colors text-cream placeholder-gray-500"
+                    />
+                  </div>
+                </div>
+
+                {/* Message Section */}
+                <div className="relative mb-6">
+                  <label className="text-xs uppercase tracking-wider text-gray-400 mb-3 block">Your Message *</label>
+                  <div className={`relative border rounded-xl transition-all duration-300 ${isRecording ? 'border-gold shadow-[0_0_15px_rgba(212,175,55,0.3)]' : 'border-gray-700 bg-black/20'}`}>
+                    <div className="relative">
+                      <textarea
+                          ref={textareaRef}
+                          value={input}
+                          onChange={(e) => setInput(e.target.value)}
+                          placeholder="Type or click the mic to speak..."
+                          className="w-full bg-transparent p-4 pr-16 focus:outline-none text-lg font-light min-h-[100px] resize-none rounded-xl text-cream placeholder-gray-600"
+                          disabled={isProcessing}
+                      />
+                      
+                      {/* Show real-time speech recognition text */}
+                      {isRecording && (
+                        <div className="absolute left-4 top-4 right-16 pointer-events-none text-lg font-light z-20 whitespace-pre-wrap break-words">
+                          <span className="text-cream">{input}</span>
+                          <span className="text-gold" style={{ textShadow: '0 0 10px rgba(212,175,55,0.5)' }}>{interimText}</span>
+                        </div>
+                      )}
+                      
+                      <button
+                          type="button"
+                          onClick={handleMicClick}
+                          className={`absolute right-3 top-3 p-3 rounded-full transition-all duration-300 ${
+                              isRecording 
+                              ? 'bg-red-500 text-white animate-pulse' 
+                              : 'text-gray-500 hover:text-gold hover:bg-white/5'
+                          }`}
+                          title={isRecording ? "Stop Recording" : "Start Voice Input"}
+                      >
+                          <Mic size={20} />
+                      </button>
+                      
+                      {isRecording && (
+                        <div className="absolute bottom-3 right-4 text-xs text-gold animate-pulse flex items-center gap-2">
+                          <span className="w-2 h-2 bg-red-500 rounded-full inline-block"></span>
+                          Recording...
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 flex flex-col items-center">
                     <button
                         type="submit"
-                        disabled={!input || isProcessing}
+                        disabled={!isFormValid || isProcessing}
                         className={`
                             group relative overflow-hidden rounded-full px-10 py-5 bg-gold text-charcoal font-bold text-sm tracking-[0.2em] uppercase transition-all
-                            ${(!input || isProcessing) ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:scale-105'}
+                            ${(!isFormValid || isProcessing) ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:scale-105'}
                         `}
                     >
                         {isProcessing ? (
@@ -244,6 +312,12 @@ const VentSection: React.FC = () => {
                             </span>
                         )}
                     </button>
+                    
+                    {!isFormValid && (
+                      <p className="text-center text-xs text-red-400 mt-4 font-medium">
+                        ⚠️ Required: Name, Email, and Message
+                      </p>
+                    )}
                 </div>
               </form>
             </motion.div>

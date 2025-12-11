@@ -24,8 +24,11 @@ export const Navbar = () => {
           </Link>
           
           <div className="hidden md:flex gap-8 items-center">
-            <Link to="/machines" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
-                 Machines
+            <Link to="/otc" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
+                 OTC
+            </Link>
+            <Link to="/biogas" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
+                 Biogas
             </Link>
             {isHome ? (
                 <>
@@ -34,7 +37,7 @@ export const Navbar = () => {
                 </>
             ) : (
                 <Link to="/" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
-                    Vision 2047
+                    Home
                 </Link>
             )}
             <a href="#contact" className="px-6 py-2 border border-gold text-gold rounded-full hover:bg-gold hover:text-moss transition-all text-xs uppercase tracking-widest font-bold">
@@ -57,12 +60,21 @@ export const Navbar = () => {
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-moss z-40 flex flex-col items-center justify-center gap-8"
           >
-             <Link to="/machines" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
-                 Machines
-             </Link>
              <Link to="/" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
                  Home
              </Link>
+             <Link to="/otc" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
+                 OTC
+             </Link>
+             <Link to="/biogas" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
+                 Biogas
+             </Link>
+             <a href="#impact" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
+                 Impact
+             </a>
+             <a href="#app" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
+                 App
+             </a>
           </motion.div>
         )}
       </AnimatePresence>
