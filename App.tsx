@@ -6,6 +6,7 @@ import MachinesPage from './pages/MachinesPage';
 import OTCPage from './pages/OTCPage';
 import BiogasPage from './pages/BiogasPage';
 import ShopPage from './pages/ShopPage';
+import AppPage from './pages/AppPage';
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/otc" element={<OTCPage />} />
         <Route path="/biogas" element={<BiogasPage />} />
         <Route path="/shop" element={<ShopPage />} />
+        <Route path="/app" element={<AppPage />} />
       </Routes>
     </div>
   );

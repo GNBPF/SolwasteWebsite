@@ -66,9 +66,9 @@ export const Navbar = () => {
             <button onClick={() => handleSectionClick('impact')} className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
                  Impact
             </button>
-            <button onClick={() => handleSectionClick('app')} className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
+            <Link to="/app" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
                  App
-            </button>
+            </Link>
             <Link to="/shop" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
                  Shop
             </Link>
@@ -101,9 +101,9 @@ export const Navbar = () => {
              <button onClick={() => { setIsOpen(false); handleSectionClick('impact'); }} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
                  Impact
              </button>
-             <button onClick={() => { setIsOpen(false); handleSectionClick('app'); }} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
+             <Link to="/app" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
                  App
-             </button>
+             </Link>
              <Link to="/shop" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
                  Shop
              </Link>

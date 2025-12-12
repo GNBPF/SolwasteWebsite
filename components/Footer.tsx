@@ -26,19 +26,19 @@ const Footer = () => {
             
             {/* Social Media Icons */}
             <div className="flex items-center gap-3 md:gap-4">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="Instagram">
+              <a href="https://www.instagram.com/solwaste/" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="Instagram">
                 <Instagram size={20} className="md:w-6 md:h-6" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61584401441321" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="Facebook">
                 <Facebook size={20} className="md:w-6 md:h-6" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="Twitter">
+              <a href="https://x.com/SolwasteCo" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="Twitter">
                 <XIcon />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/solwaste/about/" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="LinkedIn">
                 <Linkedin size={20} className="md:w-6 md:h-6" />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="YouTube">
+              <a href="https://www.youtube.com/@Solwaste" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="YouTube">
                 <Youtube size={20} className="md:w-6 md:h-6" />
               </a>
             </div>
