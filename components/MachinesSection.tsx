@@ -45,26 +45,28 @@ const MachinesSection = () => {
                 </div>
 
                 {/* Machine 1: Organic Trash Composter */}
-                <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 mb-20 md:mb-32">
-                    <div className="w-full lg:w-1/2 h-[400px] sm:h-[500px] md:h-[600px] relative">
-                        <div className="absolute top-4 left-4 z-10 bg-white/80 backdrop-blur px-3 py-1 rounded-full border border-white/20">
-                            <span className="text-[10px] uppercase tracking-widest text-moss font-bold flex items-center gap-2">
-                                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                                Live Model
-                            </span>
+                <div className="flex flex-col lg:flex-row items-start gap-8 md:gap-12 lg:gap-16 mb-20 md:mb-32">
+                    <div className="w-full lg:w-1/2 relative flex-shrink-0">
+                        <div className="relative w-full aspect-[3/4] sm:aspect-square md:aspect-[4/3] overflow-hidden rounded-2xl bg-white/30 border border-moss/10">
+                            <div className="absolute top-4 left-4 z-20 bg-white/80 backdrop-blur px-3 py-1 rounded-full border border-white/20">
+                                <span className="text-[10px] uppercase tracking-widest text-moss font-bold flex items-center gap-2">
+                                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                    Live Model
+                                </span>
+                            </div>
+                            <ProductScene type="composter" />
                         </div>
-                        <ProductScene type="composter" />
                     </div>
                     <motion.div 
-                        className="w-full lg:w-1/2 space-y-6"
+                        className="w-full lg:w-1/2 space-y-3 sm:space-y-4 md:space-y-6 lg:pl-4"
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="text-gold uppercase tracking-[0.2em] font-semibold text-xs">The Flagship</span>
-                        <h3 className="text-4xl md:text-5xl font-serif">Organic Trash Composter</h3>
-                        <p className="text-lg text-gray-700 leading-relaxed font-light">
+                        <span className="text-gold uppercase tracking-[0.2em] font-semibold text-xs inline-block">The Flagship</span>
+                        <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-tight">Organic Trash Composter</h3>
+                        <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-light">
                             A fully automatic, decentralized organic waste converter. It utilizes high-temperature microorganisms to breakdown food waste into nutrient-rich soil supplements in just 24 hours.
                         </p>
                         
@@ -97,20 +99,22 @@ const MachinesSection = () => {
                 </div>
 
                  {/* Machine 2: Biogas Plant */}
-                 <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
-                    <div className="w-full lg:w-1/2 h-[500px]">
-                        <ProductScene type="biogas" />
+                 <div className="flex flex-col lg:flex-row-reverse items-start gap-8 md:gap-12 lg:gap-16">
+                    <div className="w-full lg:w-1/2 relative flex-shrink-0">
+                        <div className="relative w-full aspect-[3/4] sm:aspect-square md:aspect-[4/3] overflow-hidden rounded-2xl bg-white/30 border border-moss/10">
+                            <ProductScene type="biogas" />
+                        </div>
                     </div>
                     <motion.div 
-                        className="w-full lg:w-1/2 space-y-6 lg:text-right"
+                        className="w-full lg:w-1/2 space-y-3 sm:space-y-4 md:space-y-6 lg:text-right lg:pr-4"
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="text-terra uppercase tracking-[0.2em] font-semibold text-xs">Energy Independence</span>
-                        <h3 className="text-4xl md:text-5xl font-serif">The Biogas Nexus</h3>
-                        <p className="text-lg text-gray-700 leading-relaxed font-light">
+                        <span className="text-terra uppercase tracking-[0.2em] font-semibold text-xs inline-block">Energy Independence</span>
+                        <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-tight">The Biogas Nexus</h3>
+                        <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-light">
                             Turn liability into utility. Our compact biogas plants convert wet waste into methane-rich gas.
                         </p>
                         <div className="pt-6 flex gap-4 lg:justify-end">

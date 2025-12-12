@@ -129,9 +129,6 @@ const VentSection: React.FC = () => {
     if (!input.trim() || !userDetails.name.trim() || !userDetails.email.trim()) return;
 
     setIsProcessing(true);
-    
-    console.log('Submitting:', { ...userDetails, message: input });
-    
     const result = await generateSolwasteSolution(input);
     setSolution(result);
     setIsProcessing(false);

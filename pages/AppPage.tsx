@@ -78,17 +78,6 @@ const AppPage = () => {
               <ArrowLeft size={14} /> Back to Home
             </Link>
             
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-block mb-6"
-            >
-              <span className="px-4 py-2 bg-moss/10 text-moss rounded-full text-xs font-bold uppercase tracking-wider border border-moss/20">
-                Launching Soon in Mumbai
-              </span>
-            </motion.div>
-            
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif mb-6 text-charcoal leading-tight">
               Meet the Solwaste App
             </h1>
@@ -106,24 +95,26 @@ const AppPage = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-3 px-8 py-4 bg-charcoal text-cream rounded-full font-bold text-sm tracking-wide hover:bg-moss transition-colors shadow-lg"
+                className="flex items-center gap-3 px-6 py-3 bg-black text-white rounded-xl font-medium text-sm hover:bg-charcoal transition-colors shadow-lg border border-white/10"
               >
-                <Apple size={24} />
+                <Apple size={32} className="flex-shrink-0" />
                 <div className="text-left">
-                  <div className="text-[10px] opacity-70">Download on the</div>
-                  <div className="text-base">App Store</div>
+                  <div className="text-[9px] opacity-70 uppercase tracking-wider">Download on the</div>
+                  <div className="text-lg font-semibold">App Store</div>
                 </div>
               </motion.button>
               
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-3 px-8 py-4 bg-charcoal text-cream rounded-full font-bold text-sm tracking-wide hover:bg-moss transition-colors shadow-lg"
+                className="flex items-center gap-3 px-6 py-3 bg-black text-white rounded-xl font-medium text-sm hover:bg-charcoal transition-colors shadow-lg border border-white/10"
               >
-                <PlayCircle size={24} />
+                <svg className="w-8 h-8 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                </svg>
                 <div className="text-left">
-                  <div className="text-[10px] opacity-70">Get it on</div>
-                  <div className="text-base">Google Play</div>
+                  <div className="text-[9px] opacity-70 uppercase tracking-wider">Get it on</div>
+                  <div className="text-lg font-semibold">Google Play</div>
                 </div>
               </motion.button>
             </div>
@@ -136,46 +127,43 @@ const AppPage = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="flex justify-center items-center gap-4 md:gap-8 max-w-5xl mx-auto"
           >
-            {/* Placeholder for app screen 1 */}
+            {/* App screen 1 */}
             <motion.div 
               className="w-[140px] sm:w-[180px] md:w-[220px] lg:w-[260px] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-charcoal/10"
               whileHover={{ y: -10 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="w-full aspect-[9/19] bg-gradient-to-br from-moss/20 to-moss/5 flex items-center justify-center">
-                <div className="text-center p-6">
-                  <HomeIcon size={48} className="mx-auto mb-4 text-moss/40" />
-                  <p className="text-xs text-charcoal/40">Home Tab<br/>Coming Soon</p>
-                </div>
-              </div>
+              <img 
+                src="/screen1.png" 
+                alt="Solwaste App Home Tab" 
+                className="w-full h-auto object-cover"
+              />
             </motion.div>
             
-            {/* Placeholder for app screen 2 */}
+            {/* App screen 2 - Center/Featured */}
             <motion.div 
               className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-charcoal/10 z-10"
               whileHover={{ y: -10, scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="w-full aspect-[9/19] bg-gradient-to-br from-gold/20 to-gold/5 flex items-center justify-center">
-                <div className="text-center p-6">
-                  <Users size={56} className="mx-auto mb-4 text-gold/50" />
-                  <p className="text-xs text-charcoal/40">Circles Tab<br/>Coming Soon</p>
-                </div>
-              </div>
+              <img 
+                src="/screen2.png" 
+                alt="Solwaste App Circles Tab" 
+                className="w-full h-auto object-cover"
+              />
             </motion.div>
             
-            {/* Placeholder for app screen 3 */}
+            {/* App screen 3 */}
             <motion.div 
               className="w-[140px] sm:w-[180px] md:w-[220px] lg:w-[260px] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-charcoal/10"
               whileHover={{ y: -10 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="w-full aspect-[9/19] bg-gradient-to-br from-charcoal/20 to-charcoal/5 flex items-center justify-center">
-                <div className="text-center p-6">
-                  <Leaf size={48} className="mx-auto mb-4 text-charcoal/30" />
-                  <p className="text-xs text-charcoal/40">Solwaste Tab<br/>Coming Soon</p>
-                </div>
-              </div>
+              <img 
+                src="/screen3.png" 
+                alt="Solwaste App Features" 
+                className="w-full h-auto object-cover"
+              />
             </motion.div>
           </motion.div>
         </div>
@@ -267,12 +255,11 @@ const AppPage = () => {
               className="w-full lg:w-1/2 flex justify-center"
             >
               <div className="w-[280px] md:w-[320px] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-moss/20">
-                <div className="w-full aspect-[9/19] bg-gradient-to-br from-moss/20 to-moss/5 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <HomeIcon size={64} className="mx-auto mb-4 text-moss/40" />
-                    <p className="text-sm text-charcoal/50">Home Tab Preview<br/>Coming Soon</p>
-                  </div>
-                </div>
+                <img 
+                  src="/screen4.png" 
+                  alt="Solwaste App Home Tab Preview" 
+                  className="w-full h-auto object-cover"
+                />
               </div>
             </motion.div>
           </div>
@@ -341,13 +328,12 @@ const AppPage = () => {
               viewport={{ once: true }}
               className="w-full lg:w-1/2 flex justify-center"
             >
-              <div className="w-[280px] md:w-[320px] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-gold/20">
-                <div className="w-full aspect-[9/19] bg-gradient-to-br from-gold/20 to-gold/5 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <Users size={64} className="mx-auto mb-4 text-gold/50" />
-                    <p className="text-sm text-charcoal/50">Circles Tab Preview<br/>Coming Soon</p>
-                  </div>
-                </div>
+              <div className="w-[280px] md:w-[320px] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-moss/20">
+                <img 
+                  src="/screen5.png" 
+                  alt="Solwaste App Circles Tab Preview" 
+                  className="w-full h-auto object-cover"
+                />
               </div>
             </motion.div>
           </div>
@@ -416,65 +402,18 @@ const AppPage = () => {
               viewport={{ once: true }}
               className="w-full lg:w-1/2 flex justify-center"
             >
-              <div className="w-[280px] md:w-[320px] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-charcoal/20">
-                <div className="w-full aspect-[9/19] bg-gradient-to-br from-charcoal/20 to-charcoal/5 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <Leaf size={64} className="mx-auto mb-4 text-charcoal/30" />
-                    <p className="text-sm text-charcoal/50">Solwaste Tab Preview<br/>Coming Soon</p>
-                  </div>
-                </div>
+              <div className="w-[280px] md:w-[320px] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-moss/20">
+                <img 
+                  src="/screen4.png" 
+                  alt="Solwaste App Solwaste Tab Preview" 
+                  className="w-full h-auto object-cover"
+                />
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Storytelling: Home to World */}
-      <section className="py-20 md:py-32 bg-moss text-cream">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mb-6">
-              Change begins small. But change spreads.
-            </h2>
-            <p className="text-lg md:text-xl text-cream/80 max-w-3xl mx-auto font-light">
-              Your daily habit ripples outward—from your kitchen to your building, your locality, your city, and beyond.
-            </p>
-          </motion.div>
-
-          <div className="max-w-4xl mx-auto">
-            {[
-              { icon: HomeIcon, label: "Your Home", desc: "Kitchen waste becomes compost" },
-              { icon: Building2, label: "Your Society", desc: "Buildings compete, neighborhoods transform" },
-              { icon: Users, label: "Your Locality", desc: "Streets cleaner, landfills lighter" },
-              { icon: Globe, label: "Your City", desc: "Mumbai leads India's zero-waste movement" },
-              { icon: Leaf, label: "The Nation", desc: "Vision 2047: A waste-neutral India" },
-              { icon: TrendingUp, label: "The World", desc: "India shows the planet how it's done" }
-            ].map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex items-center gap-6 mb-8 bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-gold/30 transition-all"
-              >
-                <div className="p-4 bg-gold/20 rounded-full">
-                  <step.icon size={32} className="text-gold" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold mb-1">{step.label}</h4>
-                  <p className="text-cream/70 text-sm">{step.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials */}
       <section className="py-20 md:py-32 bg-white">
@@ -552,30 +491,32 @@ const AppPage = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-3 px-8 py-4 bg-cream text-charcoal rounded-full font-bold text-sm tracking-wide hover:bg-gold transition-colors shadow-lg"
+                className="flex items-center gap-3 px-6 py-3 bg-black text-white rounded-xl font-medium text-sm hover:opacity-90 transition-opacity shadow-lg border border-white/10"
               >
-                <Apple size={24} />
+                <Apple size={32} className="flex-shrink-0" />
                 <div className="text-left">
-                  <div className="text-[10px] opacity-70">Download on the</div>
-                  <div className="text-base">App Store</div>
+                  <div className="text-[9px] opacity-70 uppercase tracking-wider">Download on the</div>
+                  <div className="text-lg font-semibold">App Store</div>
                 </div>
               </motion.button>
               
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-3 px-8 py-4 bg-cream text-charcoal rounded-full font-bold text-sm tracking-wide hover:bg-gold transition-colors shadow-lg"
+                className="flex items-center gap-3 px-6 py-3 bg-black text-white rounded-xl font-medium text-sm hover:opacity-90 transition-opacity shadow-lg border border-white/10"
               >
-                <PlayCircle size={24} />
+                <svg className="w-8 h-8 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                </svg>
                 <div className="text-left">
-                  <div className="text-[10px] opacity-70">Get it on</div>
-                  <div className="text-base">Google Play</div>
+                  <div className="text-[9px] opacity-70 uppercase tracking-wider">Get it on</div>
+                  <div className="text-lg font-semibold">Google Play</div>
                 </div>
               </motion.button>
             </div>
 
             <p className="text-sm text-cream/60">
-              Available soon on iOS and Android • Free forever • No ads
+              Available in India on iOS and Android • Free forever • No ads
             </p>
           </motion.div>
         </div>

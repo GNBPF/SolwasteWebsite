@@ -9,7 +9,7 @@ const OTCPage = () => {
     {
       name: 'CyberSoil™',
       subtitle: 'Home Composter',
-      image: '/OrganicWasteComposter.jpeg',
+      image: '/OTC1.avif',
       bestFor: 'Apartments, villas, small offices',
       capacity: '2-10 kg/day',
       output: 'Ready compost in 7-10 days',
@@ -19,7 +19,7 @@ const OTCPage = () => {
     {
       name: 'EcoLoop™',
       subtitle: 'Community Composter',
-      image: '/OrganicWasteComposter1.jpeg',
+      image: '/OTC2.avif',
       bestFor: 'Housing societies, small communities',
       capacity: '50-200 kg/day',
       output: 'Nutrient-rich compost for community gardens',
@@ -29,7 +29,7 @@ const OTCPage = () => {
     {
       name: 'CompoGen™',
       subtitle: 'Industrial Composter',
-      image: '/OrganicWasteComposter.jpeg',
+      image: '/OTC3.avif',
       bestFor: 'Malls, hotels, institutions, large campuses',
       capacity: '500 kg-5 ton/day',
       output: 'Large-scale compost production with real-time IoT dashboards, energy-efficient processing',
@@ -208,19 +208,6 @@ const OTCPage = () => {
               </tbody>
             </table>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Food Waste Visual Section */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 bg-cream">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
-            <img 
-              src="/OrganicWasteComposter1.jpeg"
-              alt="Organic Waste Processing"
-              className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
-            />
           </div>
         </div>
       </section>

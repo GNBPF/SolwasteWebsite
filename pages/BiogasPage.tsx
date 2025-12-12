@@ -9,7 +9,7 @@ const BiogasPage = () => {
     {
       name: 'CyberFlame™',
       subtitle: 'Domestic Biogas',
-      image: '/OrganicWasteComposter.jpeg',
+      image: '/biogas1.avif',
       bestFor: 'Societies, restaurants, institutions',
       output: '5-50 kg LPG-equivalent/day',
       features: 'IoT-based gas monitoring, solar-compatible systems',
@@ -18,7 +18,7 @@ const BiogasPage = () => {
     {
       name: 'LoopGas™',
       subtitle: 'Community Biogas',
-      image: '/OrganicWasteComposter1.jpeg',
+      image: '/biogas2.avif',
       bestFor: 'Cities, industries, food processing units',
       output: '1-20 tons waste/day = scalable biogas & power',
       features: 'Advanced anaerobic digesters, cloud monitoring, zero methane leakage',
@@ -27,7 +27,7 @@ const BiogasPage = () => {
     {
       name: 'MethaGen™',
       subtitle: 'Industrial Biogas',
-      image: '/OrganicWasteComposter.jpeg',
+      image: '/biogas3.avif',
       bestFor: 'Large-scale industrial operations',
       modular: 'Add or remove units as your needs grow',
       sustainable: 'Designed to meet SDG 7, 11, 12, and 13',
@@ -47,7 +47,7 @@ const BiogasPage = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
         
         {/* Animated background particles */}
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
           {[...Array(30)].map((_, i) => (
             <motion.div
               key={i}
@@ -80,7 +80,11 @@ const BiogasPage = () => {
               <ArrowLeft size={14} className="md:w-4 md:h-4" /> Back to Home
             </Link>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif mb-8 md:mb-12 lg:mb-16 text-transparent bg-clip-text bg-gradient-to-r from-cream via-gold to-cream leading-[1.1] px-2">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif mb-8 md:mb-12 lg:mb-16 text-gold leading-[1.1] px-2 antialiased" style={{ 
+              textShadow: '0 2px 30px rgba(212, 175, 55, 0.4)',
+              WebkitFontSmoothing: 'antialiased',
+              MozOsxFontSmoothing: 'grayscale'
+            }}>
               Biogas Technology
             </h1>
             
@@ -244,30 +248,6 @@ const BiogasPage = () => {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Visual Section */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 bg-charcoal">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border-2 border-gold/20">
-            <img 
-              src="/OrganicWasteComposter1.jpeg"
-              alt="Biogas Technology"
-              className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
-            />
-          </div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mt-8 md:mt-12 px-4"
-          >
-            <p className="text-xl sm:text-2xl md:text-3xl font-serif text-gold italic leading-relaxed">
-              "From waste to watts – the future is biogas."
-            </p>
-          </motion.div>
         </div>
       </section>
 

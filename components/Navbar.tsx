@@ -9,6 +9,10 @@ export const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isHome = location.pathname === '/';
+  
+  // Detect pages with light backgrounds
+  const lightBgPages = ['/app', '/otc', '/shop'];
+  const hasLightBg = lightBgPages.includes(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -46,35 +50,36 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? 'bg-moss/95 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        scrolled || hasLightBg 
+          ? 'bg-moss/95 backdrop-blur-md py-4 shadow-lg' 
+          : 'bg-transparent py-6'
+      }`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <a href="/" onClick={handleLogoClick} className="flex items-center gap-3 relative z-50 group cursor-pointer">
              <img src={"/logo.png"} alt="Solwaste Logo" className="h-10 w-auto object-contain group-hover:scale-110 transition-transform" />
              <div className="flex flex-col leading-tight">
-               <span className="text-cream font-bold text-xl tracking-wider group-hover:text-gold transition-colors">SOLWASTE</span>
-               <span className="text-cream/70 text-[10px] font-light tracking-wide">Nothing Wasted. Ever.</span>
+               <span className={`font-bold text-xl tracking-wider group-hover:text-gold transition-colors ${hasLightBg ? 'text-cream' : 'text-cream'}`}>SOLWASTE</span>
+               <span className={`text-[10px] font-light tracking-wide ${hasLightBg ? 'text-cream/70' : 'text-cream/70'}`}>Nothing Wasted. Ever.</span>
              </div>
           </a>
           
           <div className="hidden md:flex gap-8 items-center">
-            <Link to="/otc" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
+            <Link to="/otc" className={`text-xs uppercase tracking-widest hover:text-gold transition-colors font-medium ${hasLightBg ? 'text-cream/80' : 'text-cream/80'}`}>
                  OTC
             </Link>
-            <Link to="/biogas" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
+            <Link to="/biogas" className={`text-xs uppercase tracking-widest hover:text-gold transition-colors font-medium ${hasLightBg ? 'text-cream/80' : 'text-cream/80'}`}>
                  Biogas
             </Link>
-            <button onClick={() => handleSectionClick('impact')} className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
-                 Impact
-            </button>
-            <Link to="/app" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
-                 App
-            </Link>
-            <Link to="/shop" className="text-xs uppercase tracking-widest text-cream/80 hover:text-gold transition-colors font-medium">
+            <Link to="/shop" className={`text-xs uppercase tracking-widest hover:text-gold transition-colors font-medium ${hasLightBg ? 'text-cream/80' : 'text-cream/80'}`}>
                  Shop
+            </Link>
+            <Link to="/app" className={`text-xs uppercase tracking-widest hover:text-gold transition-colors font-medium ${hasLightBg ? 'text-cream/80' : 'text-cream/80'}`}>
+                 App
             </Link>
           </div>
 
-          <button className="md:hidden text-cream relative z-50" onClick={() => setIsOpen(!isOpen)}>
+          <button className={`md:hidden relative z-50 ${hasLightBg ? 'text-cream' : 'text-cream'}`} onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X /> : <Menu />}
           </button>
         </div>

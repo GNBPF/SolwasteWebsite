@@ -83,6 +83,16 @@
       body {
         background-color: #F5F5F0;
         color: #1A1A1A;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+      }
+      /* Better serif font rendering */
+      .font-serif {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        font-feature-settings: "kern" 1;
       }
       /* Hide scrollbar for clean look */
       ::-webkit-scrollbar {
