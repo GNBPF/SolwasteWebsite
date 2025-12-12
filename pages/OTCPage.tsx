@@ -10,18 +10,18 @@ const OTCPage = () => {
       name: 'CyberSoil™',
       subtitle: 'Home Composter',
       image: '/OTC1.avif',
-      bestFor: 'Apartments, villas, small offices',
+      bestFor: 'Apartments, Villas, Small Offices',
       capacity: '2-10 kg/day',
-      output: 'Ready compost in 7-10 days',
+      output: 'Ready compost in 24 hours.',
       features: 'Wifi-enabled, odor-free, IoT monitoring',
-      tagline: '"Your balcony\'s new best friend."'
+      tagline: '"kitchen platform\'s new best friend."'
     },
     {
       name: 'EcoLoop™',
       subtitle: 'Community Composter',
       image: '/OTC2.avif',
-      bestFor: 'Housing societies, small communities',
-      capacity: '50-200 kg/day',
+      bestFor: 'Housing societies, Small Communities, Hospitals, Hotels, Canteens',
+      capacity: '50-1000 kg/day',
       output: 'Nutrient-rich compost for community gardens',
       features: 'Modular design, zero-maintenance filter system',
       tagline: '"Because neighborhoods should grow together."'
@@ -30,8 +30,8 @@ const OTCPage = () => {
       name: 'CompoGen™',
       subtitle: 'Industrial Composter',
       image: '/OTC3.avif',
-      bestFor: 'Malls, hotels, institutions, large campuses',
-      capacity: '500 kg-5 ton/day',
+      bestFor: 'Malls, Hotels, Institutions, Large Campuses',
+      capacity: '1.5 ton onwards.',
       output: 'Large-scale compost production with real-time IoT dashboards, energy-efficient processing',
       features: 'Advanced automation, monitoring dashboards',
       tagline: '"Built for scale. Built for change."'
@@ -53,7 +53,7 @@ const OTCPage = () => {
           className="absolute inset-0 bg-cover bg-center opacity-40"
           style={{ backgroundImage: 'url(/OrganicWasteComposter.jpeg)' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-moss/80 via-moss/60 to-cream" />
+        <div className="absolute inset-0 bg-gradient-to-b from-moss/90 via-moss/75 to-moss/40" />
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div

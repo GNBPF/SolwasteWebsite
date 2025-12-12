@@ -10,16 +10,16 @@ const BiogasPage = () => {
       name: 'CyberFlame™',
       subtitle: 'Domestic Biogas',
       image: '/biogas1.avif',
-      bestFor: 'Societies, restaurants, institutions',
-      output: '5-50 kg LPG-equivalent/day',
+      bestFor: 'Individual Homes, Apartments, and Villas',
+      output: '5-10 kg LPG-equivalent/day',
       features: 'IoT-based gas monitoring, solar-compatible systems',
-      tagline: '"Gas bills? What are those?"'
+      tagline: '"Get Compost, Get Slurry, Get Gas"'
     },
     {
       name: 'LoopGas™',
       subtitle: 'Community Biogas',
       image: '/biogas2.avif',
-      bestFor: 'Cities, industries, food processing units',
+      bestFor: 'Townships, Hotels, and Malls',
       output: '1-20 tons waste/day = scalable biogas & power',
       features: 'Advanced anaerobic digesters, cloud monitoring, zero methane leakage',
       tagline: '"Mega cities deserve mega clean energy."'
@@ -31,7 +31,7 @@ const BiogasPage = () => {
       bestFor: 'Large-scale industrial operations',
       modular: 'Add or remove units as your needs grow',
       sustainable: 'Designed to meet SDG 7, 11, 12, and 13',
-      economical: 'ROI in under 18 months',
+      economical: 'ROI in under 36 months',
       features: 'Zero-maintenance design'
     }
   ];
@@ -89,7 +89,7 @@ const BiogasPage = () => {
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-cream/80 max-w-3xl mx-auto font-light leading-relaxed px-4">
-              Our machines aren't just metal boxes –<br className="hidden sm:block"/>
+              Our machines aren't just metal boxes<br className="hidden sm:block"/>
               <span className="sm:hidden"> </span>they're ecosystems in disguise.
             </p>
           </motion.div>
@@ -231,7 +231,7 @@ const BiogasPage = () => {
             {[
               { icon: Flame, title: 'Clean Energy', desc: 'Generate biogas for cooking & heating, reducing LPG dependency' },
               { icon: Droplets, title: 'Zero Emissions', desc: 'Anaerobic digestion with zero methane leakage to atmosphere' },
-              { icon: TrendingUp, title: 'Fast ROI', desc: 'Return on investment in under 18 months with energy savings' },
+              { icon: TrendingUp, title: 'Fast ROI', desc: 'Return on investment in as low as 36 months with energy savings' },
               { icon: Recycle, title: 'Circular Economy', desc: 'Convert waste to energy, fertilizer, and revenue streams' }
             ].map((benefit, i) => (
               <motion.div
