@@ -27,7 +27,7 @@ const HeroSection = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-cream mb-4 sm:mb-6 md:mb-8 leading-tight drop-shadow-2xl px-4">
-            We don't just <br/> manage waste.
+            India’s Organic Waste Crisis Needs Smarter Solutions
           </h1>
           <motion.p 
              initial={{ opacity: 0 }}
@@ -35,7 +35,7 @@ const HeroSection = () => {
              transition={{ delay: 1, duration: 1 }}
              className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-gold tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] uppercase px-4"
           >
-            We manage the future.
+            Urban societies, hotels, corporates, and institutions generate tons of daily food waste most of it ends up in landfills, causing methane emissions, odour, pests, and rising disposal costs.
           </motion.p>
         </motion.div>
 
