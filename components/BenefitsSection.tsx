@@ -1,111 +1,111 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Users, Leaf, Settings } from 'lucide-react';
 
 const BenefitsSection = () => {
   const benefitCategories = [
     {
-      icon: Shield,
-      title: "Government Benefits",
-      color: "gold",
+      title: 'Government & Compliance Benefits',
+      accent: 'gold',
       benefits: [
-        "Compliance with SWM 2016",
-        "Avoid penalties and fines",
-        "Eligible for certain municipal incentives (varies by state)",
-        "Supports ESG and CSR reporting requirements",
-        "Aligns with Smart City guidelines"
+        'Compliance with SWM Rules, 2016',
+        'Avoidance of penalties and legal notices',
+        'Eligibility for select municipal incentives (state-specific)',
+        'Supports ESG and CSR reporting frameworks',
+        'Alignment with Smart City and urban sustainability goals'
       ]
     },
     {
-      icon: Users,
-      title: "Individual / Community Benefits",
-      color: "moss",
+      title: 'Community & Society Benefits',
+      accent: 'moss',
       benefits: [
-        "Cleaner society premises",
-        "No dependence on external waste contractors",
-        "Lower monthly waste disposal expenses",
-        "Generates usable compost for gardens",
-        "Eliminates odour, pests, and overflowing bins"
+        'Cleaner and more hygienic premises',
+        'Reduced dependency on external waste contractors',
+        'Lower recurring waste management expenses',
+        'Usable compost for landscaping and gardens',
+        'No odour, pests, or overflowing waste bins'
       ]
     },
     {
-      icon: Leaf,
-      title: "Environmental Benefits",
-      color: "green-600",
+      title: 'Environmental Impact',
+      accent: 'green',
       benefits: [
-        "70–90% waste diversion from landfills",
-        "Lower methane emissions",
-        "Reduces carbon footprint",
-        "Supports circular economy by turning waste into resource",
-        "Conserves soil quality using organic compost"
+        '70–90% reduction of waste sent to landfills',
+        'Significant reduction in methane emissions',
+        'Lower overall carbon footprint',
+        'Encourages circular economy practices',
+        'Improves soil health through organic compost'
       ]
     },
     {
-      icon: Settings,
-      title: "Operational Benefits",
-      color: "charcoal",
+      title: 'Operational Advantages',
+      accent: 'charcoal',
       benefits: [
-        "Automated, low manpower",
-        "24/7 service support",
-        "Fast processing cycle",
-        "Long machine life & low maintenance"
+        'Automated operation with minimal manpower',
+        'Quick processing cycles',
+        '24/7 service and technical support',
+        'Long machine life with low maintenance needs'
       ]
     }
   ];
 
-  const getColorClasses = (color: string) => {
-    const colors: { [key: string]: { bg: string; text: string; border: string } } = {
-      gold: { bg: 'bg-gold/10', text: 'text-gold', border: 'border-gold/30' },
-      moss: { bg: 'bg-moss/10', text: 'text-moss', border: 'border-moss/30' },
-      'green-600': { bg: 'bg-green-600/10', text: 'text-green-600', border: 'border-green-600/30' },
-      charcoal: { bg: 'bg-charcoal/10', text: 'text-charcoal', border: 'border-charcoal/30' }
-    };
-    return colors[color] || colors.moss;
+  const accentStyles = {
+    gold: 'border-gold text-gold bg-gold/5',
+    moss: 'border-moss text-moss bg-moss/5',
+    green: 'border-green-600 text-green-600 bg-green-600/5',
+    charcoal: 'border-charcoal text-charcoal bg-charcoal/5'
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-moss/5 to-cream">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-moss/5 to-cream">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center max-w-4xl mx-auto mb-12"
         >
-          <span className="text-moss uppercase tracking-[0.3em] text-xs font-bold">Why Choose Solwaste</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mt-4 mb-6 text-charcoal">
-            Benefits Across Every Level
+          <span className="text-moss uppercase tracking-[0.3em] text-xs font-semibold">
+            Why Solwaste
+          </span>
+
+          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-serif text-charcoal">
+            Benefits That Scale Across Stakeholders
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {benefitCategories.map((category, index) => {
-            const colors = getColorClasses(category.color);
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-                className={`p-8 bg-white rounded-2xl shadow-lg border-2 ${colors.border} hover:shadow-2xl transition-all`}
-              >
-                <div className={`inline-flex items-center justify-center p-4 ${colors.bg} rounded-xl mb-6`}>
-                  <category.icon size={32} className={colors.text} />
-                </div>
-                <h3 className={`text-2xl font-serif mb-6 ${colors.text}`}>{category.title}</h3>
-                <ul className="space-y-3">
-                  {category.benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <span className={`mt-1.5 w-1.5 h-1.5 rounded-full ${colors.bg} flex-shrink-0`} />
-                      <span className="text-charcoal/80 leading-relaxed">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            );
-          })}
+        {/* Benefit Blocks */}
+        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          {benefitCategories.map((category, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08 }}
+              className={`p-7 rounded-2xl border-l-4 bg-white shadow-sm hover:shadow-lg transition-all ${
+                accentStyles[category.accent]
+              }`}
+            >
+              <h3 className="text-xl md:text-2xl font-serif mb-5">
+                {category.title}
+              </h3>
+
+              <ul className="space-y-2">
+                {category.benefits.map((benefit, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-current opacity-60" />
+                    <span className="text-charcoal/80 leading-relaxed">
+                      {benefit}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
+
       </div>
     </section>
   );

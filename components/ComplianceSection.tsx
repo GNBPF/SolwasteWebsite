@@ -1,24 +1,25 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FileCheck, AlertCircle, TrendingUp, Building2 } from 'lucide-react';
+// NEW ICONS IMPORTED HERE
+import { Scale, Landmark, IndianRupee, Recycle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ComplianceSection = () => {
   const compliancePoints = [
     {
-      icon: FileCheck,
+      icon: Scale, // Represents Law, Justice, and Rules
       text: "As per SWM Rules 2016, bulk waste generators must process organic waste on-site."
     },
     {
-      icon: Building2,
+      icon: Landmark, // Represents Institutions, Campuses, and Large Societies
       text: "Housing societies, hotels, restaurants, campuses, and commercial complexes are liable for compliance."
     },
     {
-      icon: TrendingUp,
+      icon: IndianRupee, // Represents Fines & Financial Incentives (Localized)
       text: "Many states incentivise composting systems, while fines for non-compliance are increasing."
     },
     {
-      icon: AlertCircle,
+      icon: Recycle, // Represents Circular Economy
       text: "Composting aligns with Smart City, Clean India, and circular economy initiatives."
     }
   ];
@@ -46,10 +47,11 @@ const ComplianceSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-sm border border-moss/10 hover:border-gold/30 transition-all"
+              className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-sm border border-moss/10 hover:border-gold/30 transition-all group"
             >
-              <div className="flex-shrink-0 p-3 bg-moss/10 rounded-lg">
-                <point.icon size={24} className="text-moss" />
+              {/* Added 'group-hover' classes to make the icon pop on hover */}
+              <div className="flex-shrink-0 p-3 bg-moss/10 rounded-lg group-hover:bg-moss/20 transition-colors">
+                <point.icon size={24} className="text-moss group-hover:scale-110 transition-transform duration-300" />
               </div>
               <p className="text-charcoal/80 leading-relaxed">{point.text}</p>
             </motion.div>

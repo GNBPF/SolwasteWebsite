@@ -11,7 +11,7 @@ export const Navbar = () => {
   const isHome = location.pathname === '/';
   
   // Detect pages with light backgrounds
-  const lightBgPages = ['/app', '/otc', '/shop'];
+  const lightBgPages = ['/app', '/otc', '/biogas', '/shop', '/solutions'];
   const hasLightBg = lightBgPages.includes(location.pathname);
 
   useEffect(() => {
@@ -65,11 +65,8 @@ export const Navbar = () => {
           </a>
           
           <div className="hidden md:flex gap-8 items-center">
-            <Link to="/otc" className={`text-xs uppercase tracking-widest hover:text-gold transition-colors font-medium ${hasLightBg ? 'text-cream/80' : 'text-cream/80'}`}>
-                 OTC
-            </Link>
-            <Link to="/biogas" className={`text-xs uppercase tracking-widest hover:text-gold transition-colors font-medium ${hasLightBg ? 'text-cream/80' : 'text-cream/80'}`}>
-                 Biogas
+            <Link to="/solutions" className={`text-xs uppercase tracking-widest hover:text-gold transition-colors font-medium ${hasLightBg ? 'text-cream/80' : 'text-cream/80'}`}>
+                 Our Solutions
             </Link>
             <Link to="/shop" className={`text-xs uppercase tracking-widest hover:text-gold transition-colors font-medium ${hasLightBg ? 'text-cream/80' : 'text-cream/80'}`}>
                  Shop
@@ -97,11 +94,8 @@ export const Navbar = () => {
              <button onClick={(e) => { setIsOpen(false); handleLogoClick(e); }} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
                  Home
              </button>
-             <Link to="/otc" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
-                 OTC
-             </Link>
-             <Link to="/biogas" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
-                 Biogas
+             <Link to="/solutions" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
+                 Our Solutions
              </Link>
              <button onClick={() => { setIsOpen(false); handleSectionClick('impact'); }} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
                  Impact

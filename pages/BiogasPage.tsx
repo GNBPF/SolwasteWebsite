@@ -9,7 +9,7 @@ const BiogasPage = () => {
     {
       name: 'CyberFlame™',
       subtitle: 'Domestic Biogas',
-      image: '/biogas1.avif',
+      image: '/machines/CyberFlame.png',
       bestFor: 'Individual Homes, Apartments, and Villas',
       output: '5-10 kg LPG-equivalent/day',
       features: 'IoT-based gas monitoring, solar-compatible systems',
@@ -18,7 +18,7 @@ const BiogasPage = () => {
     {
       name: 'LoopGas™',
       subtitle: 'Community Biogas',
-      image: '/biogas2.avif',
+      image: '/machines/LoopGas.png',
       bestFor: 'Townships, Hotels, and Malls',
       output: '1-20 tons waste/day = scalable biogas & power',
       features: 'Advanced anaerobic digesters, cloud monitoring, zero methane leakage',
@@ -27,7 +27,7 @@ const BiogasPage = () => {
     {
       name: 'MethaGen™',
       subtitle: 'Industrial Biogas',
-      image: '/biogas3.avif',
+      image: '/machines/MethaGen.png',
       bestFor: 'Large-scale industrial operations',
       modular: 'Add or remove units as your needs grow',
       sustainable: 'Designed to meet SDG 7, 11, 12, and 13',
@@ -76,8 +76,8 @@ const BiogasPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link to="/" className="inline-flex items-center gap-2 text-cream/70 hover:text-gold transition-colors mb-6 md:mb-8 text-xs md:text-sm uppercase tracking-wider">
-              <ArrowLeft size={14} className="md:w-4 md:h-4" /> Back to Home
+            <Link to="/solutions" className="inline-flex items-center gap-2 text-cream/70 hover:text-gold transition-colors mb-6 md:mb-8 text-xs md:text-sm uppercase tracking-wider">
+              <ArrowLeft size={14} className="md:w-4 md:h-4" /> Back to Solutions
             </Link>
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif mb-8 md:mb-12 lg:mb-16 text-gold leading-[1.1] px-2 antialiased" style={{ 

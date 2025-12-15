@@ -9,7 +9,7 @@ const OTCPage = () => {
     {
       name: 'CyberSoil™',
       subtitle: 'Home Composter',
-      image: '/OTC1.avif',
+      image: '/machines/CyberSoil.png',
       bestFor: 'Apartments, Villas, Small Offices',
       capacity: '2-10 kg/day',
       output: 'Ready compost in 24 hours.',
@@ -19,7 +19,7 @@ const OTCPage = () => {
     {
       name: 'EcoLoop™',
       subtitle: 'Community Composter',
-      image: '/OTC2.avif',
+      image: '/machines/EcoLoop.png',
       bestFor: 'Housing societies, Small Communities, Hospitals, Hotels, Canteens',
       capacity: '50-1000 kg/day',
       output: 'Nutrient-rich compost for community gardens',
@@ -29,7 +29,7 @@ const OTCPage = () => {
     {
       name: 'CompoGen™',
       subtitle: 'Industrial Composter',
-      image: '/OTC3.avif',
+      image: '/machines/CompoGen.png',
       bestFor: 'Malls, Hotels, Institutions, Large Campuses',
       capacity: '1.5 ton onwards.',
       output: 'Large-scale compost production with real-time IoT dashboards, energy-efficient processing',
@@ -61,8 +61,8 @@ const OTCPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link to="/" className="inline-flex items-center gap-2 text-cream/80 hover:text-gold transition-colors mb-6 md:mb-8 text-xs md:text-sm uppercase tracking-wider">
-              <ArrowLeft size={14} className="md:w-4 md:h-4" /> Back to Home
+            <Link to="/solutions" className="inline-flex items-center gap-2 text-cream/80 hover:text-gold transition-colors mb-6 md:mb-8 text-xs md:text-sm uppercase tracking-wider">
+              <ArrowLeft size={14} className="md:w-4 md:h-4" /> Back to Solutions
             </Link>
             
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-serif mb-4 md:mb-6 text-cream leading-tight px-2">

@@ -1,87 +1,115 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Building2, Factory, Zap, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const SolutionsOverviewSection = () => {
   const solutions = [
     {
-      icon: Users,
-      title: "Community Composting Machines",
-      description: "Perfect for housing societies and residential complexes processing 50-500 kg/day"
+      title: 'Community Composting',
+      description:
+        'Designed for housing societies and residential communities managing 50–500 kg of wet waste daily.',
+      image:
+        'https://images.unsplash.com/photo-1590650046871-92c887180603?q=80&w=1600&auto=format&fit=crop'
     },
     {
-      icon: Building2,
-      title: "Corporate & Hotel Solutions",
-      description: "Tailored systems for hotels, offices, and commercial establishments up to 1 ton/day"
+      title: 'Corporate & Hotel Systems',
+      description:
+        'Tailored composting solutions for offices, hotels, and commercial establishments processing up to 1 ton/day.',
+      image:
+        'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1600&auto=format&fit=crop'
     },
     {
-      icon: Factory,
-      title: "Industrial-Scale Systems",
-      description: "Heavy-duty composters for large campuses, institutions, and facilities handling 2+ tons/day"
+      title: 'Industrial-Scale Composting',
+      description:
+        'Heavy-duty systems built for institutions, campuses, and facilities handling 2+ tons of organic waste.',
+      image:
+        'https://images.unsplash.com/photo-1581091870627-3f89c7d2f16b?q=80&w=1600&auto=format&fit=crop'
     },
     {
-      icon: Zap,
-      title: "Fully Electric & Low-Maintenance",
-      description: "Automated, odour-free operation with minimal manpower and maximum efficiency"
+      title: 'Electric & Automated',
+      description:
+        'Fully electric, odour-free machines with automated operation and minimal maintenance requirements.',
+      image:
+        'https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1600&auto=format&fit=crop'
     }
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-14 md:py-18 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12 max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto text-center mb-10"
         >
-          <span className="text-moss uppercase tracking-[0.3em] text-xs font-bold">Our Solution</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mt-4 mb-6 text-charcoal">
-            End-to-End Composting Systems<br />for Every Scale
+          <span className="text-moss uppercase tracking-[0.3em] text-xs font-semibold">
+            Our Solutions
+          </span>
+
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-serif text-charcoal leading-tight">
+            Composting Systems for<br />Every Operational Scale
           </h2>
-          <p className="text-lg text-charcoal/70 leading-relaxed">
-            Solwaste provides automated, odour-free, energy-efficient composting machines engineered for reliable performance. Whether it's a 50 kg society or a 2-ton industrial setup, we enable smooth and compliant waste processing.
+
+          <p className="mt-4 text-base md:text-lg text-charcoal/70 leading-relaxed">
+            Automated, energy-efficient composting systems built for reliable,
+            compliant waste processing at every scale.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-10">
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto">
           {solutions.map((solution, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group p-8 bg-gradient-to-br from-cream to-moss/5 rounded-2xl border border-moss/10 hover:border-gold/30 hover:shadow-xl transition-all"
+              transition={{ delay: index * 0.06 }}
+              className="group relative h-[320px] rounded-xl overflow-hidden border border-moss/10 shadow-sm hover:shadow-xl transition-all"
             >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 p-4 bg-moss rounded-xl group-hover:bg-gold transition-colors">
-                  <solution.icon size={28} className="text-cream" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-serif text-charcoal mb-2">{solution.title}</h3>
-                  <p className="text-charcoal/70 leading-relaxed">{solution.description}</p>
-                </div>
+              {/* Background */}
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                style={{ backgroundImage: `url(${solution.image})` }}
+              />
+
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/50 to-transparent" />
+
+              {/* Text */}
+              <div className="relative h-full p-4 flex flex-col justify-end">
+                <h3 className="text-lg font-serif text-cream mb-2">
+                  {solution.title}
+                </h3>
+
+                <p className="text-sm text-cream/80 leading-snug">
+                  {solution.description}
+                </p>
               </div>
             </motion.div>
           ))}
         </div>
 
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="text-center mt-10"
         >
           <Link
             to="/otc"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-charcoal text-cream rounded-full font-semibold hover:bg-moss transition-colors shadow-lg"
+            className="inline-flex items-center gap-2 px-7 py-2.5 rounded-full bg-charcoal text-cream font-semibold shadow-md hover:bg-moss transition-colors"
           >
             View All Solutions
-            <ArrowRight size={18} />
+            <ArrowRight size={16} />
           </Link>
         </motion.div>
+
       </div>
     </section>
   );
