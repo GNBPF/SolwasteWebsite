@@ -7,17 +7,18 @@ import { SectionId } from '../types';
 const HeroSection = () => {
   return (
     <section id={SectionId.HERO} className="relative h-screen w-full overflow-hidden bg-charcoal">
-      {/* Simulated Video Background with Ken Burns Effect */}
+      {/* Video Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.img 
-          src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=2400&auto=format&fit=crop" 
-          alt="Indian Urban Nature" 
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
           className="w-full h-full object-cover opacity-60"
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-moss/60 via-moss/40 to-charcoal/90" />
+        >
+          <source src="/heroVideo.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-moss/60 via-moss/40 via-charcoal/70 to-charcoal" />
       </div>
 
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 max-w-5xl mx-auto">

@@ -147,14 +147,17 @@ const VentSection: React.FC = () => {
 
   return (
     <section id="vent" className="relative min-h-screen bg-charcoal text-cream flex flex-col justify-center items-center px-4 py-20 overflow-hidden">
+        {/* Smooth Transition Overlay from Hero Section */}
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-charcoal via-charcoal/95 to-transparent z-10 pointer-events-none" />
+        
         {/* Background Image */}
-        <div className="absolute inset-0 opacity-30">
+        <div className="absolute opacity-100">
           <img 
-            src="/ventBackgroung.jpg" 
+            src="/ventBackgroung.png" 
             alt="Waste Management Background" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/70 to-charcoal/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/70 to-charcoal/85" />
         </div>
         
         {/* Background Particles (Simulated) */}

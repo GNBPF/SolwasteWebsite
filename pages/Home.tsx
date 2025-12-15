@@ -26,9 +26,7 @@ const Home = () => {
             <ImpactSection />
             <TestimonialsSection />
             <PartnersSection />
-            <AppSection />
             <CTABannerSection />
-            <ContactSection />
             <Footer />
         </main>
     );
