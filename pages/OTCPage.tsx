@@ -2,9 +2,30 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Check, Leaf, Zap, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 
 const OTCPage = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Organic Trash Composter (OTC)",
+    "description": "Automated composting machine that converts organic waste into nutrient-rich compost in 24-48 hours. German engineering for Indian applications.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Solwaste"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "500"
+    }
+  };
   const solutions = [
     {
       name: 'CyberSoil™',
@@ -47,6 +68,13 @@ const OTCPage = () => {
 
   return (
     <div className="bg-cream text-moss">
+      <SEO 
+        title="Organic Trash Composter (OTC) | Automated Composting Machines - Solwaste"
+        description="Discover Solwaste's OTC machines - CyberSoil, EcoLoop, CompoGen. Convert organic waste to compost in 24-48 hours. German technology, PLC control, 8kg to 1.5 ton capacity. Perfect for homes, societies, and institutions across India."
+        keywords="OTC machine price, organic trash composter India, automated composting machine, residential composter, society composting solution, industrial composter, waste to compost machine, CyberSoil, EcoLoop, CompoGen"
+        ogImage="https://solwaste.co/og-otc.png"
+        schema={schema}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-12 md:pb-0">
         <div 
@@ -65,7 +93,7 @@ const OTCPage = () => {
               <ArrowLeft size={14} className="md:w-4 md:h-4" /> Back to Solutions
             </Link>
             
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-serif mb-4 md:mb-6 text-cream leading-tight px-2">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-google-sans font-bold mb-4 md:mb-6 text-cream leading-tight px-2">
               Our Organic Trash<br />Composters
             </h1>
             
@@ -84,7 +112,7 @@ const OTCPage = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-center mb-12 md:mb-16 lg:mb-20 text-moss"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-google-sans font-bold text-center mb-12 md:mb-16 lg:mb-20 text-moss"
           >
             Solution Lines
           </motion.h2>
@@ -114,7 +142,7 @@ const OTCPage = () => {
                 {/* Content */}
                 <div className="w-full lg:w-1/2 space-y-4 md:space-y-6 px-2">
                   <div>
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-moss mb-2">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-google-sans font-bold text-moss mb-2">
                       {solution.name}
                     </h3>
                     <p className="text-gold text-xs md:text-sm uppercase tracking-widest font-bold">
@@ -156,7 +184,7 @@ const OTCPage = () => {
                     </div>
                   </div>
 
-                  <p className="text-lg md:text-xl font-serif italic text-moss/80 pl-6 border-l-4 border-gold">
+                  <p className="text-lg md:text-xl font-google-sans italic text-moss/80 pl-6 border-l-4 border-gold">
                     {solution.tagline}
                   </p>
                 </div>
@@ -173,7 +201,7 @@ const OTCPage = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-center mb-8 md:mb-12 lg:mb-16 text-moss"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-google-sans font-bold text-center mb-8 md:mb-12 lg:mb-16 text-moss"
           >
             Specifications
           </motion.h2>
@@ -183,10 +211,10 @@ const OTCPage = () => {
               <table className="w-full min-w-[640px] bg-white/70 backdrop-blur-sm rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
                 <thead>
                   <tr className="bg-moss text-cream">
-                    <th className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-left font-serif text-sm md:text-base lg:text-lg">Specs</th>
-                    <th className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-left font-serif text-sm md:text-base lg:text-lg">Users</th>
-                    <th className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-left font-serif text-sm md:text-base lg:text-lg">Setup Time</th>
-                    <th className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-left font-serif text-sm md:text-base lg:text-lg">Output Potential</th>
+                    <th className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-left font-google-sans font-medium text-sm md:text-base lg:text-lg">Specs</th>
+                    <th className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-left font-google-sans font-medium text-sm md:text-base lg:text-lg">Users</th>
+                    <th className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-left font-google-sans font-medium text-sm md:text-base lg:text-lg">Setup Time</th>
+                    <th className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-left font-google-sans font-medium text-sm md:text-base lg:text-lg">Output Potential</th>
                 </tr>
               </thead>
               <tbody>
@@ -219,7 +247,7 @@ const OTCPage = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl font-serif text-center mb-10 md:mb-16"
+            className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold text-center mb-10 md:mb-16"
           >
             Why Choose Our Composters?
           </motion.h2>
@@ -239,7 +267,7 @@ const OTCPage = () => {
                 className="text-center p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-gold/50 transition-all"
               >
                 <benefit.icon size={48} className="mx-auto mb-4 text-gold" />
-                <h3 className="text-xl font-serif mb-3">{benefit.title}</h3>
+                <h3 className="text-xl font-google-sans font-medium mb-3">{benefit.title}</h3>
                 <p className="text-cream/80 font-light">{benefit.desc}</p>
               </motion.div>
             ))}

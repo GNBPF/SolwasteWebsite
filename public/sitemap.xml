@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://solwaste.co/</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://solwaste.co/og-home.png</image:loc>
+      <image:title>Solwaste - Organic Waste Management Solutions</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Solutions Page -->
+  <url>
+    <loc>https://solwaste.co/solutions</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://solwaste.co/og-solutions.png</image:loc>
+      <image:title>Solwaste Solutions - OTC and Biogas Systems</image:title>
+    </image:image>
+  </url>
+  
+  <!-- OTC Page -->
+  <url>
+    <loc>https://solwaste.co/otc</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://solwaste.co/og-otc.png</image:loc>
+      <image:title>Organic Trash Composter - Automated Composting Machines</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Biogas Page -->
+  <url>
+    <loc>https://solwaste.co/biogas</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://solwaste.co/og-biogas.png</image:loc>
+      <image:title>Biogas Plant - Waste to Energy Solutions</image:title>
+    </image:image>
+  </url>
+  
+  <!-- App Page -->
+  <url>
+    <loc>https://solwaste.co/app</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://solwaste.co/og-app.png</image:loc>
+      <image:title>Solwaste Mobile App - Track Your Green Impact</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Shop Page -->
+  <url>
+    <loc>https://solwaste.co/shop</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://solwaste.co/og-shop.png</image:loc>
+      <image:title>Solwaste Shop - Buy Composting Solutions</image:title>
+    </image:image>
+  </url>
+  
+</urlset>

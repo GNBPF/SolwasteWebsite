@@ -91,7 +91,7 @@ const ImpactNumbersSection = () => {
             Our Impact
           </span>
 
-          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-serif">
+          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold">
             Making a Real Difference
           </h2>
         </motion.div>
@@ -113,7 +113,7 @@ const ImpactNumbersSection = () => {
               </div>
 
               {/* Animated Number */}
-              <div className="text-4xl md:text-5xl font-serif text-gold mb-2">
+              <div className="text-4xl md:text-5xl font-google-sans font-bold text-gold mb-2">
                 <CountUpNumber value={stat.number} />
               </div>
 

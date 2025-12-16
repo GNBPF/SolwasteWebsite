@@ -2,11 +2,25 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Store, ArrowLeft, Bell } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 
 const ShopPage = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Solwaste Shop",
+    "description": "Purchase organic waste management solutions and accessories."
+  };
   return (
     <div className="bg-cream text-moss min-h-screen flex flex-col">
+      <SEO 
+        title="Shop | Buy Composting Machines & Accessories - Solwaste Store"
+        description="Shop for Solwaste composting machines, biogas plants, and eco-friendly accessories. Coming soon - browse our product catalog and get notified when we launch our online store."
+        keywords="buy composting machine, OTC machine online, biogas plant purchase, eco products India, waste management products, composting accessories"
+        ogImage="https://solwaste.co/og-shop.png"
+        schema={schema}
+      />
       {/* Hero Section */}
       <section className="relative flex-1 flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-12">
         {/* Background Pattern */}
@@ -48,7 +62,7 @@ const ShopPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-moss leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-google-sans font-bold text-moss leading-tight"
             >
               Shop
             </motion.h1>
@@ -123,7 +137,7 @@ const ShopPage = () => {
                   key={i}
                   className="p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-moss/10 hover:border-gold/30 transition-all"
                 >
-                  <h3 className="font-serif text-lg md:text-xl text-moss mb-2">{feature.title}</h3>
+                  <h3 className="font-google-sans font-medium text-lg md:text-xl text-moss mb-2">{feature.title}</h3>
                   <p className="text-sm text-gray-600">{feature.desc}</p>
                 </div>
               ))}

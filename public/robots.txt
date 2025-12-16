@@ -1,0 +1,25 @@
+# Solwaste.co - Robots.txt
+# Last updated: 16 December 2025
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://solwaste.co/sitemap.xml
+
+# Disallow admin/backend paths (if any in future)
+Disallow: /admin/
+Disallow: /api/
+
+# Allow important resources
+Allow: /logo.png
+Allow: /favicon.png
+Allow: /og-*.png
+Allow: /machines/
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.mp4
+
+# Crawl-delay for better server performance
+Crawl-delay: 1

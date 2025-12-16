@@ -59,19 +59,19 @@ export const Navbar = () => {
           <a href="/" onClick={handleLogoClick} className="flex items-center gap-3 relative z-50 group cursor-pointer">
              <img src={"/logo.png"} alt="Solwaste Logo" className="h-10 w-auto object-contain group-hover:scale-110 transition-transform" />
              <div className="flex flex-col leading-tight">
-               <span className={`font-bold text-xl tracking-wider group-hover:text-gold transition-colors ${hasLightBg ? 'text-cream' : 'text-cream'}`}>SOLWASTE</span>
+               <span className={`font-poppins font-semibold text-xl tracking-wider group-hover:text-gold transition-colors ${hasLightBg ? 'text-cream' : 'text-cream'}`}>SOLWASTE</span>
                <span className={`text-[10px] font-light tracking-wide ${hasLightBg ? 'text-cream/70' : 'text-cream/70'}`}>Nothing Wasted. Ever.</span>
              </div>
           </a>
           
           <div className="hidden md:flex gap-8 items-center">
-            <Link to="/solutions" className={`text-xs uppercase tracking-widest hover:text-gold transition-colors font-medium ${hasLightBg ? 'text-cream/80' : 'text-cream/80'}`}>
+            <Link to="/solutions" className={`text-xs uppercase tracking-widest hover:text-gold transition-colors font-bold ${hasLightBg ? 'text-cream' : 'text-cream'}`}>
                  Our Solutions
             </Link>
-            <Link to="/shop" className={`text-xs uppercase tracking-widest hover:text-gold transition-colors font-medium ${hasLightBg ? 'text-cream/80' : 'text-cream/80'}`}>
+            <Link to="/shop" className={`text-xs uppercase tracking-widest hover:text-gold transition-colors font-bold ${hasLightBg ? 'text-cream' : 'text-cream'}`}>
                  Shop
             </Link>
-            <Link to="/app" className={`text-xs uppercase tracking-widest hover:text-gold transition-colors font-medium ${hasLightBg ? 'text-cream/80' : 'text-cream/80'}`}>
+            <Link to="/app" className={`text-xs uppercase tracking-widest hover:text-gold transition-colors font-bold ${hasLightBg ? 'text-cream' : 'text-cream'}`}>
                  App
             </Link>
           </div>
@@ -91,19 +91,19 @@ export const Navbar = () => {
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-moss z-40 flex flex-col items-center justify-center gap-8"
           >
-             <button onClick={(e) => { setIsOpen(false); handleLogoClick(e); }} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
-                 Home
+             <button onClick={(e) => { setIsOpen(false); handleLogoClick(e); }} className="text-cream text-3xl font-google-sans hover:text-gold transition-colors">
+               Home
              </button>
-             <Link to="/solutions" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
-                 Our Solutions
+             <Link to="/solutions" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-google-sans hover:text-gold transition-colors">
+               Our Solutions
              </Link>
-             <button onClick={() => { setIsOpen(false); handleSectionClick('impact'); }} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
-                 Impact
+             <button onClick={() => { setIsOpen(false); handleSectionClick('impact'); }} className="text-cream text-3xl font-google-sans hover:text-gold transition-colors">
+               Impact
              </button>
-             <Link to="/app" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
-                 App
+             <Link to="/app" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-google-sans hover:text-gold transition-colors">
+               App
              </Link>
-             <Link to="/shop" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-serif hover:text-gold transition-colors">
+             <Link to="/shop" onClick={() => setIsOpen(false)} className="text-cream text-3xl font-google-sans hover:text-gold transition-colors">
                  Shop
              </Link>
           </motion.div>

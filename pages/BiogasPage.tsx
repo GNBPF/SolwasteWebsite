@@ -2,9 +2,26 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Check, Flame, Droplets, TrendingUp, Recycle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 
 const BiogasPage = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Biogas Plant",
+    "description": "Convert organic waste into clean biogas energy. Sustainable, modular biogas generation system for institutions and commercial spaces.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Solwaste"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock"
+    },
+    "category": "Renewable Energy Systems"
+  };
   const solutions = [
     {
       name: 'CyberFlame™',
@@ -20,7 +37,7 @@ const BiogasPage = () => {
       subtitle: 'Community Biogas',
       image: '/machines/LoopGas.png',
       bestFor: 'Townships, Hotels, and Malls',
-      output: '1-20 tons waste/day = scalable biogas & power',
+      output: '1-20 tons waste/day = scalable biogas and power',
       features: 'Advanced anaerobic digesters, cloud monitoring, zero methane leakage',
       tagline: '"Mega cities deserve mega clean energy."'
     },
@@ -38,6 +55,13 @@ const BiogasPage = () => {
 
   return (
     <div className="bg-charcoal text-cream">
+      <SEO 
+        title="Biogas Plant | Convert Waste to Clean Energy - Solwaste"
+        description="Solwaste Biogas Plants: CyberFlame, LoopGas, MethaGen. Transform organic waste into biogas energy. Modular, sustainable solutions for institutions, hotels, and commercial spaces. Reduce energy costs while managing waste effectively."
+        keywords="biogas plant India, biogas energy, waste to energy system, organic waste to biogas, commercial biogas plant, institutional biogas system, biogas generator, renewable energy India, CyberFlame, LoopGas, MethaGen"
+        ogImage="https://solwaste.co/og-biogas.png"
+        schema={schema}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-12 md:pb-0">
         <div 
@@ -53,8 +77,8 @@ const BiogasPage = () => {
               key={i}
               className="absolute w-1 h-1 bg-gold rounded-full"
               initial={{ 
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
+                x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+                y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
                 opacity: 0.2
               }}
               animate={{ 
@@ -80,7 +104,7 @@ const BiogasPage = () => {
               <ArrowLeft size={14} className="md:w-4 md:h-4" /> Back to Solutions
             </Link>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif mb-8 md:mb-12 lg:mb-16 text-gold leading-[1.1] px-2 antialiased" style={{ 
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-google-sans font-bold mb-8 md:mb-12 lg:mb-16 text-gold leading-[1.1] px-2 antialiased" style={{ 
               textShadow: '0 2px 30px rgba(212, 175, 55, 0.4)',
               WebkitFontSmoothing: 'antialiased',
               MozOsxFontSmoothing: 'grayscale'
@@ -103,7 +127,7 @@ const BiogasPage = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-serif text-center mb-20 text-cream"
+            className="text-4xl md:text-5xl lg:text-6xl font-google-sans font-bold text-center mb-20 text-cream"
           >
             Biogas Solutions
           </motion.h2>
@@ -133,7 +157,7 @@ const BiogasPage = () => {
                 {/* Content */}
                 <div className="w-full lg:w-1/2 space-y-6">
                   <div>
-                    <h3 className="text-3xl md:text-4xl font-serif text-cream mb-2">
+                    <h3 className="text-3xl md:text-4xl font-google-sans font-bold text-cream mb-2">
                       {solution.name}
                     </h3>
                     <p className="text-gold text-sm uppercase tracking-widest font-bold">
@@ -204,7 +228,7 @@ const BiogasPage = () => {
                   </div>
 
                   {solution.tagline && (
-                    <p className="text-lg md:text-xl font-serif italic text-gold/90 pl-6 border-l-4 border-gold">
+                    <p className="text-lg md:text-xl font-google-sans italic text-gold/90 pl-6 border-l-4 border-gold">
                       {solution.tagline}
                     </p>
                   )}
@@ -222,14 +246,14 @@ const BiogasPage = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl font-serif text-center mb-10 md:mb-16"
+            className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold text-center mb-10 md:mb-16"
           >
             Why Biogas Technology?
           </motion.h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
             {[
-              { icon: Flame, title: 'Clean Energy', desc: 'Generate biogas for cooking & heating, reducing LPG dependency' },
+              { icon: Flame, title: 'Clean Energy', desc: 'Generate biogas for cooking and heating, reducing LPG dependency' },
               { icon: Droplets, title: 'Zero Emissions', desc: 'Anaerobic digestion with zero methane leakage to atmosphere' },
               { icon: TrendingUp, title: 'Fast ROI', desc: 'Return on investment in as low as 36 months with energy savings' },
               { icon: Recycle, title: 'Circular Economy', desc: 'Convert waste to energy, fertilizer, and revenue streams' }
@@ -243,7 +267,7 @@ const BiogasPage = () => {
                 className="text-center p-5 sm:p-6 md:p-8 bg-white/5 backdrop-blur-sm rounded-xl md:rounded-2xl border border-white/10 hover:border-gold/50 transition-all"
               >
                 <benefit.icon size={40} className="sm:w-12 sm:h-12 mx-auto mb-3 md:mb-4 text-gold" />
-                <h3 className="text-lg sm:text-xl font-serif mb-2 md:mb-3">{benefit.title}</h3>
+                <h3 className="text-lg sm:text-xl font-google-sans font-medium mb-2 md:mb-3">{benefit.title}</h3>
                 <p className="text-cream/80 font-light text-xs sm:text-sm leading-relaxed">{benefit.desc}</p>
               </motion.div>
             ))}

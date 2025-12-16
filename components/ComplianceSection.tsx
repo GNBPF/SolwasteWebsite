@@ -34,7 +34,7 @@ const ComplianceSection = () => {
           className="text-center mb-12"
         >
           <span className="text-gold uppercase tracking-[0.3em] text-xs font-bold">Mandatory Compliance</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mt-4 mb-6 text-charcoal">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold mt-4 mb-6 text-charcoal">
             Government Rules Now Demand<br />On-Site Waste Processing
           </h2>
         </motion.div>

@@ -1,7 +1,0 @@
-{
-  "name": "Solwaste",
-  "description": "A minimalist, luxury sustainable tech movement platform featuring interactive 3D elements and AI-driven waste solutions.",
-  "requestFramePermissions": [
-    "microphone"
-  ]
-}

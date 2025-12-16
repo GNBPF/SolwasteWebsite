@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Settings, ArrowRight, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import ProductScene from '../components/ThreeScene';
 import Footer from '../components/Footer';
 
@@ -19,7 +20,7 @@ const SpecRow = ({ label, value }: SpecProps) => (
 
 const SpecSheet = ({ title, specs }: { title: string, specs: SpecProps[] }) => (
     <div className="bg-white/50 backdrop-blur-sm border border-moss/10 rounded-xl p-6 mt-6">
-        <h4 className="flex items-center gap-2 font-serif text-lg mb-4 text-moss">
+        <h4 className="flex items-center gap-2 font-google-sans font-medium text-lg mb-4 text-moss">
             <Settings size={18} className="text-gold" />
             Technical Specifications
         </h4>
@@ -30,13 +31,28 @@ const SpecSheet = ({ title, specs }: { title: string, specs: SpecProps[] }) => (
 );
 
 const SolutionsPage = () => {
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Solwaste Solutions - OTC & Biogas Systems",
+        "description": "Explore Solwaste's comprehensive range of organic waste management solutions including composting machines and biogas plants.",
+        "url": "https://solwaste.co/solutions"
+    };
+
     return (
         <div className="bg-cream text-moss">
+            <SEO 
+                title="Our Solutions | OTC Composting Machines & Biogas Plants - Solwaste"
+                description="Discover Solwaste's innovative waste management solutions: Organic Trash Composters (OTC) for residential & commercial composting, and Biogas Plants for sustainable energy. German engineering, Indian applications."
+                keywords="OTC machine, organic trash composter, biogas plant India, composting solutions, waste management systems, residential composting machine, commercial biogas plant, automated composting, biogas energy generation"
+                ogImage="https://solwaste.co/og-solutions.png"
+                schema={schema}
+            />
             {/* Hero Section */}
             <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-12">
                 <div 
                     className="absolute inset-0 bg-cover bg-center opacity-30"
-                    style={{ backgroundImage: 'url(/ventBackgroung.jpg)' }}
+                    style={{ backgroundImage: 'url(/ventBackgroung.png)' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-charcoal/95 via-moss/90 to-moss/70" />
                 
@@ -50,7 +66,7 @@ const SolutionsPage = () => {
                             <ArrowLeft size={14} className="md:w-4 md:h-4" /> Back to Home
                         </Link>
                         
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif mb-6 text-cream leading-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-google-sans font-bold mb-6 text-cream leading-tight">
                             Our Solutions
                         </h1>
                         
@@ -85,7 +101,7 @@ const SolutionsPage = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <span className="text-gold uppercase tracking-[0.2em] font-semibold text-xs inline-block">The Flagship</span>
-                            <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-tight">Organic Trash Composter</h3>
+                            <h3 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold leading-tight">Organic Trash Composter</h3>
                             <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-light">
                                 A fully automatic, decentralized organic waste converter. It utilizes high-temperature microorganisms to breakdown food waste into nutrient-rich soil supplements in just 24 hours.
                             </p>
@@ -133,7 +149,7 @@ const SolutionsPage = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <span className="text-terra uppercase tracking-[0.2em] font-semibold text-xs inline-block">Energy Independence</span>
-                            <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-tight">The Biogas Nexus</h3>
+                            <h3 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold leading-tight">The Biogas Nexus</h3>
                             <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-light">
                                 Turn liability into utility. Our compact biogas plants convert wet waste into methane-rich gas for cooking and heating—right where you need it.
                             </p>

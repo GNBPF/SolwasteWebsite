@@ -13,7 +13,7 @@ const SolutionsOverviewSection = () => {
         'https://images.unsplash.com/photo-1590650046871-92c887180603?q=80&w=1600&auto=format&fit=crop'
     },
     {
-      title: 'Corporate & Hotel Systems',
+      title: 'Corporate and Hotel Systems',
       description:
         'Tailored composting solutions for offices, hotels, and commercial establishments processing up to 1 ton/day.',
       image:
@@ -27,7 +27,7 @@ const SolutionsOverviewSection = () => {
         'https://images.unsplash.com/photo-1581091870627-3f89c7d2f16b?q=80&w=1600&auto=format&fit=crop'
     },
     {
-      title: 'Electric & Automated',
+      title: 'Electric and Automated',
       description:
         'Fully electric, odour-free machines with automated operation and minimal maintenance requirements.',
       image:
@@ -50,7 +50,7 @@ const SolutionsOverviewSection = () => {
             Our Solutions
           </span>
 
-          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-serif text-charcoal leading-tight">
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold text-charcoal leading-tight">
             Composting Systems for<br />Every Operational Scale
           </h2>
 
@@ -82,7 +82,7 @@ const SolutionsOverviewSection = () => {
 
               {/* Text */}
               <div className="relative h-full p-4 flex flex-col justify-end">
-                <h3 className="text-lg font-serif text-cream mb-2">
+                <h3 className="text-lg font-google-sans font-medium text-cream mb-2">
                   {solution.title}
                 </h3>
 

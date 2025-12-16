@@ -70,7 +70,7 @@ const Footer = () => {
             <ul className="space-y-1.5 md:space-y-2 text-sm md:text-base">
               <li>
                 <Link to="/" className="hover:underline transition-all">
-                  Testimonials & Insights
+                  Testimonials and Insights
                 </Link>
               </li>
               <li>
@@ -91,7 +91,7 @@ const Footer = () => {
             <ul className="space-y-1.5 md:space-y-2 text-sm md:text-base">
               <li>
                 <Link to="/" className="hover:underline transition-all">
-                  Press & Media
+                  Press and Media
                 </Link>
               </li>
               <li>

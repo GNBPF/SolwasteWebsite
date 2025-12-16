@@ -1,20 +1,47 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Solwaste Website
 
-# Run and deploy your AI Studio app
+Official website for Solwaste - Turning Organic Waste into Compost & Biogas Energy.
 
-This contains everything you need to run your app locally.
+## Tech Stack
 
-View your app in AI Studio: https://ai.studio/apps/drive/1M8isbyi2pHTNMzGmQVnsYg63MbNDzD55
+- React 19.2.1 with TypeScript
+- React Router DOM 6.22.3
+- Framer Motion 12.23.25
+- Tailwind CSS (CDN)
+- Three.js with @react-three/fiber
+- Vite
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
-
+**Prerequisites:** Node.js 16+
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
+
+2. Set the `GEMINI_API_KEY` in `.env` file:
+   ```bash
+   GEMINI_API_KEY=your_api_key_here
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## Project Structure
+
+- `/components` - Reusable React components
+- `/pages` - Page components (Home, Solutions, OTC, Biogas, App, Shop)
+- `/services` - API services (Gemini AI integration)
+- `/public` - Static assets (images, videos, 3D models)
+
+## License
+
+© 2025 Solwaste. All rights reserved.

@@ -2,10 +2,38 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Download, Apple, PlayCircle, Smartphone, Users, Leaf, TrendingUp, Home as HomeIcon, Building2, Globe, ChevronDown, ChevronUp, Heart, Sprout, Zap, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 
 const AppPage = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Solwaste App",
+    "description": "Track your green habits, join community circles, and learn sustainable waste management practices.",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "LifestyleApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Solwaste"
+    }
+  };
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  
+  const seoContent = (
+    <SEO 
+      title="Solwaste App | Track Green Habits & Community Impact - Download Free"
+      description="Download the free Solwaste App for iOS & Android. Track daily green habits, join society circles, monitor waste impact, and learn sustainable practices. Available for everyone committed to zero-waste living in India."
+      keywords="Solwaste app, waste management app India, green habits tracker, community composting app, sustainability app, eco-friendly lifestyle app, waste tracking app, environmental app India"
+      ogImage="https://solwaste.co/og-app.png"
+      schema={schema}
+    />
+  );
 
   const faqs = [
     {
@@ -36,11 +64,12 @@ const AppPage = () => {
 
   return (
     <div className="bg-cream text-charcoal">
+      {seoContent}
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-12">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: 'url(/ventBackgroung.jpg)' }}
+          style={{ backgroundImage: 'url(/ventBackgroung.png)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-cream via-cream/95 to-cream" />
         
@@ -78,7 +107,7 @@ const AppPage = () => {
               <ArrowLeft size={14} /> Back to Home
             </Link>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif mb-6 text-charcoal leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-google-sans font-bold mb-6 text-charcoal leading-tight">
               Meet the Solwaste App
             </h1>
             
@@ -179,7 +208,7 @@ const AppPage = () => {
             className="max-w-4xl mx-auto text-center"
           >
             <span className="text-moss uppercase tracking-[0.3em] text-xs font-bold">Why This App?</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mt-4 mb-6 text-charcoal">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold mt-4 mb-6 text-charcoal">
               Because change begins at home.
             </h2>
             <p className="text-lg md:text-xl text-charcoal/70 font-light leading-relaxed mb-8">
@@ -207,7 +236,7 @@ const AppPage = () => {
                 <span className="text-moss text-xs font-bold uppercase tracking-wider">Home Tab</span>
               </div>
               
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mb-6 text-charcoal">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold mb-6 text-charcoal">
                 Start from your home
               </h2>
               
@@ -281,7 +310,7 @@ const AppPage = () => {
                 <span className="text-gold text-xs font-bold uppercase tracking-wider">Circles Tab</span>
               </div>
               
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mb-6 text-charcoal">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold mb-6 text-charcoal">
                 Grow together as a community
               </h2>
               
@@ -295,7 +324,7 @@ const AppPage = () => {
                     <Building2 size={24} className="text-gold" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-1">Society & Office Circles</h4>
+                    <h4 className="font-bold text-lg mb-1">Society and Office Circles</h4>
                     <p className="text-charcoal/60 text-sm">Join your building's circle, see who's active, and track estimated waste diverted from landfills.</p>
                   </div>
                 </div>
@@ -355,7 +384,7 @@ const AppPage = () => {
                 <span className="text-charcoal text-xs font-bold uppercase tracking-wider">Solwaste Tab</span>
               </div>
               
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mb-6 text-charcoal">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold mb-6 text-charcoal">
                 Solutions that build a greener future
               </h2>
               
@@ -425,7 +454,7 @@ const AppPage = () => {
             className="text-center mb-16"
           >
             <span className="text-moss uppercase tracking-[0.3em] text-xs font-bold">Early Voices</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mt-4 mb-6 text-charcoal">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold mt-4 mb-6 text-charcoal">
               What people are saying
             </h2>
           </motion.div>
@@ -445,7 +474,7 @@ const AppPage = () => {
               {
                 quote: "The Ghar Ke Nuskhe section is gold. I'm teaching my kids ancient Indian wisdom through modern tech.",
                 name: "Sneha K.",
-                role: "Homemaker & Mother, Bandra"
+                role: "Homemaker and Mother, Bandra"
               }
             ].map((testimonial, i) => (
               <motion.div
@@ -480,7 +509,7 @@ const AppPage = () => {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-google-sans font-bold mb-6">
               Ready to start your green journey?
             </h2>
             <p className="text-lg md:text-xl text-cream/80 mb-12 font-light">
@@ -532,7 +561,7 @@ const AppPage = () => {
             className="text-center mb-16"
           >
             <span className="text-moss uppercase tracking-[0.3em] text-xs font-bold">Questions?</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mt-4 mb-6 text-charcoal">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold mt-4 mb-6 text-charcoal">
               Everything you need to know
             </h2>
           </motion.div>
