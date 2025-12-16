@@ -48,8 +48,21 @@ const Footer = () => {
           <div>
             <ul className="space-y-1.5 md:space-y-2 text-sm md:text-base">
               <li>
-                <Link to="/#impact" className="hover:underline transition-all">
-                  Vision 2047
+                <Link 
+                  to="/vision-2047" 
+                  className="inline-flex items-center gap-2 group hover:underline transition-all font-semibold relative"
+                >
+                  <span className="relative">
+                    Vision 2047
+                  </span>
+                  <svg 
+                    className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
               </li>
               <li>
