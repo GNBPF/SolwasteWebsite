@@ -9,6 +9,10 @@ export default defineConfig(({ mode }) => {
         port: 3000,
         host: '0.0.0.0',
       },
+      preview: {
+        port: 3000,
+        host: '0.0.0.0',
+      },
       plugins: [react()],
       define: {
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
@@ -17,6 +21,13 @@ export default defineConfig(({ mode }) => {
       resolve: {
         alias: {
           '@': path.resolve(__dirname, '.'),
+        }
+      },
+      build: {
+        rollupOptions: {
+          output: {
+            manualChunks: undefined,
+          }
         }
       }
     };
