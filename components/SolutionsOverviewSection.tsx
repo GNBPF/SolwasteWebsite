@@ -98,7 +98,7 @@ const SolutionsOverviewSection = () => {
           className="text-center mt-10"
         >
           <Link
-            to="/otc"
+            to="/solutions"
             className="inline-flex items-center gap-2 px-7 py-2.5 rounded-full bg-charcoal text-cream font-semibold shadow-md hover:bg-moss transition-colors"
           >
             View All Solutions

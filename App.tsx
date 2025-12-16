@@ -9,6 +9,7 @@ import ShopPage from './pages/ShopPage';
 import AppPage from './pages/AppPage';
 import VisionPage from './pages/VisionPage';
 import PartnerPage from './pages/PartnerPage';
+import CareerPage from './pages/CareerPage';
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
@@ -24,8 +25,7 @@ export default function App() {
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/app" element={<AppPage />} />
         <Route path="/vision-2047" element={<VisionPage />} />
-        <Route path="/partner" element={<PartnerPage />} />
-      </Routes>
+        <Route path="/partner" element={<PartnerPage />} />          <Route path="/careers" element={<CareerPage />} />      </Routes>
     </div>
   );
 }

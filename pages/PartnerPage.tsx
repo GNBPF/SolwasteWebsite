@@ -21,10 +21,114 @@ const PartnerPage = () => {
     agreeTerms: false
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+
+  const validateForm = (): boolean => {
+    const errors: Record<string, string> = {};
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      errors.email = 'Please enter a valid email address';
+    }
+
+    // Phone validation
+    const phoneRegex = /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,9}$/;
+    if (!phoneRegex.test(formData.phone.replace(/\s/g, ''))) {
+      errors.phone = 'Please enter a valid phone number';
+    }
+
+    // Video validation (optional but recommended)
+    if (formData.videoFile && formData.videoFile.size > 100 * 1024 * 1024) {
+      errors.video = 'Video size should be less than 100MB';
+    }
+
+    // Agreement validation
+    if (!formData.agreeTerms) {
+      errors.agreeTerms = 'Please agree to the terms to continue';
+    }
+
+    setFieldErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Partner Application:', formData);
-    // Handle form submission
+    setSubmitError('');
+    setFieldErrors({});
+
+    // Validate form
+    if (!validateForm()) {
+      setSubmitError('Please fix the errors below before submitting');
+      setTimeout(() => {
+        const firstError = document.querySelector('.error-message');
+        if (firstError) {
+          firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100);
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Prepare form data for submission
+      const submitData = new FormData();
+      
+      submitData.append('name', formData.name);
+      submitData.append('email', formData.email);
+      submitData.append('phone', formData.phone);
+      submitData.append('location', formData.location);
+      submitData.append('network', formData.network);
+      submitData.append('experience', formData.experience);
+      
+      if (formData.videoFile) submitData.append('video', formData.videoFile);
+      if (formData.videoLink) submitData.append('videoLink', formData.videoLink);
+
+      // TODO: Replace with actual API endpoint
+      // await fetch('/api/partners/submit', {
+      //   method: 'POST',
+      //   body: submitData
+      // });
+
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      console.log('Partner Application Submitted:', {
+        ...formData,
+        videoName: formData.videoFile?.name
+      });
+
+      // Success state
+      setSubmitSuccess(true);
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        location: '',
+        experience: '',
+        network: '',
+        videoLink: '',
+        videoFile: null,
+        agreeTerms: false
+      });
+
+      // Scroll to success message
+      setTimeout(() => {
+        document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmitError('Something went wrong. Please try again or contact us directly at hello@solwaste.co');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const schema = {
@@ -68,7 +172,7 @@ const PartnerPage = () => {
             </p>
             <p className="text-sm md:text-base text-cream/70 max-w-2xl mx-auto mb-8 leading-relaxed">
               We make composting machines. You know people who need them. 
-              Let's work together—no bullshit, just straightforward partnership.
+              Let's work together.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -236,8 +340,43 @@ const PartnerPage = () => {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-google-sans font-bold text-charcoal mb-3">
                 Apply Here
               </h2>
-              <p className="text-charcoal/70 text-sm">Takes 5 minutes. We'll respond within 48 hours.</p>
             </div>
+
+            {/* Success Message */}
+            {submitSuccess && (
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-moss/10 border-2 border-moss rounded-xl p-6 mb-8"
+              >
+                <div className="flex items-start gap-3">
+                  <Check size={24} className="text-moss flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="font-bold text-charcoal mb-2">Application Submitted Successfully!</h3>
+                    <p className="text-sm text-charcoal/80">
+                      Thank you for your interest in partnering with Solwaste. We've received your application and will get back to you within 48 hours.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+
+            {/* Error Message */}
+            {submitError && (
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-red-50 border-2 border-red-400 rounded-xl p-6 mb-8"
+              >
+                <div className="flex items-start gap-3">
+                  <X size={24} className="text-red-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="font-bold text-red-900 mb-2">Submission Error</h3>
+                    <p className="text-sm text-red-800">{submitError}</p>
+                  </div>
+                </div>
+              </motion.div>
+            )}
 
             <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-6 md:p-8 border-2 border-moss/10 shadow-2xl">
               {/* Step 1: Personal Details */}
@@ -264,10 +403,18 @@ const PartnerPage = () => {
                         type="email"
                         required
                         value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        className="w-full px-4 py-3 border-2 border-moss/20 rounded-xl focus:outline-none focus:border-moss transition-colors bg-cream/30"
+                        onChange={(e) => {
+                          setFormData({...formData, email: e.target.value});
+                          if (fieldErrors.email) setFieldErrors(prev => ({ ...prev, email: '' }));
+                        }}
+                        className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none transition-colors bg-cream/30 ${
+                          fieldErrors.email ? 'border-red-400 focus:border-red-500' : 'border-moss/20 focus:border-moss'
+                        }`}
                         placeholder="your@email.com"
                       />
+                      {fieldErrors.email && (
+                        <p className="error-message text-sm text-red-600 mt-1">{fieldErrors.email}</p>
+                      )}
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-charcoal mb-2">Phone Number *</label>
@@ -275,10 +422,18 @@ const PartnerPage = () => {
                         type="tel"
                         required
                         value={formData.phone}
-                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                        className="w-full px-4 py-3 border-2 border-moss/20 rounded-xl focus:outline-none focus:border-moss transition-colors bg-cream/30"
+                        onChange={(e) => {
+                          setFormData({...formData, phone: e.target.value});
+                          if (fieldErrors.phone) setFieldErrors(prev => ({ ...prev, phone: '' }));
+                        }}
+                        className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none transition-colors bg-cream/30 ${
+                          fieldErrors.phone ? 'border-red-400 focus:border-red-500' : 'border-moss/20 focus:border-moss'
+                        }`}
                         placeholder="+91 XXXXX XXXXX"
                       />
+                      {fieldErrors.phone && (
+                        <p className="error-message text-sm text-red-600 mt-1">{fieldErrors.phone}</p>
+                      )}
                     </div>
                   </div>
                   <div>
@@ -375,6 +530,9 @@ const PartnerPage = () => {
                     <p className="text-xs text-charcoal/60 mt-2">
                       A 1-2 min video helps us understand who you are and how you communicate. Not required, but helpful.
                     </p>
+                    {fieldErrors.video && (
+                      <p className="error-message text-sm text-red-600 mt-2">{fieldErrors.video}</p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -405,24 +563,40 @@ const PartnerPage = () => {
                     type="checkbox"
                     required
                     checked={formData.agreeTerms}
-                    onChange={(e) => setFormData({...formData, agreeTerms: e.target.checked})}
+                    onChange={(e) => {
+                      setFormData({...formData, agreeTerms: e.target.checked});
+                      if (fieldErrors.agreeTerms) setFieldErrors(prev => ({ ...prev, agreeTerms: '' }));
+                    }}
                     className="mt-1 w-5 h-5 rounded border-moss/30 text-moss focus:ring-moss"
                   />
                   <span className="text-sm text-charcoal/80 group-hover:text-charcoal transition-colors">
                     I agree to the terms above and understand this is a performance-based partnership *
                   </span>
                 </label>
+                {fieldErrors.agreeTerms && (
+                  <p className="error-message text-sm text-red-600 mt-2">{fieldErrors.agreeTerms}</p>
+                )}
               </div>
 
               {/* Submit Button */}
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 type="submit"
-                disabled={!formData.agreeTerms}
+                disabled={isSubmitting}
                 className="w-full py-4 bg-moss text-cream rounded-xl font-bold text-lg hover:bg-moss/90 transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group"
               >
-                <span className="relative z-10">Submit Application</span>
+                <span className="relative z-10">
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                      </svg>
+                      Submitting...
+                    </span>
+                  ) : 'Submit Application'}
+                </span>
                 <motion.div
                   className="absolute inset-0 bg-gold"
                   initial={{ x: '-100%' }}
@@ -447,9 +621,6 @@ const PartnerPage = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-google-sans font-bold text-charcoal mb-3">
               What happens after you apply?
             </h2>
-            <p className="text-charcoal/70 max-w-2xl mx-auto text-sm">
-              Simple 3-step process
-            </p>
           </motion.div>
 
           <div className="max-w-4xl mx-auto">
