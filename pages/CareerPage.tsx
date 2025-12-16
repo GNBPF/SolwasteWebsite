@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { 
   Check, Upload, Link as LinkIcon, ChevronRight, 
   Briefcase, Heart, Users as UsersIcon,
-  Target, Zap, Globe
+  Target, Zap, Globe, X
 } from 'lucide-react';
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';

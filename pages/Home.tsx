@@ -6,7 +6,6 @@ import ComplianceSection from '../components/ComplianceSection';
 import SolutionsOverviewSection from '../components/SolutionsOverviewSection';
 import BenefitsSection from '../components/BenefitsSection';
 import ImpactNumbersSection from '../components/ImpactNumbersSection';
-import TestimonialsSection from '../components/TestimonialsSection';
 import PartnersSection from '../components/PartnersSection';
 import CTABannerSection from '../components/CTABannerSection';
 import Footer from '../components/Footer';
@@ -67,7 +66,6 @@ const Home = () => {
             <SolutionsOverviewSection />
             <BenefitsSection />
             <ImpactNumbersSection />
-            <TestimonialsSection />
             <PartnersSection />
             <CTABannerSection />
             <Footer />

@@ -9,6 +9,29 @@ const partners = [
   { name: "Petronet LNG", logo: "/partnerLogo/petronet.png" }
 ];
 
+const testimonials = [
+  {
+    quote: "Processing 100 kg daily, saving ₹15,000 monthly. Game-changer for our society.",
+    name: "Rajesh Kumar",
+    role: "Green Valley Apartments, Mumbai"
+  },
+  {
+    quote: "Zero odour, minimal maintenance. Perfect for our resort's sustainability goals.",
+    name: "Priya Malhotra",
+    role: "Taj Resorts, Goa"
+  },
+  {
+    quote: "IoT monitoring made compliance seamless across our 3 campuses.",
+    name: "Amit Sharma",
+    role: "Tech Corp India, Bangalore"
+  },
+  {
+    quote: "Manages massive waste efficiently and educates our students too.",
+    name: "Dr. Meera Reddy",
+    role: "National University, Hyderabad"
+  }
+];
+
 const PartnersSection = () => {
   const [isPaused, setIsPaused] = React.useState(false);
   
@@ -44,34 +67,29 @@ const PartnersSection = () => {
                   <motion.div
                       className="flex gap-12 md:gap-16"
                       animate={{
-                          x: isPaused ? undefined : [0, -1 * (partners.length * 260)],
+                          x: [0, -1 * (partners.length * 260)],
                       }}
                       transition={{
                           x: {
-                              duration: 25,
+                              duration: 30,
                               repeat: Infinity,
                               ease: "linear",
                           },
                       }}
-                      onMouseEnter={() => setIsPaused(true)}
-                      onMouseLeave={() => setIsPaused(false)}
                   >
                       {duplicatedPartners.map((partner, index) => (
                           <div
                               key={`row1-${partner.name}-${index}`}
                               className="flex flex-col items-center justify-center gap-3 min-w-[220px] group cursor-pointer"
                           >
-                              <div className="relative w-full h-28 flex items-center justify-center bg-gradient-to-br from-cream/50 to-white rounded-2xl p-6 border border-moss/10 group-hover:border-gold/40 transition-all duration-500 group-hover:shadow-xl group-hover:scale-105 overflow-hidden">
-                                  {/* Shimmer Effect */}
-                                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
-                                  
+                              <div className="relative w-full h-28 flex items-center justify-center p-4">
                                   <img
                                       src={partner.logo}
                                       alt={partner.name}
-                                      className="max-h-16 max-w-[180px] object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 relative z-10"
+                                      className="max-h-20 max-w-[200px] object-contain grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:scale-110"
                                   />
                               </div>
-                              <p className="text-xs font-semibold text-charcoal/50 group-hover:text-moss transition-colors text-center tracking-wide">
+                              <p className="text-xs font-semibold text-charcoal/40 group-hover:text-moss transition-colors duration-500 text-center tracking-wide">
                                   {partner.name}
                               </p>
                           </div>
@@ -79,41 +97,33 @@ const PartnersSection = () => {
                   </motion.div>
               </div>
 
-              {/* Row 2: Right to Left */}
+              {/* Row 2: Testimonials - Right to Left */}
               <div className="overflow-hidden py-4">
                   <motion.div
-                      className="flex gap-12 md:gap-16"
+                      className="flex gap-8"
                       animate={{
-                          x: isPaused ? undefined : [-1 * (partners.length * 260), 0],
+                          x: [-1 * (testimonials.length * 380), 0],
                       }}
                       transition={{
                           x: {
-                              duration: 25,
+                              duration: 35,
                               repeat: Infinity,
                               ease: "linear",
                           },
                       }}
-                      onMouseEnter={() => setIsPaused(true)}
-                      onMouseLeave={() => setIsPaused(false)}
                   >
-                      {duplicatedPartners.map((partner, index) => (
+                      {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
                           <div
-                              key={`row2-${partner.name}-${index}`}
-                              className="flex flex-col items-center justify-center gap-3 min-w-[220px] group cursor-pointer"
+                              key={`testimonial-${index}`}
+                              className="relative min-w-[360px] p-5 bg-gradient-to-br from-white to-cream/50 rounded-xl border-l-4 border-moss/30 hover:border-gold transition-all hover:shadow-lg group cursor-pointer"
                           >
-                              <div className="relative w-full h-28 flex items-center justify-center bg-gradient-to-br from-white to-cream/50 rounded-2xl p-6 border border-moss/10 group-hover:border-gold/40 transition-all duration-500 group-hover:shadow-xl group-hover:scale-105 overflow-hidden">
-                                  {/* Shimmer Effect */}
-                                  <div className="absolute inset-0 translate-x-full group-hover:-translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
-                                  
-                                  <img
-                                      src={partner.logo}
-                                      alt={partner.name}
-                                      className="max-h-16 max-w-[180px] object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 relative z-10"
-                                  />
-                              </div>
-                              <p className="text-xs font-semibold text-charcoal/50 group-hover:text-moss transition-colors text-center tracking-wide">
-                                  {partner.name}
+                              <p className="text-sm text-charcoal/80 leading-relaxed mb-3 italic">
+                                  "{testimonial.quote}"
                               </p>
+                              <div className="pt-2 border-t border-moss/10">
+                                  <p className="font-bold text-charcoal text-sm">{testimonial.name}</p>
+                                  <p className="text-xs text-charcoal/60 mt-1">{testimonial.role}</p>
+                              </div>
                           </div>
                       ))}
                   </motion.div>
