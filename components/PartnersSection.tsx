@@ -3,10 +3,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const partners = [
-  { name: "Government of Kerala", logo: "/kerela.png" },
-  { name: "LuLu Group", logo: "/mall.png" },
-  { name: "ONGC", logo: "/ongc.png" },
-  { name: "Petronet LNG", logo: "/petronet.png" }
+  { name: "Government of Kerala", logo: "/partnerLogo/kerela.png" },
+  { name: "LuLu Group", logo: "/partnerLogo/mall.png" },
+  { name: "ONGC", logo: "/partnerLogo/ongc.png" },
+  { name: "Petronet LNG", logo: "/partnerLogo/petronet.png" }
 ];
 
 const PartnersSection = () => {
