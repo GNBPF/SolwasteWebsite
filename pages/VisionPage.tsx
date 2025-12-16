@@ -37,9 +37,7 @@ const VisionPage = () => {
         />
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Link to="/" className="inline-flex items-center gap-2 text-cream/60 hover:text-gold transition-colors mb-6 text-xs md:text-sm uppercase tracking-wider">
-            <ArrowLeft size={14} /> Back to Home
-          </Link>
+          
 
           <div className="max-w-4xl">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-google-sans font-bold mb-6 leading-tight">

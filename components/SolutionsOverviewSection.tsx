@@ -9,29 +9,25 @@ const SolutionsOverviewSection = () => {
       title: 'Community Composting',
       description:
         'Designed for housing societies and residential communities managing 50–500 kg of wet waste daily.',
-      image:
-        'https://images.unsplash.com/photo-1590650046871-92c887180603?q=80&w=1600&auto=format&fit=crop'
+      image:"/solutions/communityComposting.png"
     },
     {
       title: 'Corporate and Hotel Systems',
       description:
         'Tailored composting solutions for offices, hotels, and commercial establishments processing up to 1 ton/day.',
-      image:
-        'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1600&auto=format&fit=crop'
+      image:"/solutions/hotelSystem.png"
     },
     {
       title: 'Industrial-Scale Composting',
       description:
         'Heavy-duty systems built for institutions, campuses, and facilities handling 2+ tons of organic waste.',
-      image:
-        'https://images.unsplash.com/photo-1581091870627-3f89c7d2f16b?q=80&w=1600&auto=format&fit=crop'
+      image:"/solutions/industrialComposting.png"
     },
     {
       title: 'Electric and Automated',
       description:
         'Fully electric, odour-free machines with automated operation and minimal maintenance requirements.',
-      image:
-        'https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1600&auto=format&fit=crop'
+      image:"/solutions/electricAutomated.png"
     }
   ];
 
