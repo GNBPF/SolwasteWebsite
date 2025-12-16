@@ -203,54 +203,54 @@ const VentSection: React.FC = () => {
                 What’s the waste problem keeping you up?
               </p>
 
-              <form onSubmit={handleSubmit} className="relative w-full max-w-2xl mx-auto bg-white/5 backdrop-blur-sm p-4 sm:p-6 md:p-8 lg:p-10 rounded-2xl md:rounded-3xl border border-white/10">
+              <form onSubmit={handleSubmit} className="relative w-full max-w-2xl mx-auto bg-white/5 backdrop-blur-sm p-4 sm:p-6 md:p-8 lg:p-10 rounded-2xl md:rounded-3xl border-2 border-white/40 shadow-[0_0_30px_rgba(255,255,255,0.1)]">
                 
                 {/* Contact Details Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 md:mb-8">
                   {/* Name */}
                   <div className="relative group">
-                    <User size={18} className="absolute left-0 top-3 text-gray-500 group-focus-within:text-gold transition-colors" />
+                    <User size={18} className="absolute left-0 top-3 text-cream/60 group-focus-within:text-gold transition-colors" />
                     <input 
                       type="text" 
                       placeholder="Your Name *"
                       value={userDetails.name}
                       onChange={(e) => setUserDetails({...userDetails, name: e.target.value})}
                       disabled={isProcessing}
-                      className="w-full bg-transparent border-b border-gray-600 py-2 pl-8 focus:outline-none focus:border-gold transition-colors text-cream placeholder-gray-500"
+                      className="w-full bg-transparent border-b-2 border-cream/40 py-2 pl-8 focus:outline-none focus:border-gold transition-colors text-cream placeholder-cream/50"
                     />
                   </div>
 
                   {/* Email */}
                   <div className="relative group">
-                    <Mail size={18} className="absolute left-0 top-3 text-gray-500 group-focus-within:text-gold transition-colors" />
+                    <Mail size={18} className="absolute left-0 top-3 text-cream/60 group-focus-within:text-gold transition-colors" />
                     <input 
                       type="email" 
                       placeholder="Email ID *"
                       value={userDetails.email}
                       onChange={(e) => setUserDetails({...userDetails, email: e.target.value})}
                       disabled={isProcessing}
-                      className="w-full bg-transparent border-b border-gray-600 py-2 pl-8 focus:outline-none focus:border-gold transition-colors text-cream placeholder-gray-500"
+                      className="w-full bg-transparent border-b-2 border-cream/40 py-2 pl-8 focus:outline-none focus:border-gold transition-colors text-cream placeholder-cream/50"
                     />
                   </div>
 
                   {/* Phone (Optional) */}
                   <div className="relative group md:col-span-2">
-                    <Phone size={18} className="absolute left-0 top-3 text-gray-500 group-focus-within:text-gold transition-colors" />
+                    <Phone size={18} className="absolute left-0 top-3 text-cream/60 group-focus-within:text-gold transition-colors" />
                     <input 
                       type="tel" 
                       placeholder="Phone Number (Optional)"
                       value={userDetails.phone}
                       onChange={(e) => setUserDetails({...userDetails, phone: e.target.value})}
                       disabled={isProcessing}
-                      className="w-full bg-transparent border-b border-gray-600 py-2 pl-8 focus:outline-none focus:border-gold transition-colors text-cream placeholder-gray-500"
+                      className="w-full bg-transparent border-b-2 border-cream/40 py-2 pl-8 focus:outline-none focus:border-gold transition-colors text-cream placeholder-cream/50"
                     />
                   </div>
                 </div>
 
                 {/* Message Section */}
                 <div className="relative mb-4 md:mb-6">
-                  <label className="text-xs uppercase tracking-wider text-gray-400 mb-2 md:mb-3 block">Your Message *</label>
-                  <div className={`relative border rounded-xl transition-all duration-300 ${isRecording ? 'border-gold shadow-[0_0_15px_rgba(212,175,55,0.3)]' : 'border-gray-700 bg-black/20'}`}>
+                  <label className="text-xs uppercase tracking-wider text-cream/80 mb-2 md:mb-3 block font-semibold">Your Message *</label>
+                  <div className={`relative border-2 rounded-xl transition-all duration-300 ${isRecording ? 'border-gold shadow-[0_0_15px_rgba(212,175,55,0.3)]' : 'border-cream/40 bg-black/20 shadow-[0_0_10px_rgba(255,255,255,0.05)]'}`}>
                     <div className="relative">
                       <textarea
                           ref={textareaRef}
