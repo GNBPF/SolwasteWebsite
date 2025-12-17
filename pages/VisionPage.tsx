@@ -70,14 +70,16 @@ const VisionPage = () => {
           >
             Are We Really Free If Our <span className="text-gold">Waste</span> Still Owns Us?
           </motion.h1>
-          <motion.p 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="max-w-3xl text-base sm:text-lg md:text-xl text-cream/80 leading-relaxed text-center px-4"
+            className="max-w-3xl text-base sm:text-lg md:text-xl text-cream/80 leading-relaxed text-center px-4 space-y-4"
           >
-            India's waste crisis isn't just about garbage. It's about a future we can't afford to lose. It's time to rethink organic waste management for Vision 2047.
-          </motion.p>
+            <p>In 2047, India will mark <span className="text-gold font-semibold">100 years of Independence</span>.</p>
+            <p>A century of freedom. A century of progress. A century of promise.</p>
+            <p>But here's an uncomfortable question we must ask ourselves—<span className="text-cream font-semibold">can a nation truly call itself free if its waste continues to choke its land, poison its water, and silently compromise the health of its children?</span></p>
+          </motion.div>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -106,189 +108,211 @@ const VisionPage = () => {
         </div>
       </header>
 
+      {/* Waste Mirror Statement */}
+      <section className="relative py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-charcoal to-moss/10">
+        <div className="container mx-auto max-w-4xl text-center">
+          <AnimatedSection>
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-cream leading-relaxed font-light">
+              Waste is not a side issue anymore.{' '}
+              <span className="font-bold text-gold">It is a mirror.</span>
+            </p>
+            <p className="text-lg sm:text-xl md:text-2xl text-cream/70 mt-6 leading-relaxed">
+              It reflects how we live, how we consume, and how responsibly we think about tomorrow.
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* Section: The Invisible Crisis */}
-      <section className="relative py-20 lg:py-32 px-4 lg:px-40 bg-charcoal border-t border-moss/20" id="crisis">
+      <section className="relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-charcoal border-t border-moss/20" id="crisis">
         <div className="mx-auto max-w-6xl">
           <AnimatedSection className="mb-12">
-            <h2 className="text-3xl font-bold leading-tight tracking-tight text-cream lg:text-4xl lg:text-5xl font-google-sans">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-cream font-google-sans">
               The Invisible Crisis We Step Over Every Day
             </h2>
-            <div className="mt-4 h-1 w-24 rounded bg-gold"></div>
+            <div className="mt-6 h-1 w-24 rounded bg-gold"></div>
           </AnimatedSection>
-          <div className="grid gap-6 md:grid-cols-3">
-            <AnimatedSection delay={0.2}>
-              <div className="group relative flex flex-col gap-4 rounded-2xl border border-moss/20 bg-moss/5 p-8 transition-all duration-500 hover:border-gold/50 hover:bg-moss/10 hover:scale-105">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gold/20 text-gold">
-                  <Trash2 className="w-7 h-7" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-cream/60">Daily Waste Generation</p>
-                  <p className="mt-2 text-4xl font-bold text-cream">1.5 Lakh <span className="text-xl text-cream/60">MT</span></p>
-                  <p className="mt-2 text-sm text-gold font-medium flex items-center gap-1">
-                    <TrendingDown className="w-4 h-4" /> +5% annually
-                  </p>
-                </div>
-              </div>
-            </AnimatedSection>
-            <AnimatedSection delay={0.3}>
-              <div className="group relative flex flex-col gap-4 rounded-2xl border border-moss/20 bg-moss/5 p-8 transition-all duration-500 hover:border-gold/50 hover:bg-moss/10 hover:scale-105">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gold/20 text-gold">
-                  <Package className="w-7 h-7" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-cream/60">Organic Composition</p>
-                  <p className="mt-2 text-4xl font-bold text-cream">60-70%</p>
-                  <p className="mt-2 text-sm text-gold font-medium flex items-center gap-1">
-                    <AlertTriangle className="w-4 h-4" /> Critical Load
-                  </p>
-                </div>
-              </div>
-            </AnimatedSection>
+          
+          <AnimatedSection delay={0.2} className="mb-12">
+            <p className="text-lg sm:text-xl text-cream/90 leading-relaxed max-w-4xl">
+              India generates millions of tonnes of waste every year, and nearly <span className="text-gold font-semibold">50–60%</span> of it is organic food waste—vegetable peels, leftovers, spoiled food, garden waste. This waste is not inert. It is alive. It decomposes, ferments, leaks, attracts vectors, and releases gases.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.3} className="mb-8">
+            <p className="text-xl sm:text-2xl text-cream/90 font-semibold mb-6">When left unattended or mixed with dry waste:</p>
+          </AnimatedSection>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <AnimatedSection delay={0.4}>
-              <div className="group relative flex flex-col gap-4 rounded-2xl border border-moss/20 bg-moss/5 p-8 transition-all duration-500 hover:border-gold/50 hover:bg-moss/10 hover:scale-105">
+              <div className="group relative flex flex-col gap-4 rounded-2xl border border-moss/20 bg-moss/5 p-6 sm:p-8 transition-all duration-500 hover:border-gold/50 hover:bg-moss/10 hover:scale-105">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gold/20 text-gold">
-                  <MapPin className="w-7 h-7" />
+                  <Bug className="w-7 h-7" />
                 </div>
-                <div>
-                  <p className="text-sm font-medium text-cream/60">Landfills Overflowing</p>
-                  <p className="mt-2 text-4xl font-bold text-cream">3,000+</p>
-                  <p className="mt-2 text-sm text-red-400 font-medium flex items-center gap-1">
-                    <AlertTriangle className="w-4 h-4" /> Environmental Hazard
-                  </p>
+                <p className="text-cream/90 leading-relaxed">
+                  It becomes a <span className="text-cream font-semibold">breeding ground for mosquitoes and flies</span>
+                </p>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.5}>
+              <div className="group relative flex flex-col gap-4 rounded-2xl border border-moss/20 bg-moss/5 p-6 sm:p-8 transition-all duration-500 hover:border-gold/50 hover:bg-moss/10 hover:scale-105">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gold/20 text-gold">
+                  <Wind className="w-7 h-7" />
                 </div>
+                <p className="text-cream/90 leading-relaxed">
+                  It releases <span className="text-cream font-semibold">methane</span>, a greenhouse gas far more potent than CO₂
+                </p>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.6}>
+              <div className="group relative flex flex-col gap-4 rounded-2xl border border-moss/20 bg-moss/5 p-6 sm:p-8 transition-all duration-500 hover:border-gold/50 hover:bg-moss/10 hover:scale-105">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gold/20 text-gold">
+                  <Droplet className="w-7 h-7" />
+                </div>
+                <p className="text-cream/90 leading-relaxed">
+                  It contaminates <span className="text-cream font-semibold">soil and groundwater</span> through leachate
+                </p>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.7}>
+              <div className="group relative flex flex-col gap-4 rounded-2xl border border-moss/20 bg-moss/5 p-6 sm:p-8 transition-all duration-500 hover:border-gold/50 hover:bg-moss/10 hover:scale-105">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gold/20 text-gold">
+                  <AlertTriangle className="w-7 h-7" />
+                </div>
+                <p className="text-cream/90 leading-relaxed">
+                  It creates persistent <span className="text-cream font-semibold">foul odours</span>, making living spaces unhealthy
+                </p>
               </div>
             </AnimatedSection>
           </div>
+
+          <AnimatedSection delay={0.8} className="mt-12 text-center">
+            <p className="text-xl sm:text-2xl md:text-3xl text-gold font-bold italic">
+              The tragedy? Most of this damage is completely avoidable.
+            </p>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Section: Infrastructure */}
-      <section className="relative py-20 px-4 lg:px-40 bg-moss/5" id="infrastructure">
+      <section className="relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-moss/5" id="infrastructure">
         <div className="mx-auto max-w-6xl">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-            <div className="flex flex-col justify-center gap-6">
-              <AnimatedSection>
-                <h2 className="text-3xl font-bold leading-tight tracking-tight text-cream lg:text-5xl font-google-sans">
-                  Segregation Is Not a Habit. <br/><span className="text-gold">It Is Infrastructure.</span>
-                </h2>
-              </AnimatedSection>
-              <AnimatedSection delay={0.2}>
-                <p className="text-lg text-cream/80 leading-relaxed">
-                  We blame citizens for not segregating, but we lack the systemic infrastructure to process segregated waste efficiently at scale. Without the right machinery, segregation is just a delay before mixing.
-                </p>
-              </AnimatedSection>
-              <div className="grid gap-4">
-                <AnimatedSection delay={0.3}>
-                  <div className="flex items-start gap-4 rounded-xl bg-charcoal p-6 border border-moss/30 hover:border-gold/50 transition-all duration-300">
-                    <Truck className="w-6 h-6 text-gold mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-bold text-cream">Broken Supply Chains</h3>
-                      <p className="text-sm text-cream/70">Waste is often mixed during transport, completely negating household segregation efforts.</p>
-                    </div>
-                  </div>
-                </AnimatedSection>
-                <AnimatedSection delay={0.4}>
-                  <div className="flex items-start gap-4 rounded-xl bg-charcoal p-6 border border-moss/30 hover:border-gold/50 transition-all duration-300">
-                    <Hand className="w-6 h-6 text-gold mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-bold text-cream">Manual Limitations</h3>
-                      <p className="text-sm text-cream/70">Human-dependent segregation is dangerously slow, inefficient, and error-prone.</p>
-                    </div>
-                  </div>
-                </AnimatedSection>
+          <AnimatedSection className="mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-cream font-google-sans">
+              Segregation Is Not a Habit. <br/><span className="text-gold">It Is Infrastructure.</span>
+            </h2>
+            <div className="mt-6 h-1 w-24 rounded bg-gold"></div>
+          </AnimatedSection>
+          
+          <AnimatedSection delay={0.2} className="mb-12">
+            <p className="text-lg sm:text-xl text-cream/90 leading-relaxed max-w-4xl">
+              For decades, we have been told to "segregate at source." Yet, segregation alone without systems is like good intention without execution.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.3} className="mb-8">
+            <p className="text-xl text-cream/90 font-semibold mb-6">In large residential societies, townships, campuses, hotels, institutions, and commercial complexes:</p>
+          </AnimatedSection>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5 mb-12">
+            <AnimatedSection delay={0.4}>
+              <div className="rounded-2xl border border-moss/20 bg-charcoal p-6 hover:border-gold/50 transition-all duration-300">
+                <div className="w-3 h-3 bg-gold rounded-full mb-3"></div>
+                <p className="text-cream/90 leading-relaxed">Manual segregation <span className="font-semibold">fails due to scale</span></p>
               </div>
-            </div>
-            <AnimatedSection delay={0.2}>
-              <div className="relative min-h-[400px] overflow-hidden rounded-2xl border border-moss/30 bg-charcoal">
-                <img 
-                  alt="Infrastructure Failure" 
-                  className="absolute inset-0 h-full w-full object-cover opacity-60" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP4pDsfud5LZYl4PeBBVO4qKvfH6J95qllGWPKwg1Jt-_J-RHpNIhNWnO4-S5uTJH7B4WP4kC9BTMm917mtzzRqdvUUgAmtHTff7U6_wz0D61o48rchQe6KI-cIpMuKSkqH_nCpx4iVFiqpK9JAb189zHDtEGKGa0gScXupJuf024Damm26d8mv4M2huWAgcvqIJMv37SthWSXE_9VhuC_rz5BdtpOxlMWwcZJ7_gtuqEFNoJbVCaBo28Y5gjLffin3I9bjDHaCIM"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
-                <div className="absolute bottom-6 left-6 max-w-xs">
-                  <div className="flex items-center gap-2 text-red-400 mb-2">
-                    <AlertTriangle className="w-5 h-5" />
-                    <span className="text-sm font-bold uppercase">Health Hazard</span>
-                  </div>
-                  <p className="text-cream font-medium">Manual handling exposes millions of sanitation workers to toxic pathogens daily.</p>
-                </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.5}>
+              <div className="rounded-2xl border border-moss/20 bg-charcoal p-6 hover:border-gold/50 transition-all duration-300">
+                <div className="w-3 h-3 bg-gold rounded-full mb-3"></div>
+                <p className="text-cream/90 leading-relaxed">Human dependency leads to <span className="font-semibold">inconsistency</span></p>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.6}>
+              <div className="rounded-2xl border border-moss/20 bg-charcoal p-6 hover:border-gold/50 transition-all duration-300">
+                <div className="w-3 h-3 bg-gold rounded-full mb-3"></div>
+                <p className="text-cream/90 leading-relaxed">Centralized pits <span className="font-semibold">overflow</span></p>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.7}>
+              <div className="rounded-2xl border border-moss/20 bg-charcoal p-6 hover:border-gold/50 transition-all duration-300">
+                <div className="w-3 h-3 bg-gold rounded-full mb-3"></div>
+                <p className="text-cream/90 leading-relaxed">Open dumping invites <span className="font-semibold">pests and complaints</span></p>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.8}>
+              <div className="rounded-2xl border border-moss/20 bg-charcoal p-6 hover:border-gold/50 transition-all duration-300">
+                <div className="w-3 h-3 bg-gold rounded-full mb-3"></div>
+                <p className="text-cream/90 leading-relaxed">Good intentions collapse under <span className="font-semibold">bad systems</span></p>
               </div>
             </AnimatedSection>
           </div>
+
+          <AnimatedSection delay={0.9} className="text-center mt-8">
+            <p className="text-xl sm:text-2xl text-cream/80 font-semibold italic">
+              Good intentions collapse under bad systems.
+            </p>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* Section: Comparison (The Pivot) */}
-      <section className="py-20 lg:py-32 px-4 lg:px-40 bg-charcoal" id="comparison">
+      {/* Section: Why Vermicompost Pits Don't Scale */}
+      <section className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-charcoal">
         <div className="mx-auto max-w-6xl">
-          <AnimatedSection className="text-center mb-16">
-            <span className="text-gold text-sm font-bold uppercase tracking-wider">The Reality Check</span>
-            <h2 className="mt-3 text-3xl font-bold text-cream lg:text-4xl lg:text-5xl font-google-sans">Why Ancient Methods Fail Modern Cities</h2>
+          <AnimatedSection className="mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-cream font-google-sans">
+              Why <span className="text-red-400">Vermicompost Pits</span> Don't Scale for Modern India
+            </h2>
+            <div className="mt-6 h-1 w-24 rounded bg-gold"></div>
           </AnimatedSection>
-          <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-            {/* Old Way */}
-            <AnimatedSection delay={0.2}>
-              <div className="flex flex-col rounded-2xl border border-red-900/30 bg-red-950/10 p-8 lg:p-10 relative overflow-hidden h-full">
-                <div className="relative z-10">
-                  <div className="inline-flex items-center gap-2 rounded-full bg-red-500/10 px-3 py-1 text-red-400 mb-6">
-                    <Clock className="w-4 h-4" />
-                    <span className="text-xs font-bold uppercase">Traditional Approach</span>
+          
+          <AnimatedSection delay={0.2} className="mb-12">
+            <p className="text-lg sm:text-xl text-cream/90 leading-relaxed max-w-4xl">
+              Vermicomposting is often romanticized as a universal solution. While it works for small households and controlled environments, it <span className="text-red-400 font-semibold">fails dramatically at scale</span>.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.3} className="mb-8">
+            <p className="text-xl text-cream/90 font-semibold mb-6">In large residential and institutional setups, vermicompost pits:</p>
+          </AnimatedSection>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              { text: "Cannot handle daily high-volume organic waste", icon: TrendingDown },
+              { text: "Require constant manual monitoring and care", icon: Clock },
+              { text: "Are highly sensitive to moisture, temperature, and contamination", icon: AlertTriangle },
+              { text: "Become unhygienic if even slightly mismanaged", icon: Bug },
+              { text: "Often turn into odour hotspots instead of solutions", icon: Wind }
+            ].map((item, index) => (
+              <AnimatedSection key={index} delay={0.4 + index * 0.1}>
+                <div className="bg-red-900/10 border border-red-500/20 rounded-2xl p-6 hover:border-red-500/40 transition-all duration-300 h-full">
+                  <div className="flex items-start gap-4">
+                    <item.icon className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
+                    <p className="text-cream/90 leading-relaxed">{item.text}</p>
                   </div>
-                  <h3 className="text-2xl font-bold text-cream mb-2">Vermicompost Pits</h3>
-                  <p className="text-cream/60 mb-8">Good for farms, disastrous for megacities.</p>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3 text-cream/80">
-                      <X className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                      <span><strong>Takes 45-60 days</strong> to process one batch.</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-cream/80">
-                      <X className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                      <span>Requires <strong>massive land area</strong> unavailable in urban centers.</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-cream/80">
-                      <X className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                      <span>Produces methane and odors, leading to <strong>NIMBY protests</strong>.</span>
-                    </li>
-                  </ul>
                 </div>
-              </div>
-            </AnimatedSection>
-            {/* New Way */}
-            <AnimatedSection delay={0.3}>
-              <div className="flex flex-col rounded-2xl border border-gold/40 bg-gradient-to-b from-gold/5 to-transparent p-8 lg:p-10 relative overflow-hidden shadow-[0_0_50px_-12px_rgba(212,175,55,0.2)] h-full">
-                <div className="relative z-10">
-                  <div className="inline-flex items-center gap-2 rounded-full bg-gold/20 px-3 py-1 text-gold mb-6">
-                    <Zap className="w-4 h-4" />
-                    <span className="text-xs font-bold uppercase">The Future (Vision 2047)</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-cream mb-2">Machine-Based Systems</h3>
-                  <p className="text-cream/70 mb-8">Scalable, efficient, and built for density.</p>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3 text-cream">
-                      <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                      <span>Process waste in <strong>24-48 hours</strong>.</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-cream">
-                      <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                      <span><strong>Compact footprint</strong> fits in basements of apartment complexes.</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-cream">
-                      <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                      <span><strong>Odorless & Automated</strong>, creating usable compost instantly.</span>
-                    </li>
-                  </ul>
-                </div>
+              </AnimatedSection>
+            ))}
+            <AnimatedSection delay={0.9}>
+              <div className="bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-2xl p-6 hover:border-red-500/50 transition-all duration-300 h-full flex items-center">
+                <p className="text-cream/90 leading-relaxed">
+                  What starts as a <span className="text-gold font-semibold">green initiative</span> slowly becomes a <span className="text-red-400 font-semibold">health liability</span>.
+                </p>
               </div>
             </AnimatedSection>
           </div>
+
+          <AnimatedSection delay={1} className="mt-12 text-center">
+            <p className="text-lg sm:text-xl text-cream/70 italic">
+              India's urban future cannot rely on fragile systems meant for smaller, simpler times.
+            </p>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Section: Solution (The Case for Machines) */}
-      <section className="py-20 px-4 lg:px-40 bg-moss/5 border-y border-moss/20" id="solution">
+      <section className="py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-moss/5 border-y border-moss/20" id="solution">
         <div className="mx-auto max-w-6xl">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-8">
             <AnimatedSection className="lg:w-1/2">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-moss/30">
                 <img 
@@ -299,135 +323,285 @@ const VisionPage = () => {
                 <div className="absolute inset-0 bg-gold/10 mix-blend-overlay"></div>
               </div>
             </AnimatedSection>
-            <div className="lg:w-1/2 flex flex-col gap-8">
+            <div className="lg:w-1/2 flex flex-col gap-4">
               <AnimatedSection delay={0.2}>
-                <h2 className="text-3xl font-bold text-cream lg:text-4xl font-google-sans">
+                <h2 className="text-2xl sm:text-3xl font-bold text-cream font-google-sans leading-tight">
                   The Case for Robust, <br/>
                   <span className="text-gold">Machine-Based Composting Systems</span>
                 </h2>
               </AnimatedSection>
               <AnimatedSection delay={0.3}>
-                <p className="text-cream/80 text-lg">
-                  To meet the demands of 2047, we cannot rely on nature alone. We must accelerate it. Automated composting machines mimic the natural process but speed it up using controlled heat and airflow.
+                <p className="text-base sm:text-lg text-cream/90 leading-relaxed">
+                  Modern organic waste composting machines are not luxuries. <span className="text-gold font-semibold">They are essential urban infrastructure.</span>
                 </p>
               </AnimatedSection>
-              <div className="space-y-6">
-                <AnimatedSection delay={0.4}>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 size-12 rounded-full bg-charcoal border border-moss/30 flex items-center justify-center text-gold">
-                      <Zap className="w-6 h-6" />
+              <AnimatedSection delay={0.4}>
+                <p className="text-base text-cream/90 font-semibold mb-2">These systems:</p>
+              </AnimatedSection>
+              <div className="space-y-2">
+                {[
+                  "Process food waste on-site, daily, and hygienically",
+                  "Eliminate foul smells and pest breeding",
+                  "Reduce waste volume by up to 90%",
+                  "Convert waste into safe, usable compost within hours or days",
+                  "Minimise human handling and health risks"
+                ].map((text, index) => (
+                  <AnimatedSection key={index} delay={0.5 + index * 0.1}>
+                    <div className="flex items-start gap-3 rounded-lg bg-charcoal p-3 border border-moss/30 hover:border-gold/50 transition-all duration-300">
+                      <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                      <p className="text-cream/90 text-sm sm:text-base">{text}</p>
                     </div>
-                    <div>
-                      <h4 className="text-cream font-bold text-lg">Speed & Volume</h4>
-                      <p className="text-sm text-cream/70">Handle tons of waste daily without waiting months for decomposition.</p>
-                    </div>
-                  </div>
-                </AnimatedSection>
-                <AnimatedSection delay={0.5}>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 size-12 rounded-full bg-charcoal border border-moss/30 flex items-center justify-center text-gold">
-                      <BarChart3 className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h4 className="text-cream font-bold text-lg">Data-Driven Management</h4>
-                      <p className="text-sm text-cream/70">Smart sensors track waste intake, processing status, and output quality in real-time.</p>
-                    </div>
-                  </div>
-                </AnimatedSection>
-                <AnimatedSection delay={0.6}>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 size-12 rounded-full bg-charcoal border border-moss/30 flex items-center justify-center text-gold">
-                      <Sprout className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h4 className="text-cream font-bold text-lg">Circular Economy</h4>
-                      <p className="text-sm text-cream/70">Turns a liability (trash) into an asset (fertilizer) directly at the source.</p>
-                    </div>
-                  </div>
-                </AnimatedSection>
+                  </AnimatedSection>
+                ))}
               </div>
+              <AnimatedSection delay={1}>
+                <p className="text-sm sm:text-base text-cream/80 leading-relaxed mt-3">
+                  Most importantly, they <span className="font-semibold text-gold">close the waste loop at the source</span>—before garbage trucks, landfills, and open dumps ever come into the picture.
+                </p>
+              </AnimatedSection>
             </div>
           </div>
+          <AnimatedSection delay={1.1} className="mt-8">
+            <p className="text-lg sm:text-xl text-gold/90 font-bold text-center">
+              This is not just waste management. This is risk management for public health.
+            </p>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* Section: Impact */}
-      <section className="py-20 lg:py-32 px-4 lg:px-40 bg-charcoal" id="impact">
+      {/* Section: What Are We Losing */}
+      <section className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-charcoal" id="impact">
         <div className="mx-auto max-w-6xl">
-          <AnimatedSection>
-            <h2 className="text-3xl font-bold text-center text-cream lg:text-4xl lg:text-5xl mb-16 font-google-sans">What Are We Really Losing by Doing Nothing?</h2>
+          <AnimatedSection className="mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-cream font-google-sans mb-6">
+              What Are We Really <span className="text-red-400">Losing</span> by Doing Nothing?
+            </h2>
+            <div className="flex justify-center">
+              <div className="h-1 w-24 rounded bg-gold"></div>
+            </div>
           </AnimatedSection>
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Card 1 */}
+          
+          <AnimatedSection delay={0.2} className="mb-12">
+            <p className="text-lg sm:text-xl text-cream/90 leading-relaxed max-w-4xl mx-auto text-center">
+              When organic waste is ignored or mishandled, we lose:
+            </p>
+          </AnimatedSection>
+
+          <div className="space-y-6 max-w-4xl mx-auto">
+            {[
+              { loss: "Public health", to: "preventable diseases", color: "red" },
+              { loss: "Children's safety", to: "vector-borne infections", color: "orange" },
+              { loss: "Urban livability", to: "smells and filth", color: "yellow" },
+              { loss: "Environmental capital", to: "landfills and emissions", color: "green" },
+              { loss: "Soil fertility", to: "by discarding what could regenerate it", color: "blue" }
+            ].map((item, index) => (
+              <AnimatedSection key={index} delay={0.3 + index * 0.1}>
+                <div className={`bg-${item.color}-900/10 border-l-4 border-${item.color}-500 rounded-r-2xl p-6 hover:bg-${item.color}-900/20 transition-all duration-300`}>
+                  <p className="text-lg sm:text-xl text-cream">
+                    <span className="font-bold">{item.loss}</span>{' '}
+                    <span className="text-cream/60">to</span>{' '}
+                    <span className="text-cream/90">{item.to}</span>
+                  </p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+
+          <AnimatedSection delay={0.9} className="mt-12">
+            <p className="text-xl sm:text-2xl text-cream/80 font-semibold leading-relaxed text-center">
+              And perhaps most dangerously—<span className="text-red-400">we lose time.</span> Time that our children will not get back.
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Vision 2047: A Cleaner Definition of Freedom */}
+      <section className="relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-charcoal via-moss/20 to-charcoal overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-gold/10 via-transparent to-moss/10" />
+        
+        <div className="relative z-10 mx-auto max-w-6xl">
+          <AnimatedSection className="mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-cream font-google-sans mb-6">
+              <span className="text-cream">Vision 2047:</span>{' '}
+              <span className="bg-gradient-to-r from-gold via-yellow-500 to-gold bg-clip-text text-transparent">
+                A Cleaner Definition of Freedom
+              </span>
+            </h2>
+            <div className="flex justify-center">
+              <div className="h-1 w-24 rounded bg-gold"></div>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.2} className="text-center mb-12">
+            <p className="text-xl sm:text-2xl text-cream/90 leading-relaxed max-w-3xl mx-auto">
+              By 2047, India does not need more speeches about cleanliness.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.3} className="mb-12">
+            <p className="text-xl text-cream/90 font-semibold mb-6 text-center">India needs:</p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            {[
+              "Waste-free residential ecosystems",
+              "Zero-organic-waste-to-landfill policies",
+              "Mandatory on-site composting for bulk generators",
+              "Cities designed for prevention, not reaction"
+            ].map((need, index) => (
+              <AnimatedSection key={index} delay={0.4 + index * 0.1}>
+                <div className="bg-gradient-to-br from-moss/40 to-moss/20 border border-gold/30 rounded-2xl p-6 hover:border-gold/60 transition-all duration-500 hover:scale-105">
+                  <div className="flex items-center gap-4">
+                    <CheckCircle2 className="w-8 h-8 text-gold flex-shrink-0" />
+                    <p className="text-cream text-lg font-semibold">{need}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+
+          <AnimatedSection delay={0.8} className="text-center">
+            <p className="text-xl sm:text-2xl text-cream/80 leading-relaxed max-w-4xl mx-auto">
+              True freedom is not just political. True freedom is the ability to <span className="text-blue-400 font-semibold">breathe clean air</span>,{' '}
+              <span className="text-cyan-400 font-semibold">drink uncontaminated water</span>, and let{' '}
+              <span className="text-green-400 font-semibold">children play</span> without invisible health threats lurking in waste corners.
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Gentle Satire, Hard Truth */}
+      <section className="relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-charcoal to-moss/10">
+        <div className="mx-auto max-w-5xl">
+          <AnimatedSection className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center text-cream font-google-sans mb-6">
+              Gentle Satire, <span className="text-gold">Hard Truth</span>
+            </h2>
+            <div className="flex justify-center">
+              <div className="h-1 w-24 rounded bg-gold"></div>
+            </div>
+          </AnimatedSection>
+
+          <div className="space-y-8 max-w-4xl mx-auto">
             <AnimatedSection delay={0.2}>
-              <div className="bg-moss/5 rounded-2xl p-8 border-l-4 border-red-500 shadow-lg hover:scale-105 transition-all duration-300">
-                <div className="mb-4 text-red-500">
-                  <DollarSign className="w-10 h-10" />
-                </div>
-                <h3 className="text-xl font-bold text-cream mb-2">Economic Hemorrhage</h3>
-                <p className="text-cream/70 text-sm leading-relaxed">
-                  Billions spent annually on transporting water-heavy organic waste to landfills, only to spend billions more treating the resulting diseases.
+              <div className="bg-moss/10 border-l-4 border-cream/30 rounded-r-2xl p-6">
+                <p className="text-xl text-cream/90 leading-relaxed">
+                  We celebrate independence with flags, parades, and slogans.
                 </p>
               </div>
             </AnimatedSection>
-            {/* Card 2 */}
+
             <AnimatedSection delay={0.3}>
-              <div className="bg-moss/5 rounded-2xl p-8 border-l-4 border-orange-500 shadow-lg hover:scale-105 transition-all duration-300">
-                <div className="mb-4 text-orange-500">
-                  <Heart className="w-10 h-10" />
-                </div>
-                <h3 className="text-xl font-bold text-cream mb-2">Public Health Crisis</h3>
-                <p className="text-cream/70 text-sm leading-relaxed">
-                  Rotting garbage breeds vectors for dengue, malaria, and typhoid. The "invisible" cost is paid in crowded hospital wards.
+              <div className="bg-moss/10 border-l-4 border-cream/30 rounded-r-2xl p-6">
+                <p className="text-xl text-cream/90 leading-relaxed">
+                  But if our garbage still travels kilometres to rot in landfills…
                 </p>
               </div>
             </AnimatedSection>
-            {/* Card 3 */}
+
             <AnimatedSection delay={0.4}>
-              <div className="bg-moss/5 rounded-2xl p-8 border-l-4 border-yellow-500 shadow-lg hover:scale-105 transition-all duration-300">
-                <div className="mb-4 text-yellow-500">
-                  <CloudRain className="w-10 h-10" />
-                </div>
-                <h3 className="text-xl font-bold text-cream mb-2">Climate Ticking Bomb</h3>
-                <p className="text-cream/70 text-sm leading-relaxed">
-                  Landfills are the third-largest source of human-related methane emissions. We are cooking our own planet.
+              <div className="bg-moss/10 border-l-4 border-cream/30 rounded-r-2xl p-6">
+                <p className="text-xl text-cream/90 leading-relaxed">
+                  If our societies still argue about smells every monsoon…
                 </p>
               </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.5}>
+              <div className="bg-moss/10 border-l-4 border-cream/30 rounded-r-2xl p-6">
+                <p className="text-xl text-cream/90 leading-relaxed">
+                  If mosquitoes still thrive because food waste was "someone else's problem"…
+                </p>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.6} className="text-center mt-12">
+              <p className="text-xl sm:text-2xl text-cream/80 font-bold leading-relaxed">
+                Then we must ask—are we <span className="text-gold">independent</span>, or just <span className="text-red-400">outsourcing our mess</span>?
+              </p>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="relative py-24 px-4 lg:px-40 bg-gradient-to-b from-charcoal via-moss/10 to-charcoal overflow-hidden" id="act-now">
-        {/* Decoration */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/5 via-charcoal to-charcoal pointer-events-none"></div>
+      {/* The Call to Act */}
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-moss via-moss/80 to-charcoal overflow-hidden" id="act-now">
+        <div className="absolute inset-0 bg-gradient-to-t from-gold/10 to-transparent" />
         
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <AnimatedSection>
-            <h2 className="text-4xl lg:text-5xl font-black text-cream mb-6 tracking-tight font-google-sans">
-              Vision 2047: <br/>
-              <span className="text-gold">A Cleaner Definition of Freedom</span>
+        {/* Animated background elements */}
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gold/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-cream/10 rounded-full blur-3xl animate-pulse delay-1000" />
+
+        <div className="relative z-10 mx-auto max-w-6xl">
+          <AnimatedSection className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-google-sans mb-6">
+              The Call to Act—<span className="text-gold">Now, Not in 2047</span>
             </h2>
+            <div className="flex justify-center">
+              <div className="h-1 w-24 rounded bg-gold"></div>
+            </div>
           </AnimatedSection>
-          <AnimatedSection delay={0.2}>
-            <p className="text-lg text-cream/80 mb-10 leading-relaxed">
-              True independence is not just political. It is the freedom from filth, disease, and inefficiency. 
-              By adopting modern technology today, we secure a pristine, healthy India for the centennial of our independence.
+
+          <AnimatedSection delay={0.2} className="text-center mb-12">
+            <p className="text-xl sm:text-2xl text-cream/90 leading-relaxed max-w-3xl mx-auto">
+              Vision 2047 will not be achieved by intention alone.
             </p>
           </AnimatedSection>
-          <AnimatedSection delay={0.4}>
-            <div className="bg-moss/10 backdrop-blur-md border border-moss/30 p-8 rounded-2xl max-w-xl mx-auto">
-              <h3 className="text-xl font-bold text-cream mb-4">The Call to Act—Now, Not in 2047</h3>
-              <p className="text-sm text-cream/70 mb-6">Join the coalition of citizens demanding smart waste infrastructure in their municipalities.</p>
+
+          <AnimatedSection delay={0.3} className="mb-12">
+            <p className="text-xl text-cream/90 font-semibold mb-6 text-center">It will be achieved by:</p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            {[
+              "Investing in robust waste systems today",
+              "Treating organic waste as a resource, not a nuisance",
+              "Choosing machines and infrastructure that scale with India's reality"
+            ].map((action, index) => (
+              <AnimatedSection key={index} delay={0.4 + index * 0.1} className="h-full">
+                <div className="bg-cream/10 backdrop-blur-sm border border-gold/30 rounded-2xl p-6 hover:bg-cream/20 hover:border-gold/60 transition-all duration-500 hover:scale-105 h-full flex items-center justify-center">
+                  <p className="text-cream text-lg font-semibold text-center">{action}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+
+          <AnimatedSection delay={0.7} className="text-center mb-12">
+            <p className="text-xl sm:text-2xl text-cream/80 leading-relaxed max-w-4xl mx-auto">
+              Because the future will not forgive us for the problems we had the technology to solve—<span className="text-gold font-semibold">but chose not to.</span>
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.9} className="text-center mb-8">
+            <p className="text-2xl sm:text-3xl text-gold/90 font-bold">
+              A cleaner India is not a dream. It is a decision.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={1.0} className="text-center mb-12">
+            <p className="text-xl sm:text-2xl text-cream/80 leading-relaxed">
+              And that decision must begin <span className="text-gold font-bold">at the source</span>—<span className="text-gold font-bold">today</span>.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={1.1}>
+            <div className="text-center">
               <Link 
-                to="/#contact"
-                className="inline-block w-full sm:w-auto bg-gold hover:bg-gold/90 text-charcoal font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 shadow-lg"
+                to="/#contact" 
+                className="inline-block group"
               >
-                Get Started with Solwaste
+                <div className="bg-gold hover:bg-gold/90 text-charcoal rounded-2xl px-12 py-6 font-bold text-xl transition-all duration-500 shadow-2xl hover:shadow-gold/50 hover:scale-105">
+                  <span className="flex items-center gap-3">
+                    Start Your Waste-Free Journey
+                    <motion.span
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      →
+                    </motion.span>
+                  </span>
+                </div>
               </Link>
-              <p className="mt-4 text-xs text-cream/50">Join thousands making waste-free communities a reality.</p>
             </div>
           </AnimatedSection>
         </div>
