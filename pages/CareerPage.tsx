@@ -231,7 +231,7 @@ const CareerPage = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-google-sans font-bold mb-4 text-cream leading-tight">
-              Join Solwaste 🌱
+              Join Solwaste!
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-cream/90 font-light mb-6 max-w-3xl mx-auto">
               Careers | Internships | Volunteering
