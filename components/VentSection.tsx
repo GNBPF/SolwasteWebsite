@@ -195,7 +195,7 @@ const VentSection: React.FC = () => {
               exit={{ opacity: 0, scale: 0.9, filter: "blur(20px)" }}
               className="text-center"
             >
-              <h2 className="text-4xl md:text-6xl font-google-sans font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cream via-white to-gray-400">
+              <h2 className="text-4xl md:text-6xl font-sans font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cream via-white to-gray-400">
                 The Pulse of the City
               </h2>
               <p className="text-xl md:text-2xl font-light mb-12 opacity-80 max-w-2xl mx-auto leading-relaxed">
@@ -331,9 +331,9 @@ const VentSection: React.FC = () => {
                 <Sparkles size={48} className="text-charcoal" />
               </motion.div>
 
-              <h3 className="text-gold text-xs tracking-[0.4em] uppercase mb-6 font-bold font-google-sans">Solwaste Solution Generated</h3>
+              <h3 className="text-gold text-xs tracking-[0.4em] uppercase mb-6 font-bold font-sans">Solwaste Solution Generated</h3>
               
-              <h2 className="text-4xl md:text-6xl font-google-sans font-bold mb-8 text-cream drop-shadow-lg leading-tight">
+              <h2 className="text-4xl md:text-6xl font-sans font-bold mb-8 text-cream drop-shadow-lg leading-tight">
                 {solution.solution}
               </h2>
               
@@ -349,7 +349,7 @@ const VentSection: React.FC = () => {
                     className="bg-white/5 backdrop-blur-md rounded-xl p-8 w-full max-w-xs border border-white/10 hover:border-gold/30 transition-colors"
                   >
                     <p className="text-[10px] text-gold uppercase tracking-widest mb-2 font-bold">Estimated Deploy Time</p>
-                    <p className="text-3xl font-google-sans font-medium text-white">48 Hours</p>
+                    <p className="text-3xl font-sans font-medium text-white">48 Hours</p>
                   </motion.div>
                   <motion.div 
                     initial={{ y: 20, opacity: 0 }}
@@ -358,7 +358,7 @@ const VentSection: React.FC = () => {
                     className="bg-white/5 backdrop-blur-md rounded-xl p-8 w-full max-w-xs border border-white/10 hover:border-gold/30 transition-colors"
                   >
                     <p className="text-[10px] text-gold uppercase tracking-widest mb-2 font-bold">Impact</p>
-                    <p className="text-3xl font-google-sans font-medium text-white">Zero Landfill</p>
+                    <p className="text-3xl font-sans font-medium text-white">Zero Landfill</p>
                   </motion.div>
               </div>
 

@@ -71,7 +71,7 @@ const MilestoneCard = ({ data, isActive, onClick }) => {
         </div>
 
         <motion.h3 
-          className={`text-xl sm:text-2xl md:text-3xl font-google-sans font-bold mb-1 ${isActive ? "text-white" : "text-white/60"}`}
+          className={`text-xl sm:text-2xl md:text-3xl font-sans font-bold mb-1 ${isActive ? "text-white" : "text-white/60"}`}
           layout
         >
           {data.label}
@@ -240,7 +240,7 @@ const ImpactVision2047 = () => {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-white/10 pb-8">
             <div>
                  <span className="text-gold font-mono text-xs tracking-widest uppercase">The Roadmap</span>
-                 <h2 className="text-4xl md:text-5xl font-google-sans font-bold text-white mt-2">Vision <span className="text-green-400">2047</span></h2>
+                 <h2 className="text-4xl md:text-5xl font-sans font-bold text-white mt-2">Vision <span className="text-green-400">2047</span></h2>
             </div>
             <div className="text-right hidden md:block">
                  <div className="text-white/40 text-sm">Building the infrastructure for</div>

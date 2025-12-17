@@ -66,7 +66,7 @@ const VisionPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-tight text-cream font-google-sans text-center px-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-tight text-cream font-sans text-center px-4"
           >
             Are We Really Free If Our <span className="text-gold">Waste</span> Still Owns Us?
           </motion.h1>
@@ -127,7 +127,7 @@ const VisionPage = () => {
       <section className="relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-charcoal border-t border-moss/20" id="crisis">
         <div className="mx-auto max-w-6xl">
           <AnimatedSection className="mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-cream font-google-sans">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-cream font-sans">
               The Invisible Crisis We Step Over Every Day
             </h2>
             <div className="mt-6 h-1 w-24 rounded bg-gold"></div>
@@ -198,7 +198,7 @@ const VisionPage = () => {
       <section className="relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-moss/5" id="infrastructure">
         <div className="mx-auto max-w-6xl">
           <AnimatedSection className="mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-cream font-google-sans">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-cream font-sans">
               Segregation Is Not a Habit. <br/><span className="text-gold">It Is Infrastructure.</span>
             </h2>
             <div className="mt-6 h-1 w-24 rounded bg-gold"></div>
@@ -259,7 +259,7 @@ const VisionPage = () => {
       <section className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-charcoal">
         <div className="mx-auto max-w-6xl">
           <AnimatedSection className="mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-cream font-google-sans">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-cream font-sans">
               Why <span className="text-red-400">Vermicompost Pits</span> Don't Scale for Modern India
             </h2>
             <div className="mt-6 h-1 w-24 rounded bg-gold"></div>
@@ -325,7 +325,7 @@ const VisionPage = () => {
             </AnimatedSection>
             <div className="lg:w-1/2 flex flex-col gap-4">
               <AnimatedSection delay={0.2}>
-                <h2 className="text-2xl sm:text-3xl font-bold text-cream font-google-sans leading-tight">
+                <h2 className="text-2xl sm:text-3xl font-bold text-cream font-sans leading-tight">
                   The Case for Robust, <br/>
                   <span className="text-gold">Machine-Based Composting Systems</span>
                 </h2>
@@ -373,7 +373,7 @@ const VisionPage = () => {
       <section className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-charcoal" id="impact">
         <div className="mx-auto max-w-6xl">
           <AnimatedSection className="mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-cream font-google-sans mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-cream font-sans mb-6">
               What Are We Really <span className="text-red-400">Losing</span> by Doing Nothing?
             </h2>
             <div className="flex justify-center">
@@ -421,7 +421,7 @@ const VisionPage = () => {
         
         <div className="relative z-10 mx-auto max-w-6xl">
           <AnimatedSection className="mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-cream font-google-sans mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-cream font-sans mb-6">
               <span className="text-cream">Vision 2047:</span>{' '}
               <span className="bg-gradient-to-r from-gold via-yellow-500 to-gold bg-clip-text text-transparent">
                 A Cleaner Definition of Freedom
@@ -474,7 +474,7 @@ const VisionPage = () => {
       <section className="relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-charcoal to-moss/10">
         <div className="mx-auto max-w-5xl">
           <AnimatedSection className="mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center text-cream font-google-sans mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center text-cream font-sans mb-6">
               Gentle Satire, <span className="text-gold">Hard Truth</span>
             </h2>
             <div className="flex justify-center">
@@ -534,7 +534,7 @@ const VisionPage = () => {
 
         <div className="relative z-10 mx-auto max-w-6xl">
           <AnimatedSection className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-google-sans mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-sans mb-6">
               The Call to Act—<span className="text-gold">Now, Not in 2047</span>
             </h2>
             <div className="flex justify-center">

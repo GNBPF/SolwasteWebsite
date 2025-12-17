@@ -70,7 +70,7 @@ const BenefitsSection = () => {
             Why Solwaste
           </span>
 
-          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold text-charcoal">
+          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-charcoal">
             Benefits That Scale Across Stakeholders
           </h2>
         </motion.div>
@@ -88,7 +88,7 @@ const BenefitsSection = () => {
                 accentStyles[category.accent]
               }`}
             >
-              <h3 className="text-xl md:text-2xl font-google-sans font-medium mb-5">
+              <h3 className="text-xl md:text-2xl font-sans font-medium mb-5">
                 {category.title}
               </h3>
 

@@ -27,7 +27,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl xl:text-7xl font-google-sans font-bold text-cream mb-4 sm:mb-6 md:mb-8 leading-tight drop-shadow-2xl px-4">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl xl:text-7xl font-sans font-bold text-cream mb-4 sm:mb-6 md:mb-8 leading-tight drop-shadow-2xl px-4">
             India’s Organic Waste Crisis Needs Smarter Solutions
           </h1>
           <motion.p 

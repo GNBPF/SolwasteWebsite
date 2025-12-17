@@ -25,7 +25,7 @@ const CTABannerSection = () => {
             viewport={{ once: true }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-google-sans font-bold mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-bold mb-6 leading-tight">
               Ready to comply, reduce costs,<br />and go green?
             </h2>
             

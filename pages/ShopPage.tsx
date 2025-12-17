@@ -62,7 +62,7 @@ const ShopPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-google-sans font-bold text-moss leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-sans font-bold text-moss leading-tight"
             >
               Shop
             </motion.h1>
@@ -137,7 +137,7 @@ const ShopPage = () => {
                   key={i}
                   className="p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-moss/10 hover:border-gold/30 transition-all"
                 >
-                  <h3 className="font-google-sans font-medium text-lg md:text-xl text-moss mb-2">{feature.title}</h3>
+                  <h3 className="font-sans font-medium text-lg md:text-xl text-moss mb-2">{feature.title}</h3>
                   <p className="text-sm text-gray-600">{feature.desc}</p>
                 </div>
               ))}

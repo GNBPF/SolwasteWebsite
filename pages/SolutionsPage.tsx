@@ -20,7 +20,7 @@ const SpecRow = ({ label, value }: SpecProps) => (
 
 const SpecSheet = ({ title, specs }: { title: string, specs: SpecProps[] }) => (
     <div className="bg-white/50 backdrop-blur-sm border border-moss/10 rounded-xl p-6 mt-6">
-        <h4 className="flex items-center gap-2 font-google-sans font-medium text-lg mb-4 text-moss">
+        <h4 className="flex items-center gap-2 font-sans font-medium text-lg mb-4 text-moss">
             <Settings size={18} className="text-gold" />
             Technical Specifications
         </h4>
@@ -66,7 +66,7 @@ const SolutionsPage = () => {
                             <ArrowLeft size={14} className="md:w-4 md:h-4" /> Back to Home
                         </Link>
                         
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-google-sans font-bold mb-6 text-cream leading-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-bold mb-6 text-cream leading-tight">
                             Our Solutions
                         </h1>
                         
@@ -101,7 +101,7 @@ const SolutionsPage = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <span className="text-gold uppercase tracking-[0.2em] font-semibold text-xs inline-block">The Flagship</span>
-                            <h3 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold leading-tight">Organic Trash Composter</h3>
+                            <h3 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold leading-tight">Organic Trash Composter</h3>
                             <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-light">
                                 A fully automatic, decentralized organic waste converter. It utilizes high-temperature microorganisms to breakdown food waste into nutrient-rich soil supplements in just 24 hours.
                             </p>
@@ -149,7 +149,7 @@ const SolutionsPage = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <span className="text-terra uppercase tracking-[0.2em] font-semibold text-xs inline-block">Energy Independence</span>
-                            <h3 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold leading-tight">The Biogas Nexus</h3>
+                            <h3 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold leading-tight">The Biogas Nexus</h3>
                             <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-light">
                                 Turn liability into utility. Our compact biogas plants convert wet waste into methane-rich gas for cooking and heating—right where you need it.
                             </p>

@@ -14,7 +14,7 @@ import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   return (
-    <div className="font-google-sans antialiased scroll-smooth selection:bg-gold selection:text-charcoal">
+    <div className="font-sans antialiased scroll-smooth selection:bg-gold selection:text-charcoal">
       <ScrollToTop />
       <Navbar />
       <Routes>

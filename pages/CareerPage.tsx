@@ -39,7 +39,7 @@ const CareerPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-google-sans font-bold mb-4 text-cream leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-bold mb-4 text-cream leading-tight">
               Join Solwaste!
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-cream/90 font-light mb-6 max-w-3xl mx-auto">
@@ -72,7 +72,7 @@ const CareerPage = () => {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-google-sans font-bold text-charcoal mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-sans font-bold text-charcoal mb-4">
               Open Roles
             </h2>
           </motion.div>
@@ -136,7 +136,7 @@ const CareerPage = () => {
                 Why Join Us
               </span>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold text-white mt-4 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-white mt-4 leading-tight">
                 Work That Actually<br className="hidden sm:block" />
                 Matters
               </h2>
@@ -205,7 +205,7 @@ const CareerPage = () => {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-google-sans font-bold text-charcoal mb-3">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-sans font-bold text-charcoal mb-3">
               What Happens Next?
             </h2>
           </motion.div>

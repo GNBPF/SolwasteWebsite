@@ -48,7 +48,7 @@ const PartnersSection = () => {
               className="text-center mb-12"
           >
               <span className="text-moss uppercase tracking-[0.3em] text-xs font-bold">Trusted By</span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold mt-4 mb-4 text-charcoal">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold mt-4 mb-4 text-charcoal">
                 Our Clients and Partners
               </h2>
               <p className="text-lg text-charcoal/70 mb-8 max-w-2xl mx-auto">

@@ -48,7 +48,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                       <span className="text-gold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-xs font-bold">
                         The Legacy
                       </span>
-                      <h2 className="text-2xl sm:text-3xl md:text-4xl font-google-sans font-bold my-4 text-cream leading-tight">
+                      <h2 className="text-2xl sm:text-3xl md:text-4xl font-sans font-bold my-4 text-cream leading-tight">
                         For The Visionaries.
                       </h2>
                       <p className="text-sm sm:text-base md:text-lg font-light text-gray-400 px-4">

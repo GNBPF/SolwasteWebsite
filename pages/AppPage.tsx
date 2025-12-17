@@ -123,7 +123,7 @@ const AppPage = () => {
               <ArrowLeft size={14} /> Back to Home
             </Link>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-google-sans font-bold mb-6 text-charcoal leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-bold mb-6 text-charcoal leading-tight">
               Meet the Solwaste App
             </h1>
             
@@ -224,7 +224,7 @@ const AppPage = () => {
             className="max-w-4xl mx-auto text-center"
           >
             <span className="text-moss uppercase tracking-[0.3em] text-xs font-bold">Why This App?</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold mt-4 mb-6 text-charcoal">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold mt-4 mb-6 text-charcoal">
               Because change begins at home.
             </h2>
             <p className="text-lg md:text-xl text-charcoal/70 font-light leading-relaxed mb-8">
@@ -252,7 +252,7 @@ const AppPage = () => {
                 <span className="text-moss text-xs font-bold uppercase tracking-wider">Home Tab</span>
               </div>
               
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold mb-6 text-charcoal">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold mb-6 text-charcoal">
                 Start from your home
               </h2>
               
@@ -326,7 +326,7 @@ const AppPage = () => {
                 <span className="text-gold text-xs font-bold uppercase tracking-wider">Circles Tab</span>
               </div>
               
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold mb-6 text-charcoal">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold mb-6 text-charcoal">
                 Grow together as a community
               </h2>
               
@@ -400,7 +400,7 @@ const AppPage = () => {
                 <span className="text-charcoal text-xs font-bold uppercase tracking-wider">Solwaste Tab</span>
               </div>
               
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold mb-6 text-charcoal">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold mb-6 text-charcoal">
                 Solutions that build a greener future
               </h2>
               
@@ -470,7 +470,7 @@ const AppPage = () => {
             className="text-center mb-16"
           >
             <span className="text-moss uppercase tracking-[0.3em] text-xs font-bold">Early Voices</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold mt-4 mb-6 text-charcoal">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold mt-4 mb-6 text-charcoal">
               What people are saying
             </h2>
           </motion.div>
@@ -525,7 +525,7 @@ const AppPage = () => {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-google-sans font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-bold mb-6">
               Ready to start your green journey?
             </h2>
             <p className="text-lg md:text-xl text-cream/80 mb-12 font-light">
@@ -577,7 +577,7 @@ const AppPage = () => {
             className="text-center mb-16"
           >
             <span className="text-moss uppercase tracking-[0.3em] text-xs font-bold">Questions?</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold mt-4 mb-6 text-charcoal">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold mt-4 mb-6 text-charcoal">
               Everything you need to know
             </h2>
           </motion.div>
@@ -647,7 +647,7 @@ const AppPage = () => {
                   <Smartphone size={16} className="text-gold" />
                   <span className="text-gold text-xs font-bold uppercase tracking-wider">Coming Soon</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-google-sans font-bold text-charcoal mb-4">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-sans font-bold text-charcoal mb-4">
                   App in Development
                 </h3>
                 <p className="text-charcoal/70 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">

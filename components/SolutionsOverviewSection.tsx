@@ -46,7 +46,7 @@ const SolutionsOverviewSection = () => {
             Our Solutions
           </span>
 
-          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-google-sans font-bold text-charcoal leading-tight">
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-charcoal leading-tight">
             Composting Systems for<br />Every Operational Scale
           </h2>
 
@@ -78,7 +78,7 @@ const SolutionsOverviewSection = () => {
 
               {/* Text */}
               <div className="relative h-full p-4 flex flex-col justify-end">
-                <h3 className="text-lg font-google-sans font-medium text-cream mb-2">
+                <h3 className="text-lg font-sans font-medium text-cream mb-2">
                   {solution.title}
                 </h3>
 

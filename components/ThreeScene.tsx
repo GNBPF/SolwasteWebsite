@@ -283,7 +283,7 @@ const ProductScene = ({ type }: { type: 'composter' | 'biogas' }) => {
       <ErrorBoundary fallback={
         <div className="w-full h-full flex flex-col items-center justify-center bg-gray-100/50 text-moss/50 space-y-2">
            <div className="w-12 h-12 rounded-full border-2 border-moss/20 flex items-center justify-center">
-             <span className="text-xl font-google-sans font-bold">3D</span>
+             <span className="text-xl font-sans font-bold">3D</span>
            </div>
            <span className="text-xs font-mono uppercase tracking-widest">Visual Preview Unavailable</span>
         </div>
