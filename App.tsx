@@ -1,10 +1,10 @@
 import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
-import Home from './pages/Home';
 import ScrollToTop from './components/ScrollToTop';
 
-// Lazy load page components for better performance
+// Lazy load all page components for optimal performance
+const Home = lazy(() => import('./pages/Home'));
 const SolutionsPage = lazy(() => import('./pages/SolutionsPage'));
 const OTCPage = lazy(() => import('./pages/OTCPage'));
 const BiogasPage = lazy(() => import('./pages/BiogasPage'));
