@@ -153,7 +153,7 @@ const VentSection: React.FC = () => {
         {/* Background Image */}
         <div className="absolute">
           <img 
-            src="/ventBackground.webp" 
+            src="/ventBackgroung.webp" 
             alt="Waste Management Background" 
             className="w-full h-full object-cover"
           />
