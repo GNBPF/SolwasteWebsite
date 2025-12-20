@@ -151,7 +151,7 @@ const OTCPage = () => {
     {
       name: 'CyberSoil™',
       subtitle: 'Home Composter',
-      images: ['/machines/CyberSoil.png', '/machines/CyberSoil1.png', '/machines/CyberSoil2.png'],
+      images: ['/machines/CyberSoil.webp', '/machines/CyberSoil1.webp'],
       bestFor: 'Apartments, Villas, Small Offices',
       capacity: '2-10 kg/day',
       output: 'Ready compost in 24 hours.',
@@ -171,7 +171,7 @@ const OTCPage = () => {
     {
       name: 'CompoGen™',
       subtitle: 'Industrial Composter',
-      images: ['/machines/CompoGen.png', '/machines/CompoGen1.png', '/machines/CompoGen2.png'],
+      images: ['/machines/CompoGen.webp', '/machines/CompoGen1.webp', '/machines/CompoGen2.webp'],
       bestFor: 'Malls, Hotels, Institutions, Large Campuses',
       capacity: '1.5 ton onwards.',
       output: 'Large-scale compost production with real-time IoT dashboards, energy-efficient processing',
