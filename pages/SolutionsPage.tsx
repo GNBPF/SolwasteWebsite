@@ -49,12 +49,17 @@ const SolutionsPage = () => {
                 schema={schema}
             />
             {/* Hero Section */}
-            <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-12">
+            <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-12">
                 <div 
-                    className="absolute inset-0 bg-cover bg-center opacity-30"
-                    style={{ backgroundImage: 'url(/ventBackgroung.png)' }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-charcoal/95 via-moss/90 to-moss/70" />
+                    className="absolute inset-0 opacity-70"
+                >
+                    <img 
+                        src="/ourSolutionsBg.webp" 
+                        alt="Solutions Background"
+                        className="w-full h-full object-cover"
+                    />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-moss/30 to-moss/20" />
                 
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                     <motion.div
@@ -62,15 +67,12 @@ const SolutionsPage = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <Link to="/" className="inline-flex items-center gap-2 text-cream/80 hover:text-gold transition-colors mb-6 md:mb-8 text-xs md:text-sm uppercase tracking-wider">
-                            <ArrowLeft size={14} className="md:w-4 md:h-4" /> Back to Home
-                        </Link>
                         
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-bold mb-6 text-cream leading-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-bold mb-6 text-white leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
                             Our Solutions
                         </h1>
                         
-                        <p className="text-lg sm:text-xl md:text-2xl text-cream/90 max-w-3xl mx-auto font-light leading-relaxed">
+                        <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
                             Engineering Nature. German precision mechanisms<br className="hidden sm:block"/> meeting the organic soul of India.
                         </p>
                     </motion.div>

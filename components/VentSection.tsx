@@ -151,9 +151,9 @@ const VentSection: React.FC = () => {
         <div className="absolute inset-0 top-0 h-40 bg-gradient-to-b from-charcoal via-charcoal/55 to-transparent z-10 pointer-events-none" />
         
         {/* Background Image */}
-        <div className="absolute ">
+        <div className="absolute">
           <img 
-            src="/ventBackgroung.png" 
+            src="/ventBackground.webp" 
             alt="Waste Management Background" 
             className="w-full h-full object-cover"
           />

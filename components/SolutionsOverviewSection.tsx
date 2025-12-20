@@ -9,31 +9,38 @@ const SolutionsOverviewSection = () => {
       title: 'Community Composting',
       description:
         'Designed for housing societies and residential communities managing 50–500 kg of wet waste daily.',
-      image:"/solutions/communityComposting.png"
+      image:"/solutions/communityComposting.webp"
     },
     {
       title: 'Corporate and Hotel Systems',
       description:
         'Tailored composting solutions for offices, hotels, and commercial establishments processing up to 1 ton/day.',
-      image:"/solutions/hotelSystem.png"
+      image:"/solutions/hotelSystem.webp"
     },
     {
       title: 'Industrial-Scale Composting',
       description:
         'Heavy-duty systems built for institutions, campuses, and facilities handling 2+ tons of organic waste.',
-      image:"/solutions/industrialComposting.png"
+      image:"/solutions/industrialComposting.webp"
     },
     {
       title: 'Electric and Automated',
       description:
         'Fully electric, odour-free machines with automated operation and minimal maintenance requirements.',
-      image:"/solutions/electricAutomated.png"
+      image:"/solutions/electricAutomated.webp"
     }
   ];
 
   return (
-    <section className="py-14 md:py-18 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-14 md:py-18 bg-white relative">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-60"
+        style={{ backgroundImage: 'url(/newsStyleBg.webp)' }}
+      />
+      <div className="absolute inset-0 bg-white/20" />
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
         <motion.div
@@ -42,15 +49,15 @@ const SolutionsOverviewSection = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center mb-10"
         >
-          <span className="text-moss uppercase tracking-[0.3em] text-xs font-semibold">
+          <span className="text-moss uppercase tracking-[0.3em] text-xs font-semibold drop-shadow-sm">
             Our Solutions
           </span>
 
-          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-charcoal leading-tight">
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-charcoal leading-tight drop-shadow-md">
             Composting Systems for<br />Every Operational Scale
           </h2>
 
-          <p className="mt-4 text-base md:text-lg text-charcoal/70 leading-relaxed">
+          <p className="mt-4 text-base md:text-lg text-charcoal leading-relaxed font-medium drop-shadow-lg">
             Automated, energy-efficient composting systems built for reliable,
             compliant waste processing at every scale.
           </p>
