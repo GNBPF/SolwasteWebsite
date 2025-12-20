@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 const PartnerPage = () => {
 
   const schema = {
-    "@context": "https://schema.org",
+    
     "@type": "WebPage",
     "name": "Partner With Solwaste - Affiliation Program",
     "description": "Join Solwaste's partner network. Learn, represent, earn, and create impact in organic waste management.",

@@ -54,7 +54,7 @@ const SolutionsPage = () => {
                     className="absolute inset-0 opacity-70"
                 >
                     <img 
-                        src="/ourSolutionsBg.webp" 
+                        src="/solwasteCoolBg.webp" 
                         alt="Solutions Background"
                         className="w-full h-full object-cover"
                     />

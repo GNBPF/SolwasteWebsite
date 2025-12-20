@@ -198,11 +198,13 @@ const OTCPage = () => {
       />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-12 md:pb-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: 'url(/OrganicWasteComposter.jpeg)' }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-moss/90 via-moss/75 to-moss/40" />
+        <div className="absolute inset-0 opacity-70">
+          <img 
+            src="/ourSolutionsBg.webp" 
+            alt="OTC Background"
+            className="w-full h-full object-cover"
+          />
+        </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div
@@ -210,18 +212,10 @@ const OTCPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Link to="/solutions" className="inline-flex items-center gap-2 text-cream/80 hover:text-gold transition-colors mb-6 md:mb-8 text-xs md:text-sm uppercase tracking-wider">
-              <ArrowLeft size={14} className="md:w-4 md:h-4" /> Back to Solutions
-            </Link>
             
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-sans font-bold mb-4 md:mb-6 text-cream leading-tight px-2">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-sans font-bold mb-4 md:mb-6 text-cream leading-tight px-2 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
               Our Organic Trash<br />Composters
             </h1>
-            
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-cream/90 max-w-3xl mx-auto font-light leading-relaxed px-4">
-              Not all waste is equal. Not all machines should be either.<br className="hidden sm:block"/>
-              <span className="sm:hidden"> </span>That's why our solutions are like Lego – Plug, Play, Scale.
-            </p>
           </motion.div>
         </div>
       </section>
