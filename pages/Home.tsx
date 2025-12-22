@@ -54,9 +54,9 @@ const Home = () => {
     return (
         <main>
             <SEO 
-                title="Solwaste | Organic Waste to Compost & Biogas - India's #1 Solution"
-                description="Transform organic waste into compost & clean energy with Solwaste. German-engineered OTC machines & biogas plants. 500+ installations across India. Zero landfill guarantee. Get a quote today!"
-                keywords="organic waste management India, composting machine, biogas plant, OTC machine, waste to compost, organic waste converter, sustainable waste management, zero waste solutions, Mumbai waste management, residential composting, commercial composting, biogas energy, waste to energy India"
+                title="Solwaste | Waste Management India"
+                description="Leading waste management in India. Biowaste, organic waste disposal & sustainable solutions by Solwaste.co. 500+ installations. Get quote today."
+                keywords="waste management, waste management India, biowaste management, organic waste solutions, waste disposal India, garbage disposal, organic waste management India, composting machine, biogas plant, OTC machine, waste to compost, organic waste converter, sustainable waste management, zero waste solutions, Mumbai waste management, residential composting, commercial composting, biogas energy, waste to energy India"
                 ogImage="https://solwaste.co/og-home.png"
                 schema={schema}
             />

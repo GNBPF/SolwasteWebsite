@@ -15,9 +15,9 @@ const ShopPage = () => {
   return (
     <div className="bg-cream text-moss min-h-screen flex flex-col">
       <SEO 
-        title="Shop | Buy Composting Machines & Accessories - Solwaste Store"
-        description="Shop for Solwaste composting machines, biogas plants, and eco-friendly accessories. Coming soon - browse our product catalog and get notified when we launch our online store."
-        keywords="buy composting machine, OTC machine online, biogas plant purchase, eco products India, waste management products, composting accessories"
+        title="Buy Composting Machines & Accessories | Solwaste Store"
+        description="Shop waste management machines, OTC composters, biogas plants India. Solwaste online store. Fast delivery across India."
+        keywords="buy composting machine, waste management machines India, biogas plant price, OTC machine price, waste disposal equipment shop, buy composting machine, OTC machine online, biogas plant purchase, eco products India, waste management products, composting accessories"
         ogImage="https://solwaste.co/og-shop.png"
         schema={schema}
       />

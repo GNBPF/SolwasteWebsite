@@ -18,7 +18,7 @@ const CareerPage = () => {
       <SEO 
         title="Careers at Solwaste | Jobs, Internships & Volunteering"
         description="Join Solwaste's mission to redesign how cities think about waste. Opportunities in sustainability, operations, tech, design, and more."
-        keywords="Solwaste careers, sustainability jobs, environmental jobs, climate action, internships, volunteering, green jobs"
+        keywords="waste management jobs India, waste management internships, volunteering waste management, waste industry careers, Solwaste careers, sustainability jobs, environmental jobs, climate action, internships, volunteering, green jobs"
         ogImage="https://solwaste.co/og-careers.png"
         schema={schema}
       />

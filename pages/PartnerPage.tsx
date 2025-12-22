@@ -16,9 +16,9 @@ const PartnerPage = () => {
   return (
     <main className="bg-cream">
       <SEO 
-        title="Become a Partner | Solwaste Affiliation Program"
-        description="Join Solwaste as an affiliation partner. Learn waste solutions, build relationships, earn commissions, and create environmental impact. No inventory, no logistics - we handle the heavy lifting."
-        keywords="Solwaste partner, waste management partner, sustainability partner, affiliation program, commission based, green business opportunity, environmental consulting"
+        title="Waste Management Partners India | Solwaste Affiliation Program"
+        description="Become waste management distributor or affiliate in India. Super stockist opportunities for machines at Solwaste.co."
+        keywords="waste management distributors India, super stockist waste machines, waste management affiliates, waste mgmt partners, Solwaste partner, waste management partner, sustainability partner, affiliation program, commission based, green business opportunity, environmental consulting"
         ogImage="https://solwaste.co/og-partner.png"
         schema={schema}
       />

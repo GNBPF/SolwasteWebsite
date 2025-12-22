@@ -42,9 +42,9 @@ const SolutionsPage = () => {
     return (
         <div className="bg-cream text-moss">
             <SEO 
-                title="Our Solutions | OTC Composting Machines & Biogas Plants - Solwaste"
-                description="Discover Solwaste's innovative waste management solutions: Organic Trash Composters (OTC) for residential & commercial composting, and Biogas Plants for sustainable energy. German engineering, Indian applications."
-                keywords="OTC machine, organic trash composter, biogas plant India, composting solutions, waste management systems, residential composting machine, commercial biogas plant, automated composting, biogas energy generation"
+                title="Waste Disposal Solutions India | Solwaste"
+                description="Organic waste, garbage disposal & biowaste machines India. Composting, biogas & OTC solutions by Solwaste. Sustainable waste management."
+                keywords="waste disposal solutions, waste disposal India, organic waste machines, biowaste solutions, garbage disposal systems India, OTC machine, organic trash composter, biogas plant India, composting solutions, waste management systems, residential composting machine, commercial biogas plant, automated composting, biogas energy generation"
                 ogImage="https://solwaste.co/og-solutions.png"
                 schema={schema}
             />

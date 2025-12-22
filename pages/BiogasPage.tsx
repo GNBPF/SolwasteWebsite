@@ -56,9 +56,9 @@ const BiogasPage = () => {
   return (
     <div className="bg-charcoal text-cream">
       <SEO 
-        title="Biogas Plant | Convert Waste to Clean Energy - Solwaste"
-        description="Solwaste Biogas Plants: CyberFlame, LoopGas, MethaGen. Transform organic waste into biogas energy. Modular, sustainable solutions for institutions, hotels, and commercial spaces. Reduce energy costs while managing waste effectively."
-        keywords="biogas plant India, biogas energy, waste to energy system, organic waste to biogas, commercial biogas plant, institutional biogas system, biogas generator, renewable energy India, CyberFlame, LoopGas, MethaGen"
+        title="Biogas Plant | Biogas Plant from Waste India"
+        description="Biogas production from organic waste & biowaste management India. Waste-to-energy solutions by Solwaste.co. Clean energy from garbage."
+        keywords="biogas plant India, biogas from waste India, waste to energy India, biowaste management, biogas energy, biogas plant India, biogas energy, waste to energy system, organic waste to biogas, commercial biogas plant, institutional biogas system, biogas generator, renewable energy India, CyberFlame, LoopGas, MethaGen"
         ogImage="https://solwaste.co/og-biogas.png"
         schema={schema}
       />

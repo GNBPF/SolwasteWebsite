@@ -190,9 +190,9 @@ const OTCPage = () => {
   return (
     <div className="bg-cream text-moss">
       <SEO 
-        title="Organic Trash Composter (OTC) | Automated Composting Machines - Solwaste"
-        description="Discover Solwaste's OTC machines - CyberSoil, EcoLoop, CompoGen. Convert organic waste to compost in 24-48 hours. German technology, PLC control, 8kg to 1.5 ton capacity. Perfect for homes, societies, and institutions across India."
-        keywords="OTC machine price, organic trash composter India, automated composting machine, residential composter, society composting solution, industrial composter, waste to compost machine, CyberSoil, EcoLoop, CompoGen"
+        title="OTC Composting Machine India | Solwaste"
+        description="One-time composting machines for organic waste India. Fast biowaste disposal with German-engineered OTC by Solwaste.co. Zero landfill."
+        keywords="OTC machine, composting machine India, organic waste compost, organic waste converter, organic waste management India, OTC machine price, organic trash composter India, automated composting machine, residential composter, society composting solution, industrial composter, waste to compost machine, CyberSoil, EcoLoop, CompoGen"
         ogImage="https://solwaste.co/og-otc.png"
         schema={schema}
       />
