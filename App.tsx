@@ -11,6 +11,7 @@ import AppPage from './pages/AppPage';
 import VisionPage from './pages/VisionPage';
 import PartnerPage from './pages/PartnerPage';
 import CareerPage from './pages/CareerPage';
+import CaseStudiesPage from './pages/CaseStudiesPage';
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/vision-2047" element={<VisionPage />} />
         <Route path="/partner" element={<PartnerPage />} />
         <Route path="/careers" element={<CareerPage />} />
+        <Route path="/case-studies" element={<CaseStudiesPage />} />
       </Routes>
     </div>
   );

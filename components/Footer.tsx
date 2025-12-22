@@ -113,9 +113,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="https://drive.google.com/file/d/1d0RZ3Po3JJQ5iWg0KAwuWiMQai3FmSB9/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="hover:underline transition-all">
+                <Link to="/case-studies" className="hover:underline transition-all">
                   Case Studies
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
