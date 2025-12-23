@@ -136,8 +136,40 @@ const SolutionsPage = () => {
                         </motion.div>
                     </div>
 
-                    {/* Machine 2: Biogas Plant */}
-                    <div className="flex flex-col lg:flex-row-reverse items-start gap-8 md:gap-12 lg:gap-16">
+                    {/* Machine 2: Fahaka */}
+                    <div className="flex flex-col lg:flex-row-reverse items-start gap-8 md:gap-12 lg:gap-16 mb-20 md:mb-32">
+                        <div className="w-full lg:w-1/2 relative flex-shrink-0">
+                            <div className="relative w-full aspect-[3/4] sm:aspect-square md:aspect-[4/3] overflow-hidden rounded-2xl bg-white/30 border border-moss/10">
+                                <img 
+                                    src="/machines/fahaka.webp" 
+                                    alt="Fahaka Machine"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+                        <motion.div 
+                            className="w-full lg:w-1/2 space-y-3 sm:space-y-4 md:space-y-6 lg:text-right lg:pr-4"
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <span className="text-gold uppercase tracking-[0.2em] font-semibold text-xs inline-block">Innovation</span>
+                            <h3 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold leading-tight">Fahaka</h3>
+                            
+                            <div className="pt-6 flex gap-4 lg:justify-end">
+                                <Link 
+                                    to="/fahaka"
+                                    className="group inline-flex items-center gap-2 px-8 py-4 border-2 border-moss text-moss rounded-full hover:bg-moss hover:text-cream transition-all font-medium uppercase text-xs tracking-widest"
+                                >
+                                    Learn More <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform"/>
+                                </Link>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    {/* Machine 3: Biogas Plant */}
+                    <div className="flex flex-col lg:flex-row items-start gap-8 md:gap-12 lg:gap-16">
                         <div className="w-full lg:w-1/2 relative flex-shrink-0">
                             <div className="relative w-full aspect-[3/4] sm:aspect-square md:aspect-[4/3] overflow-hidden rounded-2xl bg-white/30 border border-moss/10">
                                 <ProductScene type="biogas" />
