@@ -115,6 +115,19 @@ const GalleryPage = () => {
         </div>
       </section>
 
+      {/* Tweet Section */}
+      <section className="pb-12 sm:pb-16 md:pb-20 lg:pb-24 bg-cream">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <img
+              src="/tweet1.png"
+              alt="Customer Tweet about Solwaste Installation"
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Lightbox Modal */}
       <AnimatePresence>
         {selectedImage !== null && (

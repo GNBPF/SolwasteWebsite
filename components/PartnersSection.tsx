@@ -10,7 +10,7 @@ const partners = [
   { name: "Adani, Ports and Logistics", logo: "/partnerLogo/adani.png" },
   { name: "Aizwal Municipal Corporation, Mizoram", logo: "/partnerLogo/logo4.png" },
   { name: "Assam Pollution Control Board, Nagaon, Assam", logo: "/partnerLogo/logo5.png" },
-  { name: "Defence colony, Shankar Vihar, New Delhi", logo: "/partnerLogo/logo6.png" },
+  { name: "Defence colony, Shankar Vihar, New Delhi", logo: "/partnerLogo/logo6.jpg" },
   { name: "Department of Urban Development & Housing Ziro Valley, Arunachal Pradesh", logo: "/partnerLogo/logo7.png" },
   { name: "Kartarpur Land Port, Punjab", logo: "/partnerLogo/logo8.png" },
   { name: "Don Boscho University, Guwahati, Assam", logo: "/partnerLogo/logo9.png" },
@@ -107,7 +107,8 @@ const PartnersSection = () => {
                       {duplicatedPartnersRow1.map((partner, index) => {
                           // First 4 logos keep current size, others get larger
                           const logoIndex = index % partnersRow1.length;
-                          const sizeClass = logoIndex < 4 
+                          // Make logo6.jpg (Defence colony) and first 4 logos smaller
+                          const sizeClass = (logoIndex < 4 || logoIndex === 7)
                               ? "max-h-20 sm:max-h-24 md:max-h-28 lg:max-h-32 max-w-[160px] sm:max-w-[180px] md:max-w-[220px] lg:max-w-[240px]" 
                               : "max-h-36 sm:max-h-44 md:max-h-52 lg:max-h-60 max-w-[240px] sm:max-w-[280px] md:max-w-[340px] lg:max-w-[380px]";
                           
@@ -154,7 +155,12 @@ const PartnersSection = () => {
                   >
                       {duplicatedPartnersRow2.map((partner, index) => {
                           // All logos in row 2 get larger size (they start from index 11 in original array)
-                          const sizeClass = "max-h-36 sm:max-h-44 md:max-h-52 lg:max-h-60 max-w-[240px] sm:max-w-[280px] md:max-w-[340px] lg:max-w-[380px]";
+                          const logoIndex = index % partnersRow2.length;
+                          const originalIndex = 11 + logoIndex; // Calculate original index in partners array
+                          // Make logo16.png (Numaligarh Refinery) smaller
+                          const sizeClass = originalIndex === 17 
+                              ? "max-h-20 sm:max-h-24 md:max-h-28 lg:max-h-32 max-w-[160px] sm:max-w-[180px] md:max-w-[220px] lg:max-w-[240px]"
+                              : "max-h-36 sm:max-h-44 md:max-h-52 lg:max-h-60 max-w-[240px] sm:max-w-[280px] md:max-w-[340px] lg:max-w-[380px]";
                           
                           return (
                               <div

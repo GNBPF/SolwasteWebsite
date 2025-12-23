@@ -183,7 +183,7 @@ const SolutionsPage = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <span className="text-terra uppercase tracking-[0.2em] font-semibold text-xs inline-block">Energy Independence</span>
-                            <h3 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold leading-tight">The Biogas Nexus</h3>
+                            <h3 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold leading-tight">Biogas</h3>
                             <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-light">
                                 Turn liability into utility. Our compact biogas plants convert wet waste into methane-rich gas for cooking and heating—right where you need it.
                             </p>
