@@ -157,7 +157,7 @@ const AccessibilityPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-6xl mx-auto text-center"
           >
             <p className="text-base sm:text-lg md:text-xl text-charcoal/80 leading-relaxed">
               This Accessibility Statement applies to our website{' '}
@@ -176,139 +176,63 @@ const AccessibilityPage = () => {
       </section>
 
       {/* Main Content Sections */}
-      {sections.map((section, index) => (
-        <section 
-          key={section.id}
-          className={`py-12 sm:py-16 md:py-20 lg:py-24 ${
-            index % 2 === 0 ? 'bg-white' : 'bg-cream/20'
-          }`}
-        >
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className="max-w-5xl mx-auto"
-            >
-              <div className="flex items-start gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-charcoal text-white rounded-full flex items-center justify-center font-bold text-lg sm:text-xl md:text-2xl">
-                  {section.id}
-                </div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal mt-1 sm:mt-2">
-                  {section.title}
-                </h2>
-              </div>
-
-              <div className="space-y-4 sm:space-y-5 md:space-y-6 pl-0 sm:pl-16 md:pl-20">
-                {section.content.map((paragraph, idx) => (
-                  <p key={idx} className="text-sm sm:text-base md:text-lg text-charcoal/80 leading-relaxed">
-                    {paragraph}
-                  </p>
-                ))}
-
-                {section.list && (
-                  <ul className="space-y-2 sm:space-y-3 md:space-y-4 mt-4 sm:mt-5 md:mt-6">
-                    {section.list.map((item, idx) => (
-                      <motion.li
-                        key={idx}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.1, duration: 0.5 }}
-                        className="flex items-start gap-3 sm:gap-4"
-                      >
-                        <div className="flex-shrink-0 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-charcoal rounded-full mt-2"></div>
-                        <span className="text-sm sm:text-base md:text-lg text-charcoal/80 leading-relaxed">
-                          {item}
-                        </span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                )}
-
-                {section.footer && (
-                  <p className="text-sm sm:text-base md:text-lg text-charcoal/80 leading-relaxed mt-4 sm:mt-5 md:mt-6 italic border-l-4 border-gold pl-4 sm:pl-5 md:pl-6">
-                    {section.footer}
-                  </p>
-                )}
-
-                {/* Contact Info for Section 6 */}
-                {section.id === 6 && (
-                  <div className="mt-6 sm:mt-8 p-6 sm:p-8 bg-cream/50 rounded-xl sm:rounded-2xl border-l-4 border-charcoal">
-                    <h3 className="text-lg sm:text-xl font-bold text-charcoal mb-4">
-                      Accessibility & Data Protection Officer
-                    </h3>
-                    <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-charcoal/80">
-                      <p className="font-semibold">Solwaste Innovations Private Limited</p>
-                      <p className="leading-relaxed">
-                        1st Floor, 264–265, Dr. Annie Besant Road,<br />
-                        Worli, Mumbai, Maharashtra – 400025, India
-                      </p>
-                      <div className="pt-3 sm:pt-4 space-y-2">
-                        <p>
-                          <strong className="text-charcoal">Email:</strong>{' '}
-                          <a href="mailto:privacy@solwaste.co" className="text-moss hover:underline font-medium">
-                            privacy@solwaste.co
-                          </a>
-                        </p>
-                        <p>
-                          <strong className="text-charcoal">Phone:</strong>{' '}
-                          <a href="tel:+917400383866" className="text-moss hover:underline font-medium">
-                            +91-7400383866
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-                    <p className="text-sm sm:text-base text-charcoal/70 mt-4 sm:mt-6 leading-relaxed">
-                      We aim to respond to accessibility-related requests within a reasonable timeframe and will make reasonable efforts to provide information in an accessible format upon request.
-                    </p>
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      ))}
-
-      {/* CTA Section */}
-      <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-br from-moss to-moss/90 text-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <div className="inline-block mb-6 sm:mb-8">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gold rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-charcoal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
-                Help Us Improve
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto">
-                Your feedback helps us create a more accessible experience for everyone. If you encounter any accessibility barriers, please don't hesitate to reach out.
-              </p>
-            </div>
+          <div className="max-w-6xl mx-auto">
+            {sections.map((section) => (
+              <div key={section.id} className="mb-12 sm:mb-16">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-charcoal mb-4 sm:mb-6">
+                  {section.id}. {section.title}
+                </h2>
 
-            <motion.a
-              href="mailto:privacy@solwaste.co"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 bg-gold text-charcoal px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-base md:text-lg hover:bg-gold/90 transition-all shadow-lg"
-            >
-              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Report an Accessibility Issue
-            </motion.a>
-          </motion.div>
+                <div className="space-y-4 text-sm sm:text-base text-charcoal/80 leading-relaxed">
+                  {section.content.map((paragraph, idx) => (
+                    <p key={idx}>{paragraph}</p>
+                  ))}
+
+                  {section.list && (
+                    <ul className="list-disc pl-6 sm:pl-8 space-y-2 mt-4">
+                      {section.list.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {section.footer && (
+                    <p className="mt-4 italic">{section.footer}</p>
+                  )}
+
+                  {/* Contact Info for Section 6 */}
+                  {section.id === 6 && (
+                    <div className="mt-6">
+                      <p className="font-semibold mb-2">Accessibility & Data Protection Officer</p>
+                      <p>Solwaste Innovations Private Limited</p>
+                      <p>1st Floor, 264–265, Dr. Annie Besant Road, Worli, Mumbai, Maharashtra – 400025, India</p>
+                      <p className="mt-3">
+                        <strong>Email:</strong>{' '}
+                        <a href="mailto:privacy@solwaste.co" className="text-moss hover:underline">
+                          privacy@solwaste.co
+                        </a>
+                      </p>
+                      <p>
+                        <strong>Phone:</strong>{' '}
+                        <a href="tel:+917400383866" className="text-moss hover:underline">
+                          +91-7400383866
+                        </a>
+                      </p>
+                      <p className="mt-4">
+                        We aim to respond to accessibility-related requests within a reasonable timeframe and will make reasonable efforts to provide information in an accessible format upon request.
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
+
+
 
       <Footer />
     </main>
