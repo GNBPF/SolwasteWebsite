@@ -106,7 +106,6 @@ const CareerPage = () => {
         </div>
       </section>
 
-      Meera Hai
       <section className="relative min-h-screen w-full overflow-hidden">
         {/* Background Video */}
         <video
@@ -132,7 +131,7 @@ const CareerPage = () => {
               viewport={{ once: true }}
               className="max-w-3xl mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16"
             >
-              <span className="text-moss uppercase tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] lg:tracking-[0.35em] xl:tracking-[0.4em] text-[10px] sm:text-xs md:text-sm font-semibold">
+              <span className="text-white uppercase tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] lg:tracking-[0.35em] xl:tracking-[0.4em] text-[10px] sm:text-xs md:text-sm font-semibold">
                 Why Join Us
               </span>
 
@@ -182,7 +181,7 @@ const CareerPage = () => {
                   transition={{ delay: i * 0.12 }}
                   className="relative pl-4 sm:pl-5 md:pl-6"
                 >
-                  <span className="absolute left-0 top-1 h-full w-[1.5px] sm:w-[2px] bg-moss/60" />
+                  <span className="absolute left-0 top-1 h-full w-[1.5px] sm:w-[2px] bg-gold/60" />
                   <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white mb-1.5 sm:mb-2 md:mb-2.5">
                     {item.title}
                   </h3>
