@@ -15,6 +15,7 @@ import CaseStudiesPage from './pages/CaseStudiesPage';
 import SustainabilityPage from './pages/SustainabilityPage';
 import AccessibilityPage from './pages/AccessibilityPage';
 import PrivacyPage from './pages/PrivacyPage';
+import SitemapPage from './pages/SitemapPage';
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="/sustainability" element={<SustainabilityPage />} />
         <Route path="/accessibility" element={<AccessibilityPage />} />
         <Route path="/privacy-policy" element={<PrivacyPage />} />
+        <Route path="/sitemap" element={<SitemapPage />} />
       </Routes>
     </div>
   );

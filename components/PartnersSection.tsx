@@ -7,23 +7,23 @@ const partners = [
   { name: "LuLu Group", logo: "/partnerLogo/mall.png" },
   { name: "ONGC", logo: "/partnerLogo/ongc.png" },
   { name: "Petronet LNG", logo: "/partnerLogo/petronet.png" },
-  { name: "adani", logo: "/partnerLogo/adani.png" },
-  { name: "adani", logo: "/partnerLogo/logo4.png" },
-  { name: "adani", logo: "/partnerLogo/logo5.png" },
-  { name: "adani", logo: "/partnerLogo/logo6.png" },
-  { name: "adani", logo: "/partnerLogo/logo7.png" },
-  { name: "adani", logo: "/partnerLogo/logo8.png" },
-  { name: "adani", logo: "/partnerLogo/logo9.png" },
-  { name: "adani", logo: "/partnerLogo/logo10.png" },
-  { name: "adani", logo: "/partnerLogo/logo11.png" },
-  { name: "adani", logo: "/partnerLogo/logo12.png" },
-  { name: "adani", logo: "/partnerLogo/logo13.png" },
-  { name: "adani", logo: "/partnerLogo/logo14.png" },
-  { name: "adani", logo: "/partnerLogo/logo15.png" },
-  { name: "adani", logo: "/partnerLogo/logo16.png" },
-  { name: "adani", logo: "/partnerLogo/logo17.png" },
-  { name: "adani", logo: "/partnerLogo/logo18.png" },
-  { name: "adani", logo: "/partnerLogo/logo19.png" },
+  { name: "Adani, Ports and Logistics", logo: "/partnerLogo/adani.png" },
+  { name: "Aizwal Municipal Corporation, Mizoram", logo: "/partnerLogo/logo4.png" },
+  { name: "Assam Pollution Control Board, Nagaon, Assam", logo: "/partnerLogo/logo5.png" },
+  { name: "Defence colony, Shankar Vihar, New Delhi", logo: "/partnerLogo/logo6.png" },
+  { name: "Department of Urban Development & Housing Ziro Valley, Arunachal Pradesh", logo: "/partnerLogo/logo7.png" },
+  { name: "Kartarpur Land Port, Punjab", logo: "/partnerLogo/logo8.png" },
+  { name: "Don Boscho University, Guwahati, Assam", logo: "/partnerLogo/logo9.png" },
+  { name: "Ruby Clinic", logo: "/partnerLogo/logo10.png" },
+  { name: "Guntur Municipal Corporation, Andhra Pradesh", logo: "/partnerLogo/logo11.png" },
+  { name: "55 Engineer Regiment, Indian Army, Rajasthan", logo: "/partnerLogo/logo12.png" },
+  { name: "Indira Gandhi Centre for Atomic Research, Kalpakkam, Tamil Nadu.", logo: "/partnerLogo/logo13.png" },
+  { name: "IndLab Eeuipments Pvt. Ltd.", logo: "/partnerLogo/logo14.png" },
+  { name: "Kakinada Municipal Corporation, Andhra Pradesh", logo: "/partnerLogo/logo15.png" },
+  { name: "Numaligarh Refinery Limited, Assam", logo: "/partnerLogo/logo16.png" },
+  { name: "Sam Foundation for Eco friendly Environmental, Chennai, TN", logo: "/partnerLogo/logo17.png" },
+  { name: "Telangana Institute of Medical Science, Hyderabad", logo: "/partnerLogo/logo18.png" },
+  { name: "Tirupati Municipal Corporation, Tirupati", logo: "/partnerLogo/logo19.png" },
 ];
 
 const testimonials = [
@@ -109,20 +109,23 @@ const PartnersSection = () => {
                           const logoIndex = index % partnersRow1.length;
                           const sizeClass = logoIndex < 4 
                               ? "max-h-20 sm:max-h-24 md:max-h-28 lg:max-h-32 max-w-[160px] sm:max-w-[180px] md:max-w-[220px] lg:max-w-[240px]" 
-                              : "max-h-28 sm:max-h-36 md:max-h-42 lg:max-h-48 max-w-[200px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px]";
+                              : "max-h-36 sm:max-h-44 md:max-h-52 lg:max-h-60 max-w-[240px] sm:max-w-[280px] md:max-w-[340px] lg:max-w-[380px]";
                           
                           return (
                               <div
                                   key={`row1-${partner.name}-${index}`}
-                                  className="flex items-center justify-center min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
+                                  className="flex flex-col items-center justify-start min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
                               >
-                                  <div className="relative w-full h-24 sm:h-28 md:h-32 lg:h-36 flex items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6">
+                                  <div className="relative w-full h-24 sm:h-28 md:h-32 lg:h-40 flex items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6">
                                       <img
                                           src={partner.logo}
                                           alt={partner.name}
                                           className={`${sizeClass} object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:scale-110`}
                                       />
                                   </div>
+                                  <span className="opacity-0 group-hover:opacity-100 text-xs sm:text-sm font-medium text-charcoal transition-opacity duration-300 mt-2 text-center px-2 h-6 flex items-center justify-center">
+                                      {partner.name}
+                                  </span>
                               </div>
                           );
                       })}
@@ -151,20 +154,23 @@ const PartnersSection = () => {
                   >
                       {duplicatedPartnersRow2.map((partner, index) => {
                           // All logos in row 2 get larger size (they start from index 11 in original array)
-                          const sizeClass = "max-h-28 sm:max-h-36 md:max-h-42 lg:max-h-48 max-w-[200px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px]";
+                          const sizeClass = "max-h-36 sm:max-h-44 md:max-h-52 lg:max-h-60 max-w-[240px] sm:max-w-[280px] md:max-w-[340px] lg:max-w-[380px]";
                           
                           return (
                               <div
                                   key={`row2-${partner.name}-${index}`}
-                                  className="flex items-center justify-center min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
+                                  className="flex flex-col items-center justify-start min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
                               >
-                                  <div className="relative w-full h-24 sm:h-28 md:h-32 lg:h-36 flex items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6">
+                                  <div className="relative w-full h-24 sm:h-28 md:h-32 lg:h-40 flex items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6">
                                       <img
                                           src={partner.logo}
                                           alt={partner.name}
                                           className={`${sizeClass} object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:scale-110`}
                                       />
                                   </div>
+                                  <span className="opacity-0 group-hover:opacity-100 text-xs sm:text-sm font-medium text-charcoal transition-opacity duration-300 mt-2 text-center px-2 h-6 flex items-center justify-center">
+                                      {partner.name}
+                                  </span>
                               </div>
                           );
                       })}

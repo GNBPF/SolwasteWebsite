@@ -134,6 +134,9 @@ const Footer = () => {
             <Link to="/accessibility" className="hover:underline transition-all">
               Accessibility Statement
             </Link>
+            <Link to="/sitemap" className="hover:underline transition-all">
+              Sitemap
+            </Link>
           </div>
           <p className="opacity-70">
             © {new Date().getFullYear()} Solwaste. All rights reserved.
