@@ -310,8 +310,8 @@ const SustainabilityPage = () => {
                   </p>
                   <p>
                     <strong className="text-gold">Phone:</strong>{' '}
-                    <a href="tel:+917400383866" className="hover:text-gold transition-colors">
-                      +91-7400383866
+                    <a href="tel:+919429691308" className="hover:text-gold transition-colors">
+                      +919429691308
                     </a>
                   </p>
                 </div>

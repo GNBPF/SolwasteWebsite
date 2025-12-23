@@ -16,8 +16,12 @@ const Footer = () => {
           {/* Contact Information */}
           <div>
             <div className="mb-4 md:mb-6">
-              <p className="font-medium mb-1 text-sm md:text-base">+919429691308</p>
-              <p className="font-medium mb-1 text-sm md:text-base">hello@solwaste.co</p>
+              <a href="tel:+919429691308" className="font-medium mb-1 text-sm md:text-base block hover:opacity-70 transition-opacity">
+                +919429691308
+              </a>
+              <a href="mailto:hello@solwaste.co" className="font-medium mb-1 text-sm md:text-base block hover:opacity-70 transition-opacity">
+                hello@solwaste.co
+              </a>
               <p className="text-xs md:text-sm leading-relaxed">
                 Worli, 1st floor, 264-265, Dr. Annie Besant Road,<br />
                 Worli, Mumbai, MH 400025

@@ -316,8 +316,8 @@ const PrivacyPage = () => {
                   </p>
                   <p>
                     <strong>Phone:</strong>{' '}
-                    <a href="tel:+917400383866" className="text-moss hover:underline">
-                      +91-7400383866
+                    <a href="tel:+919429691308" className="text-moss hover:underline">
+                      +919429691308
                     </a>
                   </p>
                 </div>
