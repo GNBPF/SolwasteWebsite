@@ -6,7 +6,24 @@ const partners = [
   { name: "Government of Kerala", logo: "/partnerLogo/kerela.png" },
   { name: "LuLu Group", logo: "/partnerLogo/mall.png" },
   { name: "ONGC", logo: "/partnerLogo/ongc.png" },
-  { name: "Petronet LNG", logo: "/partnerLogo/petronet.png" }
+  { name: "Petronet LNG", logo: "/partnerLogo/petronet.png" },
+  { name: "adani", logo: "/partnerLogo/adani.png" },
+  { name: "adani", logo: "/partnerLogo/logo4.png" },
+  { name: "adani", logo: "/partnerLogo/logo5.png" },
+  { name: "adani", logo: "/partnerLogo/logo6.png" },
+  { name: "adani", logo: "/partnerLogo/logo7.png" },
+  { name: "adani", logo: "/partnerLogo/logo8.png" },
+  { name: "adani", logo: "/partnerLogo/logo9.png" },
+  { name: "adani", logo: "/partnerLogo/logo10.png" },
+  { name: "adani", logo: "/partnerLogo/logo11.png" },
+  { name: "adani", logo: "/partnerLogo/logo12.png" },
+  { name: "adani", logo: "/partnerLogo/logo13.png" },
+  { name: "adani", logo: "/partnerLogo/logo14.png" },
+  { name: "adani", logo: "/partnerLogo/logo15.png" },
+  { name: "adani", logo: "/partnerLogo/logo16.png" },
+  { name: "adani", logo: "/partnerLogo/logo17.png" },
+  { name: "adani", logo: "/partnerLogo/logo18.png" },
+  { name: "adani", logo: "/partnerLogo/logo19.png" },
 ];
 
 const testimonials = [
@@ -35,74 +52,131 @@ const testimonials = [
 const PartnersSection = () => {
   const [isPaused, setIsPaused] = React.useState(false);
   
-  // Triple partners array for seamless infinite loop
-  const duplicatedPartners = [...partners, ...partners, ...partners];
+  // Split partners into two rows: 11 and 10 logos
+  const partnersRow1 = partners.slice(0, 11);
+  const partnersRow2 = partners.slice(11, 21);
+  
+  // Triple each row for seamless infinite loop
+  const duplicatedPartnersRow1 = [...partnersRow1, ...partnersRow1, ...partnersRow1];
+  const duplicatedPartnersRow2 = [...partnersRow2, ...partnersRow2, ...partnersRow2];
 
   return (
-    <section className="py-16 md:py-24 bg-white border-t border-moss/5 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white border-t border-moss/5 overflow-hidden">
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center mb-8 sm:mb-10 md:mb-12"
           >
-              <span className="text-moss uppercase tracking-[0.3em] text-xs font-bold">Trusted By</span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold mt-4 mb-4 text-charcoal">
+              <span className="text-moss uppercase tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-[10px] sm:text-xs font-bold">Trusted By</span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-sans font-bold mt-3 sm:mt-4 mb-3 sm:mb-4 text-charcoal px-2">
                 Our Clients and Partners
               </h2>
-              <p className="text-lg text-charcoal/70 mb-8 max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg text-charcoal/70 mb-6 sm:mb-8 max-w-xl md:max-w-2xl mx-auto px-4">
                 Working with leading organizations across India to build a sustainable future
               </p>
           </motion.div>
           
-          {/* Dual-Row Infinite Scrolling Marquee */}
-          <div className="relative space-y-6">
+          {/* Three-Row Infinite Scrolling Marquee */}
+          <div className="relative space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
               {/* Gradient Overlays for Premium Effect */}
-              <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+              <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-20 md:w-24 lg:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-20 md:w-24 lg:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
               
-              {/* Row 1: Left to Right */}
-              <div className="overflow-hidden py-4">
+              {/* Row 1: Partners (11 logos) - Left to Right */}
+              <div className="overflow-hidden py-2 sm:py-3 md:py-4">
                   <motion.div
-                      className="flex gap-12 md:gap-16"
+                      className="flex gap-8 sm:gap-12 md:gap-16 lg:gap-20"
                       animate={{
-                          x: [0, -1 * (partners.length * 260)],
+                          x: [0, -1 * (partnersRow1.length * 300)],
                       }}
                       transition={{
                           x: {
-                              duration: 30,
+                              duration: 60,
                               repeat: Infinity,
                               ease: "linear",
                           },
                       }}
+                      whileHover={{
+                          transition: {
+                              duration: 100,
+                          },
+                      }}
                   >
-                      {duplicatedPartners.map((partner, index) => (
-                          <div
-                              key={`row1-${partner.name}-${index}`}
-                              className="flex flex-col items-center justify-center gap-3 min-w-[220px] group cursor-pointer"
-                          >
-                              <div className="relative w-full h-28 flex items-center justify-center p-4">
-                                  <img
-                                      src={partner.logo}
-                                      alt={partner.name}
-                                      className="max-h-20 max-w-[200px] object-contain grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:scale-110"
-                                  />
+                      {duplicatedPartnersRow1.map((partner, index) => {
+                          // First 4 logos keep current size, others get larger
+                          const logoIndex = index % partnersRow1.length;
+                          const sizeClass = logoIndex < 4 
+                              ? "max-h-20 sm:max-h-24 md:max-h-28 lg:max-h-32 max-w-[160px] sm:max-w-[180px] md:max-w-[220px] lg:max-w-[240px]" 
+                              : "max-h-28 sm:max-h-36 md:max-h-42 lg:max-h-48 max-w-[200px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px]";
+                          
+                          return (
+                              <div
+                                  key={`row1-${partner.name}-${index}`}
+                                  className="flex items-center justify-center min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
+                              >
+                                  <div className="relative w-full h-24 sm:h-28 md:h-32 lg:h-36 flex items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6">
+                                      <img
+                                          src={partner.logo}
+                                          alt={partner.name}
+                                          className={`${sizeClass} object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:scale-110`}
+                                      />
+                                  </div>
                               </div>
-                              <p className="text-xs font-semibold text-charcoal/40 group-hover:text-moss transition-colors duration-500 text-center tracking-wide">
-                                  {partner.name}
-                              </p>
-                          </div>
-                      ))}
+                          );
+                      })}
                   </motion.div>
               </div>
 
-              {/* Row 2: Testimonials - Right to Left */}
-              <div className="overflow-hidden py-4">
+              {/* Row 2: Partners (10 logos) - Right to Left */}
+              <div className="overflow-hidden py-2 sm:py-3 md:py-4">
                   <motion.div
-                      className="flex gap-8"
+                      className="flex gap-8 sm:gap-12 md:gap-16 lg:gap-20"
                       animate={{
-                          x: [-1 * (testimonials.length * 380), 0],
+                          x: [-1 * (partnersRow2.length * 300), 0],
+                      }}
+                      transition={{
+                          x: {
+                              duration: 55,
+                              repeat: Infinity,
+                              ease: "linear",
+                          },
+                      }}
+                      whileHover={{
+                          transition: {
+                              duration: 95,
+                          },
+                      }}
+                  >
+                      {duplicatedPartnersRow2.map((partner, index) => {
+                          // All logos in row 2 get larger size (they start from index 11 in original array)
+                          const sizeClass = "max-h-28 sm:max-h-36 md:max-h-42 lg:max-h-48 max-w-[200px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px]";
+                          
+                          return (
+                              <div
+                                  key={`row2-${partner.name}-${index}`}
+                                  className="flex items-center justify-center min-w-[180px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[260px] group cursor-pointer"
+                              >
+                                  <div className="relative w-full h-24 sm:h-28 md:h-32 lg:h-36 flex items-center justify-center p-3 sm:p-4 md:p-5 lg:p-6">
+                                      <img
+                                          src={partner.logo}
+                                          alt={partner.name}
+                                          className={`${sizeClass} object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:scale-110`}
+                                      />
+                                  </div>
+                              </div>
+                          );
+                      })}
+                  </motion.div>
+              </div>
+
+              {/* Row 3: Testimonials - Left to Right */}
+              <div className="overflow-hidden py-2 sm:py-3 md:py-4">
+                  <motion.div
+                      className="flex gap-4 sm:gap-6 md:gap-8"
+                      animate={{
+                          x: [0, -1 * (testimonials.length * 380)],
                       }}
                       transition={{
                           x: {
@@ -115,14 +189,14 @@ const PartnersSection = () => {
                       {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
                           <div
                               key={`testimonial-${index}`}
-                              className="relative min-w-[360px] p-5 bg-gradient-to-br from-white to-cream/50 rounded-xl border-l-4 border-moss/30 hover:border-gold transition-all hover:shadow-lg group cursor-pointer"
+                              className="relative min-w-[280px] sm:min-w-[320px] md:min-w-[360px] p-4 sm:p-5 bg-gradient-to-br from-white to-cream/50 rounded-lg sm:rounded-xl border-l-4 border-moss/30 hover:border-gold transition-all hover:shadow-lg group cursor-pointer"
                           >
-                              <p className="text-sm text-charcoal/80 leading-relaxed mb-3 italic">
+                              <p className="text-xs sm:text-sm text-charcoal/80 leading-relaxed mb-2 sm:mb-3 italic">
                                   "{testimonial.quote}"
                               </p>
                               <div className="pt-2 border-t border-moss/10">
-                                  <p className="font-bold text-charcoal text-sm">{testimonial.name}</p>
-                                  <p className="text-xs text-charcoal/60 mt-1">{testimonial.role}</p>
+                                  <p className="font-bold text-charcoal text-xs sm:text-sm">{testimonial.name}</p>
+                                  <p className="text-[10px] sm:text-xs text-charcoal/60 mt-1">{testimonial.role}</p>
                               </div>
                           </div>
                       ))}
@@ -130,7 +204,7 @@ const PartnersSection = () => {
               </div>
           </div>
               
-          <p className="text-sm text-charcoal/50 mt-10 text-center">
+          <p className="text-xs sm:text-sm text-charcoal/50 mt-6 sm:mt-8 md:mt-10 text-center px-4">
             Hotels • Builders • Institutions • Corporate Clients • Government Bodies
           </p>
       </div>

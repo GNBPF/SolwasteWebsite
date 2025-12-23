@@ -66,7 +66,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:underline transition-all">
+                <Link to="/sustainability" className="hover:underline transition-all">
                   Sustainability
                 </Link>
               </li>
@@ -124,10 +124,10 @@ const Footer = () => {
         {/* Bottom Links */}
         <div className="pt-6 md:pt-8 border-t border-charcoal/20 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-xs md:text-sm">
           <div className="flex gap-6 md:gap-8">
-            <Link to="/" className="hover:underline transition-all">
+            <Link to="/privacy-policy" className="hover:underline transition-all">
               Privacy Policy
             </Link>
-            <Link to="/" className="hover:underline transition-all">
+            <Link to="/accessibility" className="hover:underline transition-all">
               Accessibility Statement
             </Link>
           </div>
