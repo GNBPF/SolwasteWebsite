@@ -13,6 +13,7 @@ import VisionPage from './pages/VisionPage';
 import PartnerPage from './pages/PartnerPage';
 import CareerPage from './pages/CareerPage';
 import CaseStudiesPage from './pages/CaseStudiesPage';
+import GalleryPage from './pages/GalleryPage';
 import SustainabilityPage from './pages/SustainabilityPage';
 import AccessibilityPage from './pages/AccessibilityPage';
 import PrivacyPage from './pages/PrivacyPage';
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="/partner" element={<PartnerPage />} />
         <Route path="/careers" element={<CareerPage />} />
         <Route path="/case-studies" element={<CaseStudiesPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/sustainability" element={<SustainabilityPage />} />
         <Route path="/accessibility" element={<AccessibilityPage />} />
         <Route path="/privacy-policy" element={<PrivacyPage />} />
