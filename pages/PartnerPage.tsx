@@ -127,32 +127,32 @@ const PartnerPage = () => {
 
   {/* Content */}
   <div className="relative z-10 min-h-screen flex items-center">
-    <div className="container mx-auto px-6 lg:px-12">
+    <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-24">
 
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="max-w-3xl mb-14"
+        className="max-w-3xl mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16"
       >
-        <span className="text-moss uppercase tracking-[0.4em] text-xs font-semibold">
+        <span className="text-moss uppercase tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] lg:tracking-[0.35em] xl:tracking-[0.4em] text-[10px] sm:text-xs md:text-sm font-semibold">
           Partner Benefits
         </span>
 
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-white mt-4 leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sans font-bold text-white mt-3 sm:mt-4 md:mt-5 leading-tight">
           A Partnership <br className="hidden sm:block" />
           That Actually Makes Sense
         </h2>
 
-        <p className="text-white/70 mt-5 text-base sm:text-lg">
+        <p className="text-white/70 mt-3 sm:mt-4 md:mt-5 lg:mt-6 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
           No fluff. No empty promises. Just a clean, scalable way to earn while
           contributing to real environmental impact.
         </p>
       </motion.div>
 
       {/* Benefits – Editorial Layout */}
-      <div className="grid md:grid-cols-2 gap-y-10 gap-x-16 max-w-5xl">
+      <div className="grid md:grid-cols-2 gap-y-6 sm:gap-y-8 md:gap-y-10 lg:gap-y-12 gap-x-8 sm:gap-x-12 md:gap-x-16 lg:gap-x-20 max-w-5xl">
         {[
           {
             title: 'Zero inventory responsibility',
@@ -185,15 +185,15 @@ const PartnerPage = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.12 }}
-            className="relative pl-6"
+            className="relative pl-4 sm:pl-5 md:pl-6"
           >
             {/* Accent Line */}
-            <span className="absolute left-0 top-1 h-full w-[2px] bg-moss/60" />
+            <span className="absolute left-0 top-1 h-full w-[1.5px] sm:w-[2px] bg-moss/60" />
 
-            <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white mb-1.5 sm:mb-2 md:mb-2.5">
               {item.title}
             </h3>
-            <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+            <p className="text-white/70 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed">
               {item.desc}
             </p>
           </motion.div>

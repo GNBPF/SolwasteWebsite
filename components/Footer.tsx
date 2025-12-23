@@ -17,7 +17,7 @@ const Footer = () => {
           <div>
             <div className="mb-4 md:mb-6">
               <a href="tel:+919429691308" className="font-medium mb-1 text-sm md:text-base block hover:opacity-70 transition-opacity">
-                +919429691308
+                +91-9429691308
               </a>
               <a href="mailto:hello@solwaste.co" className="font-medium mb-1 text-sm md:text-base block hover:opacity-70 transition-opacity">
                 hello@solwaste.co
