@@ -112,7 +112,7 @@ const Footer = () => {
           <div>
             <ul className="space-y-1.5 md:space-y-2 text-sm md:text-base">
               <li>
-                <Link to="/" className="hover:underline transition-all">
+                <Link to="/press-media" className="hover:underline transition-all">
                   Press and Media
                 </Link>
               </li>

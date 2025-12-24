@@ -59,7 +59,7 @@ const GalleryPage = () => {
       <ScrollToTop />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-moss/20 via-gold/15 to-cream pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
+      <section className="relative bg-gradient-to-b from-moss/50 via-gold/35 to-cream/60 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -115,18 +115,6 @@ const GalleryPage = () => {
         </div>
       </section>
 
-      {/* Tweet Section */}
-      <section className="pb-12 sm:pb-16 md:pb-20 lg:pb-24 bg-cream">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <img
-              src="/tweet1.png"
-              alt="Customer Tweet about Solwaste Installation"
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-      </section>
 
       {/* Lightbox Modal */}
       <AnimatePresence>
