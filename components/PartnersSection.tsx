@@ -18,7 +18,7 @@ const partners = [
   { name: "Guntur Municipal Corporation, Andhra Pradesh", logo: "/partnerLogo/logo11.png" },
   { name: "55 Engineer Regiment, Indian Army, Rajasthan", logo: "/partnerLogo/logo12.png" },
   { name: "Indira Gandhi Centre for Atomic Research, Kalpakkam, Tamil Nadu.", logo: "/partnerLogo/logo13.png" },
-  { name: "IndLab Eeuipments Pvt. Ltd.", logo: "/partnerLogo/logo14.png" },
+  { name: "IndLab Equipments Pvt. Ltd.", logo: "/partnerLogo/logo14.png" },
   { name: "Kakinada Municipal Corporation, Andhra Pradesh", logo: "/partnerLogo/logo15.png" },
   { name: "Numaligarh Refinery Limited, Assam", logo: "/partnerLogo/logo16.png" },
   { name: "Sam Foundation for Eco friendly Environmental, Chennai, TN", logo: "/partnerLogo/logo17.png" },

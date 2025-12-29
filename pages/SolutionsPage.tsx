@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight, Settings, ArrowRight, ArrowLeft } from 'lucide-react';
+import { ChevronRight, Settings, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import ProductScene from '../components/ThreeScene';
@@ -34,8 +34,8 @@ const SolutionsPage = () => {
     const schema = {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "Solwaste Solutions - OTC & Biogas Systems",
-        "description": "Explore Solwaste's comprehensive range of organic waste management solutions including composting machines and biogas plants.",
+        "name": "Solwaste Solutions - OTC Systems",
+        "description": "Explore Solwaste's comprehensive range of organic waste management solutions including composting machines.",
         "url": "https://solwaste.co/solutions"
     };
 
@@ -43,8 +43,8 @@ const SolutionsPage = () => {
         <div className="bg-cream text-moss">
             <SEO 
                 title="Waste Disposal Solutions India | Solwaste"
-                description="Organic waste, garbage disposal & biowaste machines India. Composting, biogas & OTC solutions by Solwaste. Sustainable waste management."
-                keywords="waste disposal solutions, waste disposal India, organic waste machines, biowaste solutions, garbage disposal systems India, OTC machine, organic trash composter, biogas plant India, composting solutions, waste management systems, residential composting machine, commercial biogas plant, automated composting, biogas energy generation"
+                description="Organic waste, garbage disposal & biowaste machines India. Composting & OTC solutions by Solwaste. Sustainable waste management."
+                keywords="waste disposal solutions, waste disposal India, organic waste machines, biowaste solutions, garbage disposal systems India, OTC machine, organic trash composter, composting solutions, waste management systems, residential composting machine, automated composting"
                 ogImage="https://solwaste.co/og-solutions.png"
                 schema={schema}
             />
@@ -168,42 +168,6 @@ const SolutionsPage = () => {
                         </motion.div>
                     </div>
 
-                    {/* Machine 3: Biogas Plant */}
-                    <div className="flex flex-col lg:flex-row items-start gap-8 md:gap-12 lg:gap-16">
-                        <div className="w-full lg:w-1/2 relative flex-shrink-0">
-                            <div className="relative w-full aspect-[3/4] sm:aspect-square md:aspect-[4/3] overflow-hidden rounded-2xl bg-white/30 border border-moss/10">
-                                <ProductScene type="biogas" />
-                            </div>
-                        </div>
-                        <motion.div 
-                            className="w-full lg:w-1/2 space-y-3 sm:space-y-4 md:space-y-6 lg:text-right lg:pr-4"
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            <span className="text-terra uppercase tracking-[0.2em] font-semibold text-xs inline-block">Energy Independence</span>
-                            <h3 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold leading-tight">Biogas</h3>
-                            <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-light">
-                                Turn liability into utility. Our compact biogas plants convert wet waste into methane-rich gas for cooking and heating—right where you need it.
-                            </p>
-                            
-                            <div className="flex gap-4 flex-wrap lg:justify-end">
-                                <span className="px-3 py-1 bg-terra/5 rounded-full text-xs font-medium uppercase tracking-wider text-terra">Anaerobic Digestion</span>
-                                <span className="px-3 py-1 bg-terra/5 rounded-full text-xs font-medium uppercase tracking-wider text-terra">Methane Production</span>
-                                <span className="px-3 py-1 bg-terra/5 rounded-full text-xs font-medium uppercase tracking-wider text-terra">Zero Emissions</span>
-                            </div>
-
-                            <div className="pt-6 flex gap-4 lg:justify-end">
-                                <Link 
-                                    to="/biogas"
-                                    className="group inline-flex items-center gap-2 px-8 py-4 border-2 border-moss text-moss rounded-full hover:bg-moss hover:text-cream transition-all font-medium uppercase text-xs tracking-widest"
-                                >
-                                    Learn More <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform"/>
-                                </Link>
-                            </div>
-                        </motion.div>
-                    </div>
                 </div>
             </section>
 

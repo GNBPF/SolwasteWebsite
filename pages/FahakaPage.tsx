@@ -50,9 +50,6 @@ const FahakaPage = () => {
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-sans font-bold mb-4 md:mb-6 text-white leading-tight px-2 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
               Fahaka
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-light leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] max-w-3xl mx-auto">
-              [Description to be added]
-            </p>
           </motion.div>
         </div>
       </section>

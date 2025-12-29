@@ -11,7 +11,7 @@ export const Navbar = () => {
   const isHome = location.pathname === '/';
   
   // Detect pages with light backgrounds
-  const lightBgPages = ['/app', '/otc', '/biogas', '/shop', '/solutions'];
+  const lightBgPages = ['/app', '/otc', '/shop', '/solutions'];
   const hasLightBg = lightBgPages.includes(location.pathname);
 
   useEffect(() => {

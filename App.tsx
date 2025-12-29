@@ -5,7 +5,6 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import SolutionsPage from './pages/SolutionsPage';
 import OTCPage from './pages/OTCPage';
-import BiogasPage from './pages/BiogasPage';
 import FahakaPage from './pages/FahakaPage';
 import ShopPage from './pages/ShopPage';
 import AppPage from './pages/AppPage';
@@ -29,7 +28,6 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/solutions" element={<SolutionsPage />} />
         <Route path="/otc" element={<OTCPage />} />
-        <Route path="/biogas" element={<BiogasPage />} />
         <Route path="/fahaka" element={<FahakaPage />} />
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/app" element={<AppPage />} />

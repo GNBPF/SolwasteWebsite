@@ -20,7 +20,6 @@ const SitemapPage = () => {
       links: [
         { name: "All Solutions", path: "/solutions" },
         { name: "Organic Waste Converters (OWC)", path: "/otc" },
-        { name: "Biogas Systems", path: "/biogas" },
         { name: "Shop Products", path: "/shop" },
         { name: "Solwaste App", path: "/app" }
       ]
